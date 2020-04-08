@@ -20,8 +20,11 @@ module.exports = {
   configs: {
     countOfInitialPost: 10, // Config your initial count of post
   },
+  sponsor: {
+    buyMeACoffeeId: 'Ykss',
+  },
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
-  ga: '116559927', // Add your google analytics tranking ID
+  ga: 'UA-116559927-2', // Add your google analytics tranking ID
 }
