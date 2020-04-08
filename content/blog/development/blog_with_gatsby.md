@@ -125,8 +125,8 @@ gatsby develop
 
 > 참고 출처
 >
-> 1) [https://medium.com/@pks2974/gatsby-%EB%A1%9C-blog-%EB%A7%8C%EB%93%A4%EA%B8%B0-ac3eed48e068](https://medium.com/@pks2974/gatsby-로-blog-만들기-ac3eed48e068)
+> 1) [gatsby-로-blog-만들기](https://medium.com/@pks2974/gatsby-로-blog-만들기-ac3eed48e068)
 >
-> 2) https://www.gatsbyjs.org/docs/
+> 2) [gatsby 공식 페이지](https://www.gatsbyjs.org/docs/)
 >
 > 
