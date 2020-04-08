@@ -7,7 +7,7 @@ draft: false
 
 기존에 **Jekyll**을 이용해 블로그를 운영했었다. 대학시절 오픈소스 수업을 들으며 만들었었는데, 한동안 열심히 	포스팅하고 블로그 꾸미기도 하고, 구글 애널리틱스를 붙이는 등 한때 공들였었다. 하지만 취준과 취업 기간동안 동력을 잃고 유령 블로그가 되어버렸다. 근데 신기한 건 아직도 구글 애널리틱스의 정기적인 분석 보고 메일을 	받으면 관리하지 않고 있음에도 블로그 유입이 지속적으로 일어나는게 신기했다. (대부분 *Flutter* 관련 글...) 
 
-![google analytics](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200407092955663.png)
+![google analytics](.\images\image-20200407092955663.png)
 
 
 
@@ -41,7 +41,7 @@ draft: false
 
    Gatsby JS는 단순하게 말하면 정적 HTML 생성기라고 할 수 있다. Gatsby의 경우 DB에서 정보를 받아와 HTML을 만들어내는 SSR(Server Side Rendering) 방식이나 API를 통해 페이지 정보를 받아와서 HTML을 생성하는 CSR(Client Side Rendering) 방식이 아니고 GraphQL을 이용해 정보를 가져와 빌드 시점에서 정적페이지를 만드는 방식이다. 배포 시점에는 이미 HTML 페이지가 완성되어있기 때문에 WAS가 별도로 필요하지 않다. **사전 렌더링**이 가장 큰 특징이라고 할 수 있다.
 
-   ![image-20200407144255254](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200407144255254.png)
+   ![image-20200407144255254](.\images\image-20200407144255254.png)
 
    
 
@@ -110,15 +110,15 @@ draft: false
 
    ​	1) Netlify에 로그인 한 후에 `create a new site`를 클릭한다. 클릭하면 아래와 같은 화면을 볼 수 있다. 
 
-   ![image-20200406130622988](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200406130622988.png)
+   ![image-20200406130622988](.\images\image-20200406130622988.png)
 
    ​	2) `Continuous Deployment`에서 Github 또는 Gitlab 등 계정을 연결하여, 원하는 저장소를 선택한다. 
 
-   ![image-20200406130843777](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200406130843777.png)
+   ![image-20200406130843777](.\images\image-20200406130843777.png)
 
    ​	3) 기본 설정 셋팅을 하고 `Deploy site` 를 클릭하면 배포가 완료된다.
 
-   ![image-20200406130948124](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20200406130948124.png)
+   ![image-20200406130948124](.\images\image-20200406130948124.png)
 
    ​	4) 위와 같은 과정을 마치면 배포가 완료되고, `Site settings`과 `Domain settings`등을 통해 여러가지 
 
