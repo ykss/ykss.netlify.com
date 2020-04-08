@@ -112,47 +112,45 @@ export default ({
     author = {
       author
     }
-    /> {
-      !!sponsor.buyMeACoffeeId && ( <
-        SponsorButton sponsorId = {
-          sponsor.buyMeACoffeeId
-        }
-        />
-      )
-    } <
-    Elements.Hr / >
-    <
-    Bio / >
-    <
-    PostNavigator pageContext = {
-      pageContext
+    /> {!!sponsor.buyMeACoffeeId && ( <
+    SponsorButton sponsorId = {
+      sponsor.buyMeACoffeeId
     }
-    /> {
-      !!disqusShortName && ( <
-        Disqus post = {
-          post
-        }
-        shortName = {
-          disqusShortName
-        }
-        siteUrl = {
-          siteUrl
-        }
-        slug = {
-          pageContext.slug
-        }
-        />
-      )
-    } {
-      !!utterances && < Utterences repo = {
-        utterances
-      }
-      />} <
-      /Layout>
-    )
+    />
+  )
+} <
+Elements.Hr / >
+  <
+  Bio / >
+  <
+  PostNavigator pageContext = {
+    pageContext
   }
+/> {!!disqusShortName && ( <
+Disqus post = {
+  post
+}
+shortName = {
+  disqusShortName
+}
+siteUrl = {
+  siteUrl
+}
+slug = {
+pageContext.slug
+}
+/>
+)
+} {
+  !!utterances && < Utterences repo = {
+    utterances
+  }
+  />} < /
+  Layout >
+)
+}
 
-  export const pageQuery = graphql `
+export const pageQuery = graphql `
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
@@ -162,6 +160,9 @@ export default ({
         comment {
           disqusShortName
           utterances
+        }
+        sponsor {
+          buyMeACoffeeId
         }
       }
     }
