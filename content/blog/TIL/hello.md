@@ -2,7 +2,6 @@
 title: 'Welcome Bee starter'
 date: 2019-2-6 16:21:13
 category: 'TIL'
-thumbnail: './images/hello.png'
 draft: true
 ---
 
