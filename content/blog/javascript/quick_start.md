@@ -2,7 +2,7 @@
 title: 'Quick Start'
 date: 2019-5-31 16:21:13
 category: 'Javascript'
-draft: false
+draft: true
 ---
 
 # Getting Started 😎
