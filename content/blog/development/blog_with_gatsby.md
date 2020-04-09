@@ -1,7 +1,7 @@
 ---
 title: 'Gatsby JS로 블로그 시작하기'
 date: 2020-4-7 19:02:00
-category: 'development'
+category: 'Development'
 draft: false
 ---
 
