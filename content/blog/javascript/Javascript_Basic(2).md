@@ -28,7 +28,7 @@ draft: false
 
 1. `Object()`생성자 함수
 
-   ```javascript
+```javascript
    //player라는 이름의 빈 객체 생성
    var player = new Object();
    
@@ -39,13 +39,13 @@ draft: false
    
    console.log(typeof player); // (결과) object
    console.log(player); // (결과) {name: 'Mason Mount', position: 'Midfielder', back_number: 19 }
-   ```
+```
 
    
 
 2. 객체 리터럴
 
-   ```javascript
+```javascript
    var player = {
    	name : 'Mason Mount',
    	position : 'Midfielder',
@@ -54,13 +54,13 @@ draft: false
    
    console.log(typeof player); // (결과) object
    console.log(player); // (결과) {name: 'Mason Mount', position: 'Midfielder', back_number: 19 }
-   ```
+ ```
 
    
 
 3. 생성자 함수 (함수를 통한 객체 생성)
 
-   ```javascript
+```javascript
    var minus = new Function('x','y','return x-y'); //minus라는 함수 객체 선언
    console.log(minus(4,3)); //(출력값) 1
    ```
@@ -83,7 +83,7 @@ draft: false
 
 2. 마침표(.)를 통한 접근법
 
-   ```javascript
+```javascript
    var player = {
    	name : 'Mason Mount',
    	position : 'Midfielder',
@@ -108,7 +108,7 @@ draft: false
    player['market-value'] = '20m';
    console.log(player['market-value']); // (출력값) 20m
    console.log(player.market-value); // (출력값) NaN
-   ```
+```
 
    * **프로퍼티 동적생성** - 존재하지 않는 프로퍼티에 값을 할당할 경우 새로운 프로퍼티가 동적으로 할당된 이후에 값이 할당된다.
    * **NaN**은 수치 연산을 해서 비정상적인 값을 얻지 못할 때 출력된다.
@@ -132,7 +132,7 @@ for (i in player) {
 // (출력값) name 'Mason Mount'
 //         position Midfielder
 //         back_number 19          
-```
+   ```
 
 
 
@@ -150,7 +150,7 @@ console.log(player.name); // (출력값) undefined;
 
 delete player;
 console.log(player.position); // (출력값) midfielder;
-```
+   ```
 
 
 
