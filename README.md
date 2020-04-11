@@ -1,5 +1,5 @@
-<div align="center">
-  <img src="./content/assets/felog.png" width="360px" />
+<div>
+  <img src="./content/assets/felog.png" width="180px" />
 </div>
 
 해당 블로그는 [gatsby-starter-bee](https://github.com/JaeYeopHan/gatsby-starter-bee) 스타터를 사용해 제작되었습니다.
