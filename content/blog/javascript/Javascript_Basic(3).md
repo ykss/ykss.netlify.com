@@ -1,18 +1,11 @@
 ---
-
 title: '프로토타입과 배열'
-
 date: 2020-4-13 11:50:00
-
 category: 'Javascript'
-
 draft: false
-
-\---
+---
 
 ![image-20200409103446799](./images/image-20200409103446799.png)
-
-
 
 
 
