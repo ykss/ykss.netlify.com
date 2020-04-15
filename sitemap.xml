@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	  	  
+<!-- www.check-domains.com sitemap generator -->
+
+<url>
+   <loc>https://ykss.netlify.com/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>1.0000</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/rss.xml</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/sitemap.xml</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/javascript/different_with_var_let_const/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/development/blog_with_gatsby/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.8000</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/about/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/javascript/javascript_basic(2)/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.6400</priority>
+</url>
+<url>
+   <loc>https://ykss.netlify.com/javascript/javasciprt_basic(1)/</loc>
+   <lastmod>2020-04-13T04:45:58+00:00</lastmod>
+   <changefreq>always</changefreq>
+   <priority>0.6400</priority>
+</url>
+</urlset>
