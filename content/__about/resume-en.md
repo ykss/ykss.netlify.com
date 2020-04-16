@@ -14,7 +14,7 @@ _Thank you for reading my resume. If you want to contact me, Please send me an e
 
 Github : https://github.com/Ykss
 
-Blog : https://ykss.netlify.com
+Blog : https://ykss.netlify.app
 
 Contact : yukyeongsang@gmail.com
 
@@ -24,9 +24,9 @@ Contact : yukyeongsang@gmail.com
 
 ## Hyundai-Autoever
 
-### period : 19.07 ~
+period : 19.07 ~
 
-### position : Mcloud Engineer
+position : Mcloud Engineer
 
 ---
 
@@ -35,6 +35,6 @@ Contact : yukyeongsang@gmail.com
 
 ## Handong Global University
 
-### period : 15.03 ~ 19.08
+period : 15.03 ~ 19.08
 
-### major : Computer Science & Business Management
+major : Computer Science & Business Management

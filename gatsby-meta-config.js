@@ -3,7 +3,7 @@ module.exports = {
   description: `성장하는 엔지니어가 되기 위한 기록`,
   author: `[Ykss]`,
   introduction: `고이지 않고 흘러가는 개발자가 되고자합니다.`,
-  siteUrl: `https://ykss.netlify.com`, // Your blog site url
+  siteUrl: `https://ykss.netlify.app`, // Your blog site url
   social: {
     twitter: ``, // Your Twitter account
     github: `ykss`, // Your GitHub account
