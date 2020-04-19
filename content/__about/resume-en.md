@@ -18,9 +18,15 @@ Blog : https://ykss.netlify.com
 
 Contact : yukyeongsang@gmail.com
 
+
+
 ---
 
+
+
 # Experiences
+
+
 
 ## Hyundai-Autoever
 
@@ -28,9 +34,15 @@ Contact : yukyeongsang@gmail.com
 
 ### position : Mcloud Engineer
 
+
+
 ---
 
+
+
 # Education
+
+
 
 
 ## Handong Global University
@@ -38,3 +50,7 @@ Contact : yukyeongsang@gmail.com
 ### period : 15.03 ~ 19.08
 
 ### major : Computer Science & Business Management
+
+
+
+---
