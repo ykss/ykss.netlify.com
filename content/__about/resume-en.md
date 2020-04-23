@@ -4,11 +4,16 @@ date: 2020-4-15 22:08:13
 lang: 'en'
 ---
 
+
 # Kyeongsang Yu
+
+
 
 <div align="center">
 
+
 _Thank you for reading my resume. If you want to contact me, Please send me an email._
+
 
 </div>
 
@@ -20,7 +25,10 @@ Contact : yukyeongsang@gmail.com
 
 
 
+
 ---
+
+
 
 
 
@@ -28,15 +36,22 @@ Contact : yukyeongsang@gmail.com
 
 
 
+
+
 ## Hyundai-Autoever
 
+
 ### period : 19.07 ~
+
 
 ### position : Mcloud Engineer
 
 
 
+
 ---
+
+
 
 
 
@@ -45,9 +60,13 @@ Contact : yukyeongsang@gmail.com
 
 
 
+
+
 ## Handong Global University
 
+
 ### period : 15.03 ~ 19.08
+
 
 ### major : Computer Science & Business Management
 
