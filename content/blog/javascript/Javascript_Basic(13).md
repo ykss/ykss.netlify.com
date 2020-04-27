@@ -54,6 +54,34 @@ console.log(mount.getName()); // (출력 값) mount
 
 
 
+##### 2) 클래스 기반의 상속
+
+사실 클래스 기반의 상속도 프로토타입의 방식과 크게 다르지 않다. 프로토타입 기반에서는 객체 리터럴로 생성했던 것을 클래스 방식에서는 클래스 역할을 하는 함수로 상속을 구현한다.
+
+```javascript
+function Player(name){
+	this.name = name;
+};
+
+Player.prototype.setName = function(value){
+    this.name = value;
+};
+
+Player.prototype.getName = function(){
+    return this.name;
+};
+
+function Midfielder(name) { 
+}
+
+var mount = new Player("mount");
+Midfielder.prototype = mount;
+var kante = new Midfielder("kante");
+kante.setName("kante");
+console.log(kante.getName());
+
+```
+
 
 
 
@@ -66,7 +94,5 @@ console.log(mount.getName()); // (출력 값) mount
 
 > 1. [INSIDE JAVASCRIPT (한빛미디어, 송형주,고현준 지음)](https://book.naver.com/bookdb/book_detail.nhn?bid=7400243)
 > 2. [인프런 'Javascipt 핵심 개념 알아보기 - JS Flow'](https://www.inflearn.com/course/핵심개념-javascript-flow/)
-
-
 
 
