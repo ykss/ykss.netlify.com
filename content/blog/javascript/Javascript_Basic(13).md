@@ -1,8 +1,8 @@
 ---
 title: '자바스크립트의 상속과 캡슐화'
-date: 2020-4-25 14:00:00
+date: 2020-4-28 11:00:00
 category: 'Javascript'
-draft: true
+draft: false
 ---
 
 ![자바스크립트](./images/image-20200409103446799.png)
@@ -79,8 +79,17 @@ Midfielder.prototype = mount;
 var kante = new Midfielder("kante");
 kante.setName("kante");
 console.log(kante.getName());
-
 ```
+
+위 코드에서는 `Midfielder`함수를 만들어서 해당 함수의 프로토타입이 `Player`생성자 함수의 인스턴스인 `mount`를 참조하도록 만들었다. 그리고 `Midfielder`생성자 함수로 만든 `kante`라는 인스턴스는 `mount`를 부모 객체로 참조하게 된다. 그럼 `mount`객체는 `Person`생성자로 만들어졌기 때문에 `Person`의 프로토타입 객체에 접근 가능하고, `mount`를 부모 프로토타입 객체로 취급하는 `kante` 또한 `Person.prototype`에 접근이 가능하다. 이렇게 프로토 타입 체인이 형성된 것이다. 하지만 위 코드에는 문제가 있는데, `kante`인스턴스 생성 시에 `Person`생성자는 호출되지 않는다. 처음 생성할 때 `new Midfielder("kante")`와 같이 인자를 전달했지만,  이것을 받아서 반영하는 부분은 존재하지 않는다. `Midfielder`생성자 함수는 비어있는 함수 이기 때문이다.  `kante`라는 객체는 결국 빈 객체가 되고 `kante.setName()`메서드 실행 이후에야 프로퍼티가 생성된다. 이것을 해결하기 위해 `Midfielder`코드를 수정해야 한다.
+
+```javascript
+function Midfielder(name) {
+	Player.apply(this, arguments);
+}
+```
+
+위 코드처럼 수정하면 `this`를 통해 `Midfielder` 생성자 함수로 생성된 빈 객체가 전달되고 `Player()` 생성자 함수를 실행시킨다. 이런 방식으로 자식 클래스의 인스턴스에 대해 부모 클래스의 생성자를 실행 시킬 수 있다. 현재 경우는 부모와 자식 클래스 인스턴스가 독립적이지 못하다. 
 
 
 
