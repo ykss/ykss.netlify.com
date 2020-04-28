@@ -1,6 +1,6 @@
 ---
 title: '자바스크립트의 상속과 캡슐화'
-date: 2020-4-28 11:00:00
+date: 2020-4-28 23:00:00
 category: 'Javascript'
 draft: false
 ---
@@ -89,7 +89,114 @@ function Midfielder(name) {
 }
 ```
 
-위 코드처럼 수정하면 `this`를 통해 `Midfielder` 생성자 함수로 생성된 빈 객체가 전달되고 `Player()` 생성자 함수를 실행시킨다. 이런 방식으로 자식 클래스의 인스턴스에 대해 부모 클래스의 생성자를 실행 시킬 수 있다. 현재 경우는 부모와 자식 클래스 인스턴스가 독립적이지 못하다. 
+위 코드처럼 수정하면 `this`를 통해 `Midfielder` 생성자 함수로 생성된 빈 객체가 전달되고 `Player()` 생성자 함수를 실행시킨다. 이런 방식으로 자식 클래스의 인스턴스에 대해 부모 클래스의 생성자를 실행 시킬 수 있다. 현재 경우는 부모와 자식 클래스 인스턴스가 독립적이지 못하다. 현재 자식 클래스의 prototype이 부모 클래스의 인스턴스를 참조하고 있기 때문에 자식 클래스의 prototype에 메서드를 추가하려고 하면 문제가 발생 할 수 있다. 부모 클래스의 인스턴스와 자식 클래스의 인스턴스는 독립되어야 한다. 그렇게 하기 위해서는 두 클래스의 프로토타입 사이에 중개역할을 하는 것이 필요하다.
+
+```javascript
+function Player(name){
+	this.name = name;
+};
+
+Function.prototype.method = function(name, func) {
+    this.prototype[name] = func;
+}
+
+Player.method("setName",function(value){
+    this.name = value;
+});
+
+Player.method("getName",function(){
+    return this.name;
+});
+
+function Midfielder(name) { 
+}
+
+function F() {};
+F.prototype = Player.prototype;
+Midfielder.prototype = new F();
+Midfielder.prototype.constructor = Midfielder;
+Midfielder.super = Player.prototype;
+
+var mount = new Midfielder();
+mount.setName("mount");
+console.log(mount.getName());
+```
+
+이 방식은 프로토타입을 통한 상속 구현과 매우 유사하다. 빈 함수 객체 `F()`를 쓰기 때문이다. 빈 함수 `F()`를 사용하며 `Player`의 인스턴스와 `Midfielder`의 인스턴스가 독립적이게 만들었다. 
+
+
+
+
+
+#### 2. 캡슐화
+
+캡슐화는 OOP에서 매우 중요한 부분이다. **캡슐화**는 관련된 여러 정보를 하나의 틀에 담는 것이다. 관련된 변수와 메서드 등을 클래스라는 틀안에 담는다고 생각하면 된다. 여기서 이러한 정보들을 공개하느냐 아니면 비공개로 유지하느냐에 따라 **정보 은닉**의 개념이 적용되는지에 여부가 달려있다. 다른 언어에서도 `public`이나 `private` 키워드를 통해 어떤 키워드로 변수를 생성하느냐에 따라 해당 변수를 노출시킬지 말지 결정한다. 자바스크립트의 경우 이러한 키워드가 존재하지는 않지만 다른 방식을 통해 **정보 은닉**을 실현할 수 있다.
+
+```javascript
+var Player = function(arg) {
+    var name = arg ? arg : "example";
+    
+    this.getName = function() {
+        return name;
+    }
+    this.setName = function() {
+        name = arg;
+    }
+};
+
+var mount = new Player();
+console.log(mount.getName()); // (출력 값) example
+mount.setName("mount"); 
+console.log(mount.getName()); // (출력 값) mount
+console.log(mount.name); // (출력 값) undefined
+```
+
+위 코드를 보면 `name`은 private 멤버로 선언했고, `getName()`과 `setName()` 함수는 public 메서드로 선언되었다. `this` 객체의 프로퍼티로 선언하면 외부에서 `new`를 통해 생성하여 접근 가능하지만 `var`로 선언된 멤버는 외부에서 접근이 불가능하다. 하지만 public한 메서드가 **클로저**역할을 하면서 `getName()`이나 `setName()`에서는 `name` 변수에 접근할 수 있게 된다. 이게 자바스크립트의 기본적인 **정보 은닉**이다.
+
+```javascript
+var Player = function(arg) {
+    var name = arg ? arg : "example";
+    
+    return {
+    	getName : function() {
+        	return name
+    	},
+        setName : function() {
+        name = arg;
+    	}
+    }; 
+}
+
+var mount = new Player();
+console.log(mount.getName()); // (출력 값) example
+```
+
+위 코드의 방식은 `Player()` 함수를 호출하면서 객체를 리턴받는다. 리턴받는 객체에는 `Player()`함수의 private 멤버에 접근 할 수 있는 메서드들이 담겨있다. 반환 받는 객체의 메서드를 호출함을 통해서 private 멤버에 접근할 수 있다. 실제로 자주 쓰는 구조이고, 한 가지 주의할 점이 있다. 접근하는 private 멤버가 객체나 배열일 경우 얕은 복사로 참조만 반환 하기 때문에 쉽게 변경 될 수 있다. 그렇기 때문에 객체가 아닌 함수를 반환하는 방식도 있다. 
+
+```javascript
+var Player = function(arg) {
+    var name = arg ? arg : "example";
+    
+    var Func = function () {}
+    Func.prototype = {
+        getName : function() {
+        	return name
+    	},
+        setName : function() {
+       	 	name = arg;
+    	}
+    }
+    
+    return Func;
+}();
+
+var mount = new Player();
+console.log(mount.getName()); // (출력 값) example
+```
+
+위와 같이 즉시 실행 함수를 사용하면 반환되는 `Func()` 함수가 클로저가 되고, `name` 프로퍼티는 자유 변수가 된다. 그렇기 때문에 직접적으로 `name`변수에는 접근할 수 없다. (자바의 게터, 세터 느낌이라고 이해하면 될 거 같다.) 위에 나타난 정보은닉을 위한 여러가지 패턴을 잘 숙지하고 유용하게 이용할 수 있어야 한다.
+
+
 
 
 
@@ -99,9 +206,12 @@ function Midfielder(name) {
 
 
 
+
+
+
+
 ### 출처
 
-> 1. [INSIDE JAVASCRIPT (한빛미디어, 송형주,고현준 지음)](https://book.naver.com/bookdb/book_detail.nhn?bid=7400243)
-> 2. [인프런 'Javascipt 핵심 개념 알아보기 - JS Flow'](https://www.inflearn.com/course/핵심개념-javascript-flow/)
+> 1. [INSIDE JAVASCRIPT (한빛미디어, 송형주,고현준 지음)
 
 
