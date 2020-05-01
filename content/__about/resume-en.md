@@ -19,7 +19,7 @@ _Thank you for reading my resume. If you want to contact me, Please send me an e
 
 Github : https://github.com/Ykss
 
-Blog : https://ykss.netlify.com
+Blog : https://ykss.netlify.app
 
 Contact : yukyeongsang@gmail.com
 
