@@ -2,7 +2,7 @@
 title: 'Babel 이란 무엇일까?'
 date: 2020-5-3 23:40:00
 category: 'Web'
-draft: true
+draft: false
 ---
 
 ![image-20200503232057591](./images/image-20200503232057591.png)
@@ -12,7 +12,7 @@ draft: true
 **Babel**은 자바스크립트 개발을 하다보면 자연스럽게 접하게 되는 것인데, Babel이란 무엇일까? [Babel의 공식 홈페이지](https://babeljs.io/)에 보면 매우 간단하게 "`Babel is a Javascript complier.` "라고 표현되어있다. 쉽게 말하면 자바스크립트의 컴파일러인 것이다. 그것도 코드를 코드로 바꿔주는 `code to code` 컴파일러이다. `code to code`라고 설명하는 이유는 최신의 자바스크립트의 코드들을 **babel**을 통해서 이전의 자바스크립트로 바꿔주는 역할을 수행하기 때문이다. 때문에 **트랜스파일러(Transpiler)**라고 불린다. 
 
 
-
+---
 
 
 #### Babel이 필요하게 된 이유
@@ -25,6 +25,7 @@ draft: true
 
 
 
+---
 
 
 #### Polyfill 기능
@@ -37,17 +38,11 @@ draft: true
 
 
 
-
-
 Babel에서는 이런 Polyfill 기능을 지원하려고 `babel-polyfill`을 지원한다. Babel을 사용해도 최신 함수를 그냥 사용할 수 있는게 아니기 때문에, Polyfill을 통해 실행할 때 지원하지 않는 기능들을 추가해주는 것이다. babel은 컴파일 시에 실행하고, `babel-polyfill`은 런타임에 실행된다.
 
 
 
-
-
-#### Babel을 활용하려면?
-
-
+Babel의 활용에 대한 자세한 내용은 다음 프로젝트 시 적용 과정을 정리하여 포스팅할 것이다.
 
 
 
