@@ -54,7 +54,7 @@ draft: false
 
 * SAVEPOINT
 
-  
+  트랜젝션을 분할 관리하여 SAVEPOINT 지정된 위치 이후의 트랜잭션만 ROLLBACK 할수 있다. `SAVEPOINT <SAVEPOINT명>`으로 지정할 수 있다. 지정된 세이브 포인트 까지만 테이터 변경을 취소하려면 `ROLLBACK TO <SAVEPOINT명>`을 사용할 수 있다.
 
 
 
