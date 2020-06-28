@@ -1,12 +1,9 @@
 ---
-title: 'Welcome Bee starter'
-date: 2019-2-6 16:21:13
+title: 'DOM이란 무엇일까?'
+date: 2020-6-28 23:21:13
 category: 'TIL'
-thumbnail: './images/hello.png'
 draft: true
 ---
-
-![](./images/hello.png)
 
 Welcome, Gatsby! This starter is full-package for your new blog!
 
