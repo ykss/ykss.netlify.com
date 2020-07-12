@@ -15,3 +15,15 @@ draft: true
 ## `this`는 현재 실행되는 문맥이다.
 
 현재 실행되는 문맥은 즉, 공부했었던 `실행 컨텍스트`를 말한다. 그것은 결국 `this`를 호출한게 누구냐와 관련이 있는 것이다.
+
+```
+sayName(this === window)
+
+const funcObj = {
+        callName : function () {
+            sayName(this === window)
+        }
+}
+funcObj.callName()
+
+```
