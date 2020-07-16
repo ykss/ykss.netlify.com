@@ -33,3 +33,5 @@ funcObj.callName()
 ```
 
 ```
+
+app.js 구조등 자바스크립트 구조 파악하기
