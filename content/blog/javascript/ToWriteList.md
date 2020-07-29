@@ -46,3 +46,5 @@ draft: true
 (https://d2.naver.com/helloworld/59361)[참고]
 
 # Event delegation
+
+# 코딩하면서 하나씩 개념하나하나 정리하기
