@@ -6,3 +6,5 @@ draft: true
 ---
 
 ## 부제 :
+
+AWS Solution Architecture 자격증 도전
