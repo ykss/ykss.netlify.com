@@ -16,7 +16,7 @@ draft: false
 리액트를 어떤 프레임워크나 하나의 프로그래밍 언어로 생각하는 사람들도 많은데, 리액트는 라이브러리다. "컴포넌트"라는 작고 고립된 코드의 파편으로 복잡한 UI를 구성하는 것이다. 
 
 예를 들어서 `React.Component`의 하위 클래스를 살펴보자.
-```
+```javascript
 class PlayerList extends React.Component {
     render() {
         return (
@@ -48,7 +48,7 @@ class PlayerList extends React.Component {
    ```
 3. 새로 생성된 프로젝트에서 `src/` 폴더 내용을 비운다.
 4. 초기 파일들(`index.css`,`index.js`)을 생성하고 `index.js` 파일에 아래 코드를 추가한다.
-   ```
+   ```javascript
     import React from 'react';
     import ReactDOM from 'react-dom';
     import './index.css';
