@@ -1,6 +1,6 @@
 ---
 title: '[리액트 튜토리얼] React는 무엇일까요?'
-date: 2020-11-14 23:00:00
+date: 2020-11-13 23:00:00
 category: 'React'
 draft: false
 ---
