@@ -137,7 +137,7 @@ ReactDOM.render(
 `this.state.comment = 'Hello';`는 컴포넌트를 다시 렌더링하지 않는다. `setState()`를 사용할 때 다시 렌더링한다. **`this.state`를 지정할 수 있는 유일한 공간은 constructor이다.**
 
 #### 2. State 업데이트는 비동기적일 수 있다.
-리액트는 성능을 위해서 여러 `setState()`를 단일 업데이트로 한꺼번에 처리할 수 있다. `this.props`와 `this.state가 비동기적으로 업데이트 될 수 있어서 해당 값에 의존해서는 안된다.
+리액트는 성능을 위해서 여러 `setState()`를 단일 업데이트로 한꺼번에 처리할 수 있다. `this.props`와 `this.state`가 비동기적으로 업데이트 될 수 있어서 해당 값에 의존해서는 안된다.
 ```javascript
 // wrong
 this.setState({
