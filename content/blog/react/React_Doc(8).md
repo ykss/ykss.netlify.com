@@ -1,5 +1,5 @@
 ---
-title: '[리액트 주요 개념] 폼
+title: '[리액트 주요 개념] 폼'
 date: 2020-12-05 01:00:00
 category: 'React'
 draft: false
