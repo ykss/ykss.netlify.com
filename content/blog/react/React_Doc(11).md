@@ -36,11 +36,11 @@ JSON API와 목업을 디자이너로부터 받았다고 가정하자. 목업과
 5. **ProductRow(빨간색)** : 각각의 *제품*에 해당하는 행을 보여준다.
 
 위의 컴포넌트를 계층 구조로 나열해보면 다음과 같다.
-* `FilterableProductTable`
-  * `SearchBar`
-  * `ProductTable`
-    * `ProductCategoryRow`
-    * `ProductRow`
+- `FilterableProductTable`
+  - `SearchBar`
+  - `ProductTable`
+      - `ProductCategoryRow`
+      - `ProductRow`
 
 
 
