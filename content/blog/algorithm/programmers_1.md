@@ -5,16 +5,17 @@ category: 'Algorithm'
 draft: false
 ---
 
-* 문제 설명
+### 문제 설명
+  
 정수 배열 numbers가 주어집니다. numbers에서 서로 다른 인덱스에 있는 두 개의 수를 뽑아 더해서 만들 수 있는 모든 수를 배열에 오름차순으로 담아 return 하도록 solution 함수를 완성해주세요.
 
 
-* 제한사항
+### 제한사항
 numbers의 길이는 2 이상 100 이하입니다.
 numbers의 모든 수는 0 이상 100 이하입니다.
 
 
-* 입출력 예
+### 입출력 예
 ```
 numbers	result
 [2,1,3,4,1]	[2,3,4,5,6,7]
@@ -22,7 +23,10 @@ numbers	result
 ```
 
 
-* 내 코드
+---
+
+
+###  내 코드
 ```python
 def solution(numbers):
     answer = [] 
@@ -35,9 +39,10 @@ def solution(numbers):
 ```
 알고리즘 문제 푸는 것도 오랜만이고, 파이썬도 익숙치 않아서 아직 전혀 Pythonic하지 못하게 작성하고 있다. 기본적인 메서드들을 사용하면서 익숙해 져야 할 것 같다.
 
+---
 
 
-* 다른 사람의 코드
+### 다른 사람의 코드
 ```python
 from itertools import combinations
 
