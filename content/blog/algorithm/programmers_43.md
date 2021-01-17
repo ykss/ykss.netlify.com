@@ -2,7 +2,7 @@
 title: '[프로그래머스] 프린터'
 date: 2021-01-17 01:00:00
 category: 'Algorithm'
-draft: true
+draft: false
 ---
 
 ### 문제 설명
