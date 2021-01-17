@@ -37,17 +37,38 @@ location은 0 이상 (현재 대기목록에 있는 작업 수 - 1) 이하의 �
 ### 내 코드
 
 ```python
-
+def solution(priorities, location):
+    printList = []
+    priorities = [ (i,v) for i,v in enumerate(priorities) ]
+    target = priorities[location]
+    while(priorities) :
+        if priorities[0] == max(priorities,key = lambda x : x[1]) :
+            printList.append(priorities[0])
+            priorities.remove(priorities[0])
+        else :
+            priorities.append(priorities[0])
+            priorities.remove(priorities[0])
+    return printList.index(target)+1
 ```
 
-일단 처음에는 분기를 나누어 다 처리해보려고 했는데, 주어진 예시 테스트케이스에서 하나가 실패해서 보니 `10`이 문제였다. 점수가 `0`부터 `10`까지였기 때문에 주어진 문자열에서 하나씩 빼서 분기처리하게되면 `10`을 판별해내지 못했다. 그래서 어쩔 수 없이 문자열에서 숫자만 뺴는 걸 찾다보니 정규식인 `re` 모듈을 사용하였다. 정규식은 자유롭게 활용하기에는 잘 모르지만 숫자나 문자열을 뽑아내기 좋았다. `\d+`는 한글자가 아닌 붙은 숫자를 찾는거고, `\D`는 한글자짜리 문자를 말하는 것이다. 그렇게 점수와 Operand를 분리하여 추출한 후에 분기에서 활용했다. 일단 숫자면 제곱까지 마친 수를 `result`에 넣고 `*`이나 `#`이 나올 경우에는 `result`에 저장된 값을 활용하여 구하고 마지막에 `result`의 `sum()`을 구하여 답을 구했다.
+처음 문제를 봤을 떄는 되게 쉽게 풀 수 있는 문제로 생각했는데, 생각보다 까다로웠다. 먼저 우선순위 대로 출력한 결과를 담는 `printList` 배열을 만들고, 일단 주어진 우선 순위 배열을 `enumerate()` 함수를 통해 인덱스와 같이 튜플로 저장되는 형태로 했다. 그 이유는 우선 순위가 같은 경우, 어떤게 몇번째 문서였는지를 알 수 없기 때문에 `key`값으로 인덱스를 넣어줬다. 그리고 주어진 `location`을 통해서 마지막에 위치를 찾을 것을 `target`으로 저장해놓고 `while`을 통해 `priorities` 배열이 빈 배열이 될 때까지 반복시켰다. 그리고 `max()`를 통해 튜플에서 우선순위를 기준으로 최대값을 계산하여 해당 우선순위 배열에서 맨 앞의 튜플을 뽑았을 때 그 튜플이 최대 값이 튜플이라면 출력하여 출력 리스트에 넣고, 우선순위 리스트에서는 해당 튜플을 제거하였고, 만약 최대값이 아니라면 맨 앞에서 지우고 맨 뒤에 추가하였다. 이런식으로 출력 순서대로 들어가있는 `printList`를 기준으로 해당 `target`이 리스트의 어느 인덱스에 위치해있는지 `index()`함수를 통해서 구하였다.
 
 ---
 
 ### 다른 사람의 코드
 
 ```python
-
+def solution(priorities, location):
+    queue =  [(i,p) for i,p in enumerate(priorities)]
+    answer = 0
+    while True:
+        cur = queue.pop(0)
+        if any(cur[1] < q[1] for q in queue):
+            queue.append(cur)
+        else:
+            answer += 1
+            if cur[0] == location:
+                return answer
 ```
 
-가장 많은 좋아요를 받은 코드였는데 역시 `10`때문에 `re`를 쓴 것 같은데 나와는 다르게 `findall()`을 통해서 배열로 추출한 것이 아니고 `compile()`을 통해 정규식을 먼저 만들었다. 정규식을 통해 만든 예시는 `[('1', 'D', '#'), ('2', 'S', '*'), ('3', 'S', '')]`과 같은 형태로 만들어진다. 숫자가 먼저나오고 문자가 SDT 중에 나오고 `*`이랑 `#`은 `?`를 활용해 있어도되고 없어도 되게끔 정규식을해서 만든 후에 미리 만들어놓은 딕셔너리에서 `key`로 `value`를 조회해서 계산식에 사용했다. 딕셔너리를 잘 쓰고, 정규식을 더 잘 활용해서 나보다 훨씬 간결한 코드가 나온 것 같다.
+가장 좋아요를 많이 받은 코드였고, 나와 같은 목적으로 `enumerate()` 함수를 사용했다. 그리고 `while` 문을 사용했고, 그 뒤로는 `cur`변수에 `queue.pop(0)`을 통해서 첫 번째 인덱스를 뽑아서 해당 튜플에서 `if`문에서 하나라도 더 우선순위가 더 큰게 존재하면 다시 뒤쪽에 `append()`를 사용해서 넣고, 만약 가장 큰 값이라면 `answer`을 증가시키고 만약에 해당 인덱스가 찾아야 할 `location`과 같으면 `answer`을 리턴했다. 여기서 `any()`도 포인트가 되는 부분인데, 하나라도 `True`이면 true를 반환하도록 하는 것이다. 그리고 내가 간과했던 것은 `pop()`이 맨 뒤에꺼만 뽑을 수 있다고 생각헀는데, 인덱스를 통해 뽑을 수 있다는 것을 알았고, 앞으로 더 유용하게 쓸 수 있을 것 같다. 
