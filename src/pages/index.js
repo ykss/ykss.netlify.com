@@ -15,6 +15,7 @@ import * as EventManager from '../utils/event-manager'
 import * as Dom from '../utils/dom'
 
 import { HOME_TITLE, CATEGORY_TYPE } from '../constants'
+import { Helmet } from 'react-helmet'
 
 const DEST_POS = 316
 const BASE_LINE = 80
@@ -74,6 +75,13 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteMetadata.title}>
       <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
+      <Helmet>
+        <script
+          data-ad-client="ca-pub-5924627079296495"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+      </Helmet>
       <Bio />
       <Category
         categories={categories}
