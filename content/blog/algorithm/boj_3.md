@@ -1,6 +1,6 @@
 ---
 title: '[BOJ] 스택 수열'
-date: 2021-01-31 01:00:00
+date: 2021-02-01 01:00:00
 category: 'Algorithm'
 draft: false
 ---
@@ -33,14 +33,14 @@ draft: false
 n = int(input())
 stack = []
 result = []
-count = 1 
+count = 1
 for i in range(n) :
     data = int(input())
     while count <= data :
         stack.append(count)
         count += 1
         result.append('+')
-    if stack[-1] == data : 
+    if stack[-1] == data :
         stack.pop()
         result.append('-')
     else :
