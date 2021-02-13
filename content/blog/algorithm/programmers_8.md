@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 문자열 다루기 기본'
+title: '[프로그래머스] 문자열 다루기 기본 - 파이썬'
 date: 2020-12-15 01:00:00
 category: 'Algorithm'
 draft: false

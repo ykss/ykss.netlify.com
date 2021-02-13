@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 피보나치 수'
+title: '[BOJ] 피보나치 수 - 파이썬'
 date: 2021-02-14 01:00:00
 category: 'Algorithm'
 draft: false

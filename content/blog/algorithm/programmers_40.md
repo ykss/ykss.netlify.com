@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 비밀지도'
+title: '[프로그래머스] 비밀지도 - 파이썬'
 date: 2021-01-14 01:00:00
 category: 'Algorithm'
 draft: false

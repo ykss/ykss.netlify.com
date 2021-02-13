@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 같은 숫자는 싫어'
+title: '[프로그래머스] 같은 숫자는 싫어 - 파이썬'
 date: 2020-12-13 01:00:00
 category: 'Algorithm'
 draft: false

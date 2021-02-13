@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 자릿수 더하기'
+title: '[프로그래머스] 자릿수 더하기 - 파이썬'
 date: 2020-12-28 01:00:00
 category: 'Algorithm'
 draft: false

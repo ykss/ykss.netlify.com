@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 두 정수 사이의 합'
+title: '[프로그래머스] 두 정수 사이의 합 - 파이썬'
 date: 2020-12-15 23:00:00
 category: 'Algorithm'
 draft: false

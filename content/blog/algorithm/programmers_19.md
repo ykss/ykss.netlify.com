@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 행렬의 덧셈'
+title: '[프로그래머스] 행렬의 덧셈 - 파이썬'
 date: 2020-12-23 01:00:00
 category: 'Algorithm'
 draft: false

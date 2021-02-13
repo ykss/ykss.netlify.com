@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 제일 작은 수 제거하기'
+title: '[프로그래머스] 제일 작은 수 제거하기 - 파이썬'
 date: 2020-12-13 21:00:00
 category: 'Algorithm'
 draft: false

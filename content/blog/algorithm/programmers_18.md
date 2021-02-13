@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 이상한 문자 만들기'
+title: '[프로그래머스] 이상한 문자 만들기 - 파이썬'
 date: 2020-12-22 01:00:00
 category: 'Algorithm'
 draft: false

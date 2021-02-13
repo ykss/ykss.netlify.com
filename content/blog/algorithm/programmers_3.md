@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] k번째 수'
+title: '[프로그래머스] k번째 수 - 파이썬'
 date: 2020-12-11 19:00:00
 category: 'Algorithm'
 draft: false

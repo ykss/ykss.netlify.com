@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] SHA-256'
+title: '[BOJ] SHA-256 - 파이썬'
 date: 2021-02-05 01:00:00
 category: 'Algorithm'
 draft: false

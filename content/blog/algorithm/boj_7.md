@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 수 찾기'
+title: '[BOJ] 수 찾기 - 파이썬'
 date: 2021-02-06 01:00:00
 category: 'Algorithm'
 draft: false

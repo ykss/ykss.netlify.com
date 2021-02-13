@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 두 개 뽑아서 더하기'
+title: '[프로그래머스] 두 개 뽑아서 더하기 - 파이썬'
 date: 2020-12-10 23:00:00
 category: 'Algorithm'
 draft: false

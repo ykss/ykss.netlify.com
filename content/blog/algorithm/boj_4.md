@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 프린터 큐'
+title: '[BOJ] 프린터 큐 - 파이썬'
 date: 2021-02-02 01:00:00
 category: 'Algorithm'
 draft: false

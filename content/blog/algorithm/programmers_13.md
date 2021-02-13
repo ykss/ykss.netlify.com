@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 짝수와 홀수'
+title: '[프로그래머스] 짝수와 홀수 - 파이썬'
 date: 2020-12-17 23:00:00
 category: 'Algorithm'
 draft: false

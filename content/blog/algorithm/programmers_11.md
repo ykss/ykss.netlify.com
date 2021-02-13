@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 문자열 내림차순으로 배치하기'
+title: '[프로그래머스] 문자열 내림차순으로 배치하기 - 파이썬'
 date: 2020-12-17 01:00:00
 category: 'Algorithm'
 draft: false

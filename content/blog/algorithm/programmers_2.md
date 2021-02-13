@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 완주하지 못한 선수'
+title: '[프로그래머스] 완주하지 못한 선수 - 파이썬'
 date: 2020-12-11 01:00:00
 category: 'Algorithm'
 draft: false

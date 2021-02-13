@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 큰 수 만들기'
+title: '[프로그래머스] 큰 수 만들기 - 파이썬'
 date: 2021-01-22 01:00:00
 category: 'Algorithm'
 draft: false

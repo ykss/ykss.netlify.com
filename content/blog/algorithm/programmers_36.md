@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 3진법 뒤집기'
+title: '[프로그래머스] 3진법 뒤집기 - 파이썬'
 date: 2021-01-10 01:00:00
 category: 'Algorithm'
 draft: false

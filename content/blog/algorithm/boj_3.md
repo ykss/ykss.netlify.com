@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 스택 수열'
+title: '[BOJ] 스택 수열 - 파이썬'
 date: 2021-02-01 01:00:00
 category: 'Algorithm'
 draft: false

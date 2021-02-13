@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 약수의 합'
+title: '[프로그래머스] 약수의 합 - 파이썬'
 date: 2020-12-29 01:00:00
 category: 'Algorithm'
 draft: false

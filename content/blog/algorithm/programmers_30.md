@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 콜라츠 추측'
+title: '[프로그래머스] 콜라츠 추측 - 파이썬'
 date: 2021-01-03 01:00:00
 category: 'Algorithm'
 draft: false

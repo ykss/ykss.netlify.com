@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 나이순 정렬'
+title: '[BOJ] 나이순 정렬 - 파이썬'
 date: 2021-02-10 01:00:00
 category: 'Algorithm'
 draft: false

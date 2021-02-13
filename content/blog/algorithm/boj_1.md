@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 음계'
+title: '[BOJ] 음계 - 파이썬'
 date: 2021-01-30 01:00:00
 category: 'Algorithm'
 draft: false

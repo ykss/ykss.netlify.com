@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 크레인 인형뽑기 게임'
+title: '[프로그래머스] 크레인 인형뽑기 게임 - 파이썬'
 date: 2021-01-09 01:00:00
 category: 'Algorithm'
 draft: false

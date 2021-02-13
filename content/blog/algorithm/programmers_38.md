@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 키패드 누르기'
+title: '[프로그래머스] 키패드 누르기 - 파이썬'
 date: 2021-01-12 01:00:00
 category: 'Algorithm'
 draft: false

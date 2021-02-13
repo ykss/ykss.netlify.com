@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 블랙잭'
+title: '[BOJ] 블랙잭 - 파이썬'
 date: 2021-01-31 01:00:00
 category: 'Algorithm'
 draft: false

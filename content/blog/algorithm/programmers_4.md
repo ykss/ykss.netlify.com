@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 가운데 글자 가져오기'
+title: '[프로그래머스] 가운데 글자 가져오기 - 파이썬'
 date: 2020-12-12 01:00:00
 category: 'Algorithm'
 draft: false

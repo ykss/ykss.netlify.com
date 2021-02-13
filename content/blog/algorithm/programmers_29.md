@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 하샤드 수'
+title: '[프로그래머스] 하샤드 수 - 파이썬'
 date: 2021-01-02 01:00:00
 category: 'Algorithm'
 draft: false

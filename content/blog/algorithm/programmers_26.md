@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 정수 제곱근 판별'
+title: '[프로그래머스] 정수 제곱근 판별 - 파이썬'
 date: 2020-12-30 01:00:00
 category: 'Algorithm'
 draft: false

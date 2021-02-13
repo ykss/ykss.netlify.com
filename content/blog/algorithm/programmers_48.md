@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 전화번호 목록'
+title: '[프로그래머스] 전화번호 목록 - 파이썬'
 date: 2021-01-24 01:00:00
 category: 'Algorithm'
 draft: false

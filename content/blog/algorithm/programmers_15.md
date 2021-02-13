@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 나누어 떨어지는 숫자 배열'
+title: '[프로그래머스] 나누어 떨어지는 숫자 배열 - 파이썬'
 date: 2020-12-19 01:00:00
 category: 'Algorithm'
 draft: false

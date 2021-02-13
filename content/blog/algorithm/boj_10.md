@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 소트인사이드'
+title: '[BOJ] 소트인사이드 - 파이썬'
 date: 2021-02-09 01:00:00
 category: 'Algorithm'
 draft: false

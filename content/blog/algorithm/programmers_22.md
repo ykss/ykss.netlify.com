@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 시저 암호'
+title: '[프로그래머스] 시저 암호 - 파이썬'
 date: 2020-12-26 01:00:00
 category: 'Algorithm'
 draft: false

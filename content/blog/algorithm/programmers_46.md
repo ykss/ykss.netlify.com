@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 가장 큰 수'
+title: '[프로그래머스] 가장 큰 수 - 파이썬'
 date: 2021-01-21 01:00:00
 category: 'Algorithm'
 draft: false

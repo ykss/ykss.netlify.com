@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 키로거'
+title: '[BOJ] 키로거 - 파이썬'
 date: 2021-02-03 01:00:00
 category: 'Algorithm'
 draft: false

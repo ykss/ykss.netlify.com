@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 문자열 내 p와 y의 개수'
+title: '[프로그래머스] 문자열 내 p와 y의 개수 - 파이썬'
 date: 2020-12-14 01:00:00
 category: 'Algorithm'
 draft: false

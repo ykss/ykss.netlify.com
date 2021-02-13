@@ -1,5 +1,5 @@
 ---
-title: '[BOJ] 좌표 정렬하기'
+title: '[BOJ] 좌표 정렬하기 - 파이썬'
 date: 2021-02-11 01:00:00
 category: 'Algorithm'
 draft: false

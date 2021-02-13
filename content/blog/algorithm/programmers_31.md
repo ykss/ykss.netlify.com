@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 최대공약수와 최소공배수'
+title: '[프로그래머스] 최대공약수와 최소공배수 - 파이썬'
 date: 2021-01-04 01:00:00
 category: 'Algorithm'
 draft: false

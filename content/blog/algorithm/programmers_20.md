@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 자연수 뒤집어 배열로 만들기'
+title: '[프로그래머스] 자연수 뒤집어 배열로 만들기 - 파이썬'
 date: 2020-12-24 01:00:00
 category: 'Algorithm'
 draft: false
