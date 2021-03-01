@@ -1,7 +1,7 @@
 ---
 title: '리액트 Hook(훅)이란?'
 date: 2021-03-01 18:00:00
-category: 'development'
+category: 'React'
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 'CSS Position & Display 정리 '
 date: 2021-02-26 18:00:00
-category: 'development'
+category: 'Development'
 draft: false
 ---
 
