@@ -60,6 +60,17 @@ function Example() {
 
 `useEffect`는 effect hook으로, React class의 `componentDidMount`나 `componentDidUpdate`, `componentWillUnmount`와 같은 목적으로 제공되지만, 하나의 API로 통합된 것이다. 리액트는 기본적으로 렌더링 이후에 effect를 실행한다. 그리고 effect 함수는 컴포넌트 내에 있기 떄문에 props와 state에 접근할 수 있다. 첫번쨰 렌더링과 이후 업데이트 시 마다 effect가 수행된다.
 
+```javascript
+// 이렇게하면 계속해서 관찰한다.
+useEffect(() => {
+  console.log('렌더링')
+})
+// 두번째 인자에 빈 배열을 추가하면 한번 실행 후 더이상 관찰하지 않는다. 로딩 타이밍에 처음에 한번만 실행된다.
+useEffect(() => {
+  console.log('렌더링')
+}, [])
+```
+
 ## Custom Hook
 
 Custom Hook은 `higher-order components`와 `render props`과는 달리 컴포넌트 트리에 새 컴포넌트를 추가하지 않고도 상태 관련 로직을 컴포넌트 간에 재사용할 수 있게 해준다. Custom Hook을 만들어서 여러 컴포넌트에서 사용하더라도, 각 컴포넌트에서 사용하는 state는 독립적이다. Custom Hook은 기능이라기보다는 컨벤션(convention)에 가깝다. 이름이 ”use“로 시작하고, 안에서 다른 Hook을 호출한다면 그 함수를 custom Hook으로 볼 수 있다.
