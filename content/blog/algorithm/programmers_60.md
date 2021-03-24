@@ -1,6 +1,6 @@
 ---
 title: '[프로그래머스] 최댓값과 최솟값 - 파이썬'
-date: 2021-03-24 01:00:00
+date: 2021-03-25 01:00:00
 category: 'Algorithm'
 draft: false
 ---
