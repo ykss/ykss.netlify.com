@@ -1,7 +1,7 @@
 ---
 title: '브라우저의 동작 방식'
 date: 2021-03-16 18:00:00
-category: 'Development'
+category: 'Web'
 draft: true
 ---
 
