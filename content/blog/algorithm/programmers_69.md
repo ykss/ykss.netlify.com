@@ -1,5 +1,5 @@
 ---
-title: '[프로그래머스] 수식 최대화 - 파이썬'
+title: '[프로그래머스] 보석쇼핑 - 파이썬'
 date: 2021-04-22 01:00:00
 category: 'Algorithm'
 draft: false
