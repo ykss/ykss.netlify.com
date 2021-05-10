@@ -2,7 +2,7 @@
 title: '[LeetCode] Swap Nodes in Pairs - 파이썬'
 date: 2021-05-09 01:00:00
 category: 'Algorithm'
-draft: true
+draft: false
 ---
 
 ### Description
@@ -40,31 +40,40 @@ The number of nodes in the list is in the range [0, 100].
 #         self.val = val
 #         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-        list_1 = []
-        list_2 = []
-        sum = 0
-        answers = []
+    def swapPairs(self, head: ListNode) -> ListNode:
 
-        while l1 is not None :
-            list_1.append(l1.val)
-            l1 = l1.next
-        while l2 is not None :
-            list_2.append(l2.val)
-            l2 = l2.next
+        node = head
+        arr = []
 
-        list_1 = list(reversed(list_1))
-        list_2 = list(reversed(list_2))
-        list_1 = list(map(str,list_1))
-        list_2 = list(map(str,list_2))
-        list_1 = ''.join(list_1)
-        list_2 = ''.join(list_2)
-        sum_list = int(list_1) + int(list_2)
-        prev: ListNode = None
-        for i in str(sum_list) :
-            node = ListNode(int(i))
+        while node is not None :
+            arr.append(node.val)
+            node = node.next
+        for i in range(1,len(arr),2) :
+            arr[i], arr[i-1] = arr[i-1], arr[i]
+
+        prev = None
+
+        while arr:
+            node = ListNode(arr.pop())
             node.next = prev
             prev = node
 
         return node
 ```
+
+먼저 연결리스트를 파이썬 리스트로 만들고 나서 해당 리스트의 인덱스 1부터 2씩 증가시켜 스왑하는 방식으로 했다. 그리고나서 스왑된 배열을 다시 배열리스트로 만들어서 답을 구했다.
+
+### 다른 답안
+
+```python
+    def swapPairs(self, head: ListNode) -> ListNode:
+        cur = head
+
+        while cur and cur.next :
+            cur.val, cur.next.val = cur.next.val, cur.val
+            cur = cur.next.next
+
+        return head
+```
+
+이 방식은 값만 스왑되는 방식으로 리스트로 만들필요 없이 연결리스트에서 바로바로 스왑하는 방식이다. 훨씬 짧은 코드로 같은 답을 구할 수 있다.
