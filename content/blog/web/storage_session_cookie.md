@@ -1,6 +1,6 @@
 ---
 title: '웹 스토리지 vs 쿠키 vs 세션'
-date: 2021-05-19 18:00:00
+date: 2021-05-20 18:00:00
 category: 'Web'
 draft: false
 ---
