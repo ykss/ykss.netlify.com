@@ -1,8 +1,8 @@
 ---
 title: '[LeetCode] Design Circular Queue - 파이썬'
-date: 2021-06-01 01:00:00
+date: 2021-06-03 01:00:00
 category: 'Algorithm'
-draft: true
+draft: false
 ---
 
 ### Description
@@ -51,5 +51,53 @@ At most 3000 calls will be made to enQueue, deQueue, Front, Rear, isEmpty, and i
 ### 내 코드
 
 ```python
+from collections import deque
 
+class MyCircularQueue:
+
+    def __init__(self, k: int):
+        self.queue = [None] * k
+        self.size = k
+        self.front = 0
+        self.rear = 0
+
+    def enQueue(self, value: int) -> bool:
+        if self.queue[self.rear] is None :
+            self.queue[self.rear] = value
+            self.rear = (self.rear + 1) % self.size
+            return True
+        else :
+            return False
+
+    def deQueue(self) -> bool:
+        if self.queue[self.front] is None :
+            return False
+        else :
+            self.queue[self.front] = None
+            self.front = (self.front+1) % self.size
+            return True
+
+
+    def Front(self) -> int:
+        return -1 if self.queue[self.front] is None else self.queue[self.front]
+
+    def Rear(self) -> int:
+        return -1 if self.queue[self.rear -1 ] is None else self.queue[self.rear - 1]
+
+    def isEmpty(self) -> bool:
+        return self.front == self.rear and self.queue[self.front] is None
+
+    def isFull(self) -> bool:
+        return self.front == self.rear and self.queue[self.front] is not None
+
+# Your MyCircularQueue object will be instantiated and called as such:
+# obj = MyCircularQueue(k)
+# param_1 = obj.enQueue(value)
+# param_2 = obj.deQueue()
+# param_3 = obj.Front()
+# param_4 = obj.Rear()
+# param_5 = obj.isEmpty()
+# param_6 = obj.isFull()
 ```
+
+이번 원형 큐 구현은 `front`와 `rear`이라는 투 포인터를 이용하여 구현했다. 일반적인 파이썬의 리스트를 활용하여 구현할 수 있었다. `enqueue` 될 땐 `rear`가 증가하고 `dequeue` 될 때는 `front`가 증가하도록 하고 `%size`를 통해 큐의 크기를 벗어나지 않도록 구현할 수 있었다.
