@@ -90,6 +90,8 @@ draft: false
 
 ![라이프사이클 메서드](https://media.vlpt.us/images/whdvkf92/post/745af11e-6b8c-454e-ae70-7c0f1c089d60/%EB%A6%AC%EC%95%A1%ED%8A%B8%20%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4%20%EB%A9%94%EC%84%9C%EB%93%9C.JPG)
 
+---
+
 참고
 
 1. [리액트를 다루는 기술](https://book.naver.com/bookdb/book_detail.nhn?bid=15372757)
