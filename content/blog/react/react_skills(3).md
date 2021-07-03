@@ -5,8 +5,6 @@ category: 'React'
 draft: false
 ---
 
-# 8. Hooks
-
 ## 8.1 useState
 
 가장 기본 적인 Hook으로 함수형 컴포넌트에서도 상태를 사용할 수 있게 해준다. useState 함수는 하나의 상태 값만 관리 할 수 있기 때문에 여러 상태를 관리하기 위해서는 useState를 여러 번 사용해야 한다.

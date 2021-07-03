@@ -5,8 +5,6 @@ category: 'React'
 draft: false
 ---
 
-# 10. 일정 관리 웹 애플리케이션 만들기
-
 - onSubmit 이벤트는 브라우저를 새로고침 시킨다. → `e.preventDefault()` 함수를 호출하면서 새로 고침을 방지 할 수 있다.
 - onSubmit 이벤트의 경우 인풋에서 `Enter` 키를 입력했을 때도 발생한다. 하지만 버튼에 onClick 이벤트의 경우에는 따로 엔터키를 감지하여 처리하는 로직을 작성해야 한다.
 

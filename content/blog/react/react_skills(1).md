@@ -5,8 +5,6 @@ category: 'React'
 draft: false
 ---
 
-# 1. 리액트 시작
-
 ## 1.1 왜 리액트인가
 
 슬랙, 아톰, vs code등도 일렉트론으로 만들었다.
