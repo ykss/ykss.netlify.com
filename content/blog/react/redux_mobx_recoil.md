@@ -5,8 +5,6 @@ category: 'React'
 draft: false
 ---
 
-# Redux vs Mobx vs Recoil
-
 React 전역 상태관리 라이브러리가 많이 등장하고 있는데, 대표적으로 가장 많이 쓰이는 라이브러리는 단연 Redux이다. 그리고 그 다음이 Mobx정도라고 할 수 있다. 그리고 최근에 페이스북에서 만든 상태관리를 위한 Recoil이 뜨고있다. 이러한 상황에서 나는 Redux정도만 사용해보았기 때문에 redux와 mobx, recoil을 비교하며 각각의 특징에 대해서 알아가면서, 어떠한 부분 때문에 Recoil이 등장하여 주목받고 있는지에 초점을 맞춰 알아보려고 한다.
 
 ![img](./images/npm.png)
