@@ -107,10 +107,11 @@ render(
 
 위의 코드를 보면 Styled-components의 특징에 대해서 나와 있다. 형태는 기존 태그에 백틱(`)을 사용하여 백틱 내에 css 코드 및 scss 코드를 자유롭게 입력할 수 있도록 하는 것인데, 이렇게 스타일링을 하고 나서 단순하게 스타일링된 컴포넌트의 이름을 jsx코드 내에서 해당 이름을 태그로한 컴포넌트를 사용하기만 하면 된다. 그런 면에서 렌더링하는 컴포넌트가 매우 간단하게 보일 수 있고, 붎필요하게 여러 컴포넌트들 마다 모두 클래스를 붙이지는 않아도 된다는 장점이 있다. 이밖에 간단하게 Styled-components의 특징에 대해서 알아보자.
 
-1. Styled-Components는 공식적으로 리액트 네이티브에서도 지원된다.
+#### 1. Styled-Components는 공식적으로 리액트 네이티브에서도 지원된다.
 
-2. No-class Policy
-   가능한 class를 만들지 않고 props를 사용하는 것을 권장한다. 아래와 같이 컴포넌트를 사용할 때 넣어준 props를 스타일링 코드에서도 이용이 가능하다. 이 점은 매우 큰 유연성을 제공한다.
+#### 2. No-class Policy
+
+가능한 class를 만들지 않고 props를 사용하는 것을 권장한다. 아래와 같이 컴포넌트를 사용할 때 넣어준 props를 스타일링 코드에서도 이용이 가능하다. 이 점은 매우 큰 유연성을 제공한다.
 
 ```tsx
 const Subtitle = styled.h2`
@@ -120,7 +121,7 @@ const Subtitle = styled.h2`
 <Subtitle primary>Hello World</Subtitle>
 ```
 
-3. 재사용성이 높다.
+#### 3. 재사용성이 높다.
 
 ```tsx
 const whiteText = css`
@@ -151,7 +152,7 @@ const ErrorText = styled(StyledText)`
 
 위와 같이 공통적인 스타일은 그대로 적용할 때, 중복되는 스타일을 재사용 가능하도록 관리할 수 있다.
 
-4. ThemeProvider를 통해 context API 방식과 같이 전역 스타일을 제공가능하다.
+#### 4. ThemeProvider를 통해 context API 방식과 같이 전역 스타일을 제공가능하다.
 
 ```tsx
 /* src/theme.js */
@@ -188,11 +189,11 @@ export default App
 
 위와 같이 다크모드 적용도 가능하다.
 
-5. 서버사이드렌더링을 지원한다.
+#### 5. 서버사이드렌더링을 지원한다.
 
-6. CSS 테스팅이 간편하다. (jest-styled-components 이용)
+#### 6. CSS 테스팅이 간편하다. (jest-styled-components 이용)
 
-7. Typescript를 사용할 경우, Props에 대한 타입 인터페이스 적용이 가능하다.
+#### 7. Typescript를 사용할 경우, Props에 대한 타입 인터페이스 적용이 가능하다.
 
 ```tsx
 export interface ButtonInterface = {
@@ -216,7 +217,7 @@ export const StyledButton = styled.TouchableOpacity<ButtonInterface>`
 `;
 ```
 
-위에 4번, 6번 특징의 경우는 사실 아직 제대로 적용해 본 적이 없기 때문에 체감상 와닿지는 않지만 이렇게나 여러가지 장점들이 존재한다.
+위에 5번, 6번 특징의 경우는 사실 아직 제대로 적용해 본 적이 없기 때문에 체감상 와닿지는 않지만 이렇게나 여러가지 장점들이 존재한다.
 
 ## 4. 리액트 네이티브에서 Styled-components를 쓰며 느낀점
 
