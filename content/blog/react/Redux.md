@@ -13,6 +13,8 @@ draft: true
 
 ## 3. 리덕스 로직의 이해
 
+## 4. 리덕스 적용
+
 ---
 
 출처 : [리액트 주요 개념안내서](https://ko.reactjs.org/docs/hello-world.html)
