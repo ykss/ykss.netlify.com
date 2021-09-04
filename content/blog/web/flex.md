@@ -17,17 +17,131 @@ Flex는 Flexible Box 또는 FlexBox라고 불리고, Flex 방식 자체가 레�
 
 ```HTML
 <div class="container">
-	<div class="item">helloflex</div>
-	<div class="item">abc</div>
-	<div class="item">helloflex</div>
+	<div class="item">item1</div>
+	<div class="item">item2</div>
+	<div class="item">item3</div>
 </div>
 ```
 
 위 구조에서 보면 `.container`는 Flex container의 역할을 하고, `.item`들은 Flex item의 역할을 한다고 볼 수 있다. Flex container는 Flex 방식의 영향을 받는 큰 틀, 범위라고 할 수 있고 container에 설정된 속성대로 Flex Item들이 배치된다고 생각할 수 있다.
 
-## 3. Flex 속성의 종류
+## 3. Flex 속성의 종류 - 컨테이너에 적용하는 속성
 
-Flex의 속성들은 크게 컨테이너에 적용하는 속성과 아이템에 적용하는 속성으로 나뉜다.
+Flex의 속성들은 크게 컨테이너에 적용하는 속성과 아이템에 적용하는 속성으로 나뉜다. 먼저 컨테이너에 적용하는 속성들에 대해 알아보자.
+
+### 1. `display:`
+
+```css
+.container {
+  display: flex;
+  /* display: inline-flex; */
+}
+```
+
+Flex 컨테이너로 사용하기 위해서는 컨테이너에 꼭 적용해야 하는 속성이다. 이 속성만 적용해도 컨테이너 내부의 아이템들은 해당 내용물의 width만큼만 차지하게된다. 기본적으로는 flex item들은 가로 방향으로 배치된다. 그리고 height의 경우는 컨테이너의 높이만큼 조정된다. 그냥 `flex` 설정이 아닌 `inline-flex`속성도 있는데, 이것은 설정한 컨테이너가 주변 요소들과 어떻게 어우러져 배치될 지를 설정하는 것이다. `block`과 `inline-block`의 차이라고 볼 수 있다.
+
+### 2. `flex-direction:`
+
+```css
+.container {
+  flex-direction: row;
+  /* flex-direction: column; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column-reverse; */
+}
+```
+
+위 속성은 아이템들이 배치 될 방향에 관한 것이다. `row`설정은 기본 값이고 `column`은 위에서 아래 방향으로 배치된다. `-reverse`가 붙은 것들은 반대 방향이라고 보면된다.
+
+### 3. `flex-wrap:`
+
+```css
+.container {
+  flex-wrap: nowrap;
+  /* flex-wrap: wrap; */
+  /* flex-wrap: wrap-reverse; */
+}
+```
+
+이 속성은 컨테이너가 아이템을 한 줄에 담을 수 있는 공간이 없을 때 줄바꿈을 어떻게 할지를 결정하는 속성이다. `nowrap`(기본 값)으로 설정하면 삐져나가게 되고 `wrap`은 자연스럽게 다음 줄로 연결된다. `wrap-reverse`의 경우는 줄바꿈을 하는데 배치가 역순으로 된다.
+
+### 4. `flex-flow:`
+
+```css
+.container {
+  flex-flow: row wrap;
+  /* 아래의 두 줄을 줄여 쓴 것 */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+}
+```
+
+이 속성은 `flex-direction`과 `flex-wrap`을 한번에 할 수 있는 속성이다. 둘다 설정할 경우 한줄로 간결하게 표현 가능하다.
+
+### 5. `justify-content:`
+
+```css
+.container {
+  justify-content: flex-start;
+  /* justify-content: flex-end; */
+  /* justify-content: center; */
+  /* justify-content: space-between; */
+  /* justify-content: space-around; */
+  /* justify-content: space-evenly; */
+}
+```
+
+메인 축 방향으로 아이템을 정렬하는 속성이다. `flex-start`가 기본값이고 가로일 땐 왼쪽 세로일 땐 위쪽으로 정렬한다. `flex-end`는 반대 끝점으로 정렬한다. `center`는 가운데로 정렬한다. 이 세개는 간단하고 `space-`로 시작하는 세가지를 살펴보자. `space-between`은 아이템들의 사이를 동일한 간격으로 정렬해준다. `space-around`는 아이템들의 둘레에 균일한 간격으로 정렬해준다.(패딩까지 균일하게 맞춰서 정렬하는 느낌이다.) 마지막으로 `space-evenly`는 아이템들의 사이와 양 끝에 균일한 간격을 만들어 준다. 하지만 이 속성은 IE와 엣지에서는 지원되지 않으니 주의해야 한다.
+
+### 6. `align-items:`
+
+```css
+.container {
+  align-items: stretch;
+  /* align-items: flex-start; */
+  /* align-items: flex-end; */
+  /* align-items: center; */
+  /* align-items: baseline; */
+}
+```
+
+수직 축으로 아이템 정렬하는 속성이다. `stretch` 속성이 기본 값이고, 아이템들이 수직축 방향으로 끝까지 늘어난다. `flex-start`와 `flex-end`는 아이템을 시작점으로 정렬할지 끝점으로 정렬할 지 정하는 것이다. `center`는 당연하게 가운데로 정렬하는 것이고, `baseline`은 아이템들을 텍스트 베이스라인 기준으로 정렬한다.
+
+### 7. `flex-wrap:wrap;` + `align-content`
+
+```css
+.container {
+  flex-wrap: wrap;
+  align-content: stretch;
+  /* align-content: flex-start; */
+  /* align-content: flex-end; */
+  /* align-content: center; */
+  /* align-content: space-between; */
+  /* align-content: space-around; */
+  /* align-content: space-evenly; */
+}
+```
+
+이 속성은 `flex-wrap:wrap`이 설정된 상태에서 행이 2줄 이상 되었을 때에 수직축 방향 정렬을 결정하는 속성이다. 세부 속성은 `justify-content`나 `align-items`랑 유사하다.
+
+## 4. Flex 속성의 종류 - 아이템에 적용하는 속성
+
+### 1. `flex-basis`
+
+```css
+.item {
+  flex-basis: auto; /* 기본값 */
+  /* flex-basis: 0; */
+  /* flex-basis: 50%; */
+  /* flex-basis: 300px; */
+  /* flex-basis: 10rem; */
+  /* flex-basis: content; */
+}
+```
+
+이 속성은 Flex 아이템의 기본 크기를 설정하는데 이 기본 크기는 flex-direction에 따라 너비일 수도 있고 높이일 수도 있다. 기본 값인 `auto`의 경우 해당 아이템의 width를 사용한다. 그리고 위 예시처럼 직접적으로 조정할 수 있고, `content`로 할 경우 컨텐츠의 크기에 맞게 설정된다.
+
+### 2. `flex-grow`
 
 ---
 
