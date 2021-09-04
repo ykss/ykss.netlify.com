@@ -2,7 +2,7 @@
 title: '[CSS] Flex 레이아웃 알아보기'
 date: 2021-09-03 01:00:00
 category: 'Web'
-draft: true
+draft: false
 ---
 
 웹 페이지를 구성할 때, 다양한 레이아웃의 방식이 존재한다. float와 inline-block도 있고, 이번에 공부해볼 flex도 그 방법 중 하나이다. 최근 개발을 하면서 flex를 통한 레이아웃을 많이 사용하기 때문에, 이것에 대해 제대로 알고 정리하면 좋을 것 같아서 이렇게 공부하면서 정리한다.
@@ -142,6 +142,101 @@ Flex 컨테이너로 사용하기 위해서는 컨테이너에 꼭 적용해야 
 이 속성은 Flex 아이템의 기본 크기를 설정하는데 이 기본 크기는 flex-direction에 따라 너비일 수도 있고 높이일 수도 있다. 기본 값인 `auto`의 경우 해당 아이템의 width를 사용한다. 그리고 위 예시처럼 직접적으로 조정할 수 있고, `content`로 할 경우 컨텐츠의 크기에 맞게 설정된다.
 
 ### 2. `flex-grow`
+
+```css
+.item {
+  flex-grow: 1;
+  /* flex-grow: 0; */ /* 기본값 */
+}
+```
+
+이 속성은 아이템이 `flex-basis`보다 커질 수 있는지 결정하는 속성이다. 값으로는 숫자 값을 넣을 수 있는데, 0보다 클경우 해당 아이템이 유연한 Flexible 박스가 된다. 기본값이 0이기 때문에 따로 지정하지 않을 경우 유연하게 늘어나지 않는다. 뒤의 숫자는 의미없는 것은 아니고 아이템이 여러개일 경우 비율을 의미한다.
+
+```css
+/* 1:2:1의 비율로 세팅할 경우 */
+.item:nth-child(1) {
+  flex-grow: 1;
+}
+.item:nth-child(2) {
+  flex-grow: 2;
+}
+.item:nth-child(3) {
+  flex-grow: 1;
+}
+```
+
+### 3. `flex-shrink`
+
+```css
+.item {
+  flex-basis: 150px;
+  flex-shrink: 1; /* 기본값 */
+}
+```
+
+`flex-grow`와 쌍을 이루는 속성으로, 반대로 `flex-basis`보다 작아질 수 있는지를 정한다. `flex-grow`와는 다르게 1이 기본값이라, 따로 적용하지않으면 기본적으로 `flex-basis`보다 줄어들 수 있다.
+
+### 4. `flex`
+
+```css
+.item {
+  flex: 1;
+  /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+  flex: 1 1 auto;
+  /* flex-grow: 1; flex-shrink: 1; flex-basis: auto; */
+  flex: 1 500px;
+  /* flex-grow: 1; flex-shrink: 1; flex-basis: 500px; */
+}
+```
+
+직전의 세가지 속성을 한번에 쓸수 있는 방식이다. `flex-basis`의 경우 생략하면 0이 된다.
+
+### 5. `align-self`
+
+```css
+.item {
+  align-self: auto;
+  /* align-self: stretch; */
+  /* align-self: flex-start; */
+  /* align-self: flex-end; */
+  /* align-self: center; */
+  /* align-self: baseline; */
+}
+```
+
+이 속성은 `align-items`의 아이템 버전이라고 할 수 있다. 기본값은 `auto`이고, `align-items` 속성을 상속받는다. 하지만 따로 지정되어있을 경우 `align-self`가 더 우선된다.
+
+### 6. `order`
+
+```css
+.item:nth-child(1) {
+  order: 3;
+} /* A */
+.item:nth-child(2) {
+  order: 1;
+} /* B */
+.item:nth-child(3) {
+  order: 2;
+} /* C */
+```
+
+아이템의 나열 순서를 지정하는 건데, 시각적인 순서일 뿐이고 HTML 구조가 바뀌는 것은 아니다.
+
+### 7. `z-index`
+
+```css
+.item:nth-child(2) {
+  z-index: 1;
+  transform: scale(2);
+}
+/* z-index를 설정 안하면 0이므로, 1만 설정해도 나머지 아이템을 보다 위로 올라온다 */
+```
+
+Z축 정렬을 할 수 있는 속성이다. 숫자가 클 수록 위로 올라온다. `position`의 `z-index`와 비슷하다.
+
+## 정리
+
+위의 Flex 속성들만 숙지해도 레이아웃을 충분히 쉽고 간편하게 할 수 있다. 많이 써볼수록 익숙해지고 써봐야 제대로 알 수 있기 때문에, 프로젝트에 적용하며 익숙해져야겠다.
 
 ---
 
