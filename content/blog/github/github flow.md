@@ -1,7 +1,7 @@
 ---
 title: '[Github] Git Branch Strategy 알아보기(GitFlow,GithubFlow)'
 date: 2021-09-09 01:00:00
-category: 'Web'
+category: 'github'
 draft: false
 ---
 
