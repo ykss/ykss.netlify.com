@@ -38,9 +38,9 @@ SELECT * FROM example WHERE user_id in ('ykss');
 
 REST API의 경우, URL과 METHOD를 조합하여 요청하기 때문에 다양한 ENDPOINT가 존재한다. 하지만 이에 반해 gql은 단 하나의 ENDPOINT가 존재한다. 또한, gql API에서는 불러오는 데이터 종류를 쿼리 조합을 통해 결정한다. 만약 REST API에서 각 엔드포인트 마다 DB SQL 쿼리가 달라지지만, gql API는 gql 스키마의 타입마다 DB SQL 쿼리가 달라진다. gql API를 사용할 경우 네트워크 호출을 여러번 할 필요 없이 한번의 네트워크 호출로 처리가 가능하다.
 
-![http vs gql](http://tech.kakao.com/files/graphql-stack.png)
+![http vs gql](https://tech.kakao.com/files/graphql-stack.png)
 
-![REST API와 GraphQL API 사용](http://tech.kakao.com/files/graphql-mobile-api.png)
+![REST API와 GraphQL API 사용](https://tech.kakao.com/files/graphql-mobile-api.png)
 
 ## 3. GraphQL의 구조
 
@@ -48,7 +48,7 @@ REST API의 경우, URL과 METHOD를 조합하여 요청하기 때문에 다양�
 
 gql의 쿼리와 뮤테이션, 그리고 응답은 매우 직관적이다. 쿼리의 구조와 응답의 구조가 거의 일치한다고 볼 수 있다.
 
-![쿼리와응답](http://tech.kakao.com/files/graphql-example.png)
+![쿼리와응답](https://tech.kakao.com/files/graphql-example.png)
 
 쿼리와 뮤테이션이 나눠지는데 사실 큰 차이는 없으나, 쿼리의 경우, CRUD에서 R(Read)의 기능을 담당하고, 뮤테이션은 CUD(Create,Update,Delete)시에 사용한다.
 
