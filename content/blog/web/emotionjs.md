@@ -93,6 +93,6 @@ let secondStyle = css`
 
 출처 :
 
-1. [https://ideveloper2.dev/blog/2019-05-05--thinking-about-emotion-js-vs-styled-component/](https://ideveloper2.dev/blog/2019-05-05--thinking-about-emotion-js-vs-styled-component/)
+1. [emotion.js vs styled components](https://ideveloper2.dev/blog/2019-05-05--thinking-about-emotion-js-vs-styled-component/)
 
-2. [https://brunch.co.kr/@kmongdev/17](https://brunch.co.kr/@kmongdev/17)
+2. [kmong emotion.js 적용기](https://brunch.co.kr/@kmongdev/17)
