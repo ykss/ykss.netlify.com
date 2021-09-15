@@ -1,8 +1,8 @@
 ---
 title: '[리액트네이티브] Expo 정리하기'
-date: 2021-09-15 01:00:00
+date: 2021-09-16 01:00:00
 category: 'ReactNative'
-draft: true
+draft: false
 ---
 
 처음 RN으로 앱을 만들어보면서 자연스럽게 expo를 쓰면 좋다! 해서 Expo를 사용해서 개발해본게 처음이었는데, 막상 새로운 프로젝트를 기획하면서 Expo를 써야할지 말아야할지에 대해서 고민할 때, 제대로 알고있지 못했기 때문에 써야할지 말아야할지는 판단할 수 없었다. 그래서 이번 포스트를 통해 Expo에 대해서 정리해보려고 한다.
@@ -50,9 +50,14 @@ expo init으로 생성된 `package.json`을 살펴보면, 일반적으로 생성
 
 ### 3.2 Expo 베어 프로젝트의 특징
 
+엑스포 베어 프로젝트와 RN 프로젝트 간의 제일 큰 차이는 베어 프로젝트에는 RN 프로젝트에서는 설치되지 않는 Expo나 react-native-unimodules와 같은 패키지가 미리 설치된다. 특히 `react-native-unimodules`는 엑스포 베어 프로젝트의 핵심 패키지라고 할 수 있다. 해당 패키지에서는 `Asset`, `Constants`, `FileSystem`, `Permissions` 등 4가지 서비스를 제공한다. `package.json`에서 `expo-`로 시작하는 패키지는 엑스포 개발팀이 expo와 충돌하지 않도록 만든 패키지이고, 엑스포에서는 베어 프로젝트에 설치 가능한 다양한 패키지를 제공한다. 해당 패키지를 설치 할 때는 `expo install` 명령어로 설치해야 한다. 엑스포 베어 프로젝트는 퍼블리싱과 `AndroidManifest.xml` 파일에 추가 설정이 필요없다는 것이 장점이다.
+
+## 정리
+
+이번 포스트에서는 엑스포의 기본과 프로젝트의 종류에 대해서 알아보았고, 실질적으로 엑스포에 대해 알아보기 위해서는 개발을 하며 학습을 병행하면서 생기는 이슈나, 새로운 부분들을 정리해나가야 할 것 같다.
+
 ---
 
 출처
 
-1. [스타일드 컴포넌트를 사용하는 이유](https://eunbin00.tistory.com/31)
-2. [react-native 프로젝트의 style에 대해서 알아보기](https://velog.io/@jinsunee/react-native-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%9D%98-style%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
+1. Do it! 리액트 네이티브 앱 프로그래밍
