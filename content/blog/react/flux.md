@@ -45,7 +45,7 @@ Dispatcher에서 콜백 함수가 실행되면 Store가 업데이트되는데, �
 
 ## 정리
 
-사실상 Flux 패턴을 정리하면서 느낀 것은 Flux 자체가 Redux라는 생각이 들었지만 엄격히 말하면 그것은 아니다. Redux가 Flux패턴의 대표적인 패키지로 쓰이는 것은 맞지만 최근은 Redux가 기능에 비해서 너무 많은 코드가 필요하다는 의견도 있다. 그리고 React에서도 자체적으로 Context API를 제공한다. Redux 자체로는 디스패처 개념이 존재하지 않는다. 리듀서가 디스패처+스토어의 기능을 한다. 그리고 리듀서가 모든 상태를 immutable하도록 설정하고, 업데이트된 값은 새로운 객체로 복사되어 리턴된다. Flux의 스토어가 각자의 상태만 간직했던 것과 다르게 Redux의 상태는 역할을 리듀서로 넘긴 뒤에 모든 리듀서가 하나의 스토어에 묶이게 설계했다. 각 뷰가 자신이 필요한 스토어만 각각 접근할 수 있던 Flux와 다르게 Redux는 무조건 싱글 스토어로 각 리듀서에 접근할 수 있다. 아직은 Flux와 Redux에 대해 완전히 이해하지는 못했지만, 이러한 패턴의 등장과 Redux의 등장에 대해서 알아갈 수 있는 좋은 기회였다.
+사실상 Flux 패턴을 정리하면서 느낀 것은 Flux 자체가 Redux라는 생각이 들었지만 엄격히 말하면 그것은 아니다. Redux가 Flux패턴의 대표적인 패키지로 쓰이는 것은 맞지만 최근은 Redux가 기능에 비해서 너무 많은 코드가 필요하다는 의견도 있다. 그리고 React에서도 자체적으로 Context API를 제공한다. Redux 자체로는 디스패처 개념이 존재하지 않는다. 리듀서가 디스패처+스토어의 기능을 한다. 그리고 리듀서가 모든 상태를 immutable하도록 설정하고, 업데이트된 값은 새로운 객체로 복사되어 리턴된다. Flux의 스토어가 각자의 상태만 간직했던 것과 다르게 Redux의 상태는 역할을 리듀서로 넘긴 뒤에 모든 리듀서가 하나의 스토어에 묶이게 설계했다. 각 뷰가 자신이 필요한 스토어만 각각 접근할 수 있던 Flux와 다르게 Redux는 무조건 싱글 스토어로 각 리듀서에 접근할 수 있다. 아직은 Flux와 Redux에 대해 완전히 이해하지는 못했지만, 이러한 패턴의 등장과 Redux의 등장에 대해서 알아갈 수 있는 좋은 기회였다. 특히 Flux에 대한 이해가 어렵다면, [Flux로의 카툰 안내서](https://bestalign.github.io/translation/cartoon-guide-to-flux/) 이 글이 이해하는데 매우 효과적이었다고 생각하여 추천한다.
 
 ---
 
@@ -54,3 +54,5 @@ Dispatcher에서 콜백 함수가 실행되면 Store가 업데이트되는데, �
 1. [[디자인패턴] Flux, MVC 비교](https://beomy.tistory.com/44)
 
 2. ['데이터가 폭포수처럼 흘러내려' React의 flux 패턴](https://www.huskyhoochu.com/flux-architecture/)
+
+3. [Flux로의 카툰 안내서](https://bestalign.github.io/translation/cartoon-guide-to-flux/)
