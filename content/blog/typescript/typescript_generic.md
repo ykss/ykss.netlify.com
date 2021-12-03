@@ -1,7 +1,7 @@
 ---
 title: '[Typescript] 제네릭'
 date: 2021-10-14 01:00:00
-category: 'Javascript'
+category: 'Typescript'
 draft: false
 ---
 

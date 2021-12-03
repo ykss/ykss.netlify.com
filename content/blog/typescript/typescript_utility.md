@@ -1,7 +1,7 @@
 ---
 title: '[Typescript] 유틸리티 타입 정리'
 date: 2021-10-09 01:00:00
-category: 'Javascript'
+category: 'Typescript'
 draft: false
 ---
 
