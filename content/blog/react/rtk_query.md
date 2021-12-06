@@ -5,16 +5,14 @@ category: 'React'
 draft: true
 ---
 
+RTK Query는 데이터를 가져오고(fetching), 캐싱하는(caching) 강력한 도구이다. 데이터를 가져오고 캐싱하는 로직을 번거롭게 작성하지 않고 단순화시켜준다. RTK 쿼리는 Redux Tookit 패키지에 포함된 선택적 애드온이다.
+
 ## 정리
 
-RTK Query는
+정리
 
 ---
 
 출처
 
-1. [redux-toolkit](https://kyounghwan01.github.io/blog/React/redux/redux-toolkit/#%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC%E1%84%92%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB-%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%B2)
-
-2. [[ React ] 리액트 리덕스 툴킷 redux-toolkit](https://mjn5027.tistory.com/36)
-
-3. [Redux Toolkit을 활용한 React 상태 관리](https://blog.rhostem.com/posts/2020-03-04-redux-toolkits)
+1. [RTK 쿼리 핸드북](https://raejoonee.gitbook.io/rtk-query/rtk-query)
