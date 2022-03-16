@@ -5,10 +5,6 @@ category: 'Javascript'
 draft: false
 ---
 
-# this 파헤치기(call, apply, bind)
-
----
-
 ### 1) this의 존재 이유
 
 this를 통해 함수를 다른 객체에서도 재사용할 수 있다.
@@ -28,8 +24,6 @@ var kante = {
   display : playerGlobal
 }
 ```
-
-‏‏‎ ‎
 
 ### 2) apply, call, bind
 
