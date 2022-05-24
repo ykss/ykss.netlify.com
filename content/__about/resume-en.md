@@ -28,17 +28,17 @@ lang: 'en'
 
 # Work Experience.
 
+## 컬리
+
+### 풀필먼트웹개발팀 - 물류 시스템 개발
+
+2022.05 - 현재
+
 ## 현대오토에버
-
-10만 유저, 해외 10개국이
-
-이용하는 클라우드 스토리지
-
-서비스 운영
 
 ### 모비스운영관리팀 - MCLOUD 시스템 운영
 
-2019.07 - 현재
+2019.07 - 2022.05
 
 - PM으로써 기능 개선 및 고도화 프로젝트 5개 수행
   - MCLOUD 문서 정리/이관 기능 개발 프로젝트
@@ -60,23 +60,23 @@ lang: 'en'
 # Skill.
 
 - Front-End
-- HTML5, CSS3(SCSS), Javascript(es6)
-- Typescript, React
-- React Native(expo), Next.js
-- Redux(Redux Toolkit), Recoil
+  - HTML5, CSS3(SCSS), Javascript(es6)
+  - Typescript, React
+  - React Native(expo), Next.js
+  - Redux(Redux Toolkit), Recoil
 - Back-End
-- Node.js, Express
-- Github Action(CI/CD)
+  - Node.js, Express
+  - Github Action(CI/CD)
 - Server/DB/Env
-- IBM Websphere, Tomcat
-- Oracle, Google Firebase
-- Windows, Linux, AIX
+  - IBM Websphere, Tomcat
+  - Oracle, Google Firebase
+  - Windows, Linux, AIX
 - Collaboration
   & Tool
-- Slack, Jira
-- Git, Github
-- Figma, Zeplin
-- Google Analytics
+  - Slack, Jira
+  - Git, Github
+  - Figma, Zeplin
+  - Google Analytics
 
 ---
 
