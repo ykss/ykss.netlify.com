@@ -1,5 +1,5 @@
 ---
-title: 'Vue 라우터 네비게이션 가드(Navigation Guard)'
+title: 'Vue 라우터 네비게이션 가드(vue router guard)'
 date: 2022-06-13 01:00:00
 category: 'Vue'
 draft: false
