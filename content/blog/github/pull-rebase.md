@@ -1,11 +1,11 @@
 ---
 title: 'git pull vs git pull --rebase vs git rebase'
 date: 2022-06-24 01:00:00
-category: 'Vue'
+category: 'Git'
 draft: false
 ---
 
-먼저 `git pull`과 `git pull --rebase`의 차이를 알아보자.
+먼저 `git pull`과 `git pull --rebase`, 그리고 `rebase`의 차이를 알아보자.
 
 ## 1. git pull
 
@@ -21,7 +21,7 @@ draft: false
 >
 > `fetch`의 경우에는 remote에서 최신 데이터가 있는지 해당 메타 데이터를 업데이는 하는 것이다. pull과의 차이는 가져온 파일에 대하여 merge를 수행하는지 여부이다. 단순히 원격 저장소의 내용을 확인만 하고 병합은 원치 않는 경우 사용한다. `(pull = fetch + merge)`
 
-## 2. `git pull --rebase`
+## 2. git pull --rebase
 
 `--rebase` 옵션을 사용하면 Commit 이력을 한 줄로 깔끔히 관리 할 수 있다.
 
