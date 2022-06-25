@@ -9,7 +9,7 @@ draft: false
 
 `vue-class-component` 라이브러리는 데코레이터(@)를 사용하여 클래스 스타일로 코딩할 수 있게 해주는 라이브러리이다.
 
-1. @Component
+## 1. @Component
 
 `@Component` 데코레이터는 정의한 class를 Vue component로 만들어준다. data나 methods도 일반적인 클래스의 프로퍼티 형태로 선언하여 사용할 수 있다. 이 데코레이터는 `vue-property-decorator`에서 제공한다기 보단 `vue-class-component`에서 가져온 것이다.
 
@@ -77,7 +77,7 @@ export default class Example extends Vue {
 
 위의 경우 처럼 `computed, components, filters` 와 같은 컴포넌트 옵션들을 데코레이터 인자에 포함시켜 사용할 수 있다. 이외에도 자주 사용되는 옵션은 directives, mixins, life-cycle hooks 등이 있다.
 
-2. @Prop
+## 2. @Prop
 
 > @Prop(options: (PropOptions | Constructor[] | Constructor) = {})
 
@@ -104,7 +104,7 @@ export default class YourComponent extends Vue {
 >
 > `!`은 `null` 아님 단언이라고 할 수 있다. `!`가 붙은 경우에는 해당 멤버는 `null`이나 `undefined`가 아니라고 확정짓는 의미이다. 너무 많이 사용할 경우 확장성에 제한이 생길 수 있기 때문에 `required: true`나 default value를 설정하는게 바람직하다.
 
-3. @PropSync
+## 3. @PropSync
 
 > @PropSync(propName: string, options: (PropOptions | Constructor[] | Constructor) = {})
 
@@ -148,7 +148,7 @@ export default class ChildComponent extends Vue {
 
 여기서 주의할 점은 부모 컴포넌트에서 `:selectItems.sync="..."`를 통해 내렸다면 자식 컴포넌트에서 `@PropSync`의 인자 name에도 동일하게 지정해줘야한다. 이게 제대로 매핑되지 않으면 오류가 발생한다.
 
-4. @Watch
+## 4. @Watch
 
 > @Watch(path: string, options: WatchOptions = {})
 
@@ -180,7 +180,7 @@ export default class Example extends Vue {
 
 만약 같은 값을 여러 번 `@Watch()` 했을 경우에 가장 마지막에 지정한 것이 유효하다.
 
-5. @Emit
+## 5. @Emit
 
 > @Emit(event?: string)
 
@@ -259,7 +259,7 @@ export default class ChildComponent extends Vue {
 </script>
 ```
 
-6. @Ref
+## 6. @Ref
 
 > @Ref(refKey?: string)
 
@@ -294,7 +294,7 @@ mounted() {
 
 `@Ref()`를 쓰지 않았다면, `this.$refs.submitButton.focus()`와 같은 식으로 불러다 쓸 수 있다.
 
-7. @Provide/ @Inject
+## 7. @Provide/ @Inject
 
 > @Provide(key?: string | symbol) / @Inject(options?: { from?: InjectKey, default?: any } | InjectKey)
 
