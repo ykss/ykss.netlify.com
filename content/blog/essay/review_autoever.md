@@ -1,5 +1,5 @@
 ---
-title: '3년차 대기업 SI/SM 회고'
+title: '3년차 대기업 SI/SM 회고 & 이직 후기'
 date: 2022-04-26 18:00:00
 category: 'Essay'
 draft: false
