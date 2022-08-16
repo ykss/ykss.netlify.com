@@ -5,8 +5,6 @@ category: 'Translation'
 draft: false
 ---
 
-# 소프트웨어 변경에 대해 이야기하는 방법
-
 > 작업을 시연하기 위한 4가지 핵심 개요
 
 > 원문: [How to Talk About Software Changes](https://betterprogramming.pub/how-to-talk-about-software-changes-82dfb39cfaa)
