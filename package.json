@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Ykss[KyeongSangYu]<yukyeongsang@gmail.com>",
   "bugs": {
-    "url": "https://github.com/ykss/ykss-starter-blog"
+    "url": "https://github.com/ykss/ykss.netlify.com"
   },
   "dependencies": {
     "gatsby": "^2.2.8",
