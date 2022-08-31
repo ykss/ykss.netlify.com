@@ -9,7 +9,7 @@ module.exports = {
     twitter: ``, // Your Twitter account
     github: `ykss`, // Your GitHub account
     medium: ``, // Your Medium account
-    facebook: `kyeongsang.yu`, // Your Facebook account
+    facebook: ``, // Your Facebook account
     linkedin: `kyeongsangyu`, // Your LinkedIn account
   },
   icon: `content/assets/felog.png`, // Add your favicon
@@ -28,4 +28,4 @@ module.exports = {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
   ga: 'UA-116559927-2', // Add your google analytics tranking ID
-}
+};
