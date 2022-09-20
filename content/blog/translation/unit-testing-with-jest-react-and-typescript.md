@@ -9,7 +9,7 @@ draft: false
 
 ## 💡 소프트웨어 테스트는 무엇인가요?
 
-![](http://www.abstracta.us/wp-content/uploads/2016/09/giphy-48.gif)
+![](https://www.abstracta.us/wp-content/uploads/2016/09/giphy-48.gif)
 
 소프트웨어 테스트(Software Testing)은 소프트웨어 애플리케이션이나 제품이 의도된 대로 작동하는지 평가하고 확인하는 과정입니다. 테스팅을 통해 버그 방지, 개발 비용 절감, 성능 향상 등에 장점을 얻을 수 있습니다.
 
