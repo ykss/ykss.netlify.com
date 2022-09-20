@@ -5,8 +5,6 @@ category: 'Translation'
 draft: false
 ---
 
-# Jest, React 및 Typescript를 사용한 단위 테스트
-
 > 원문: [Unit testing with Jest, React, and TypeScript](https://harshal0902.hashnode.dev/unit-testing-with-jest-react-and-typescript#heading-automated-testing)
 
 ## 💡 소프트웨어 테스트는 무엇인가요?
