@@ -1,5 +1,5 @@
 ---
-title: '드롭다운에서 on Blur 이벤트 사용하기'
+title: '[DevLog]div에서 onBlur 이벤트 사용하기 - 드롭다운, 셀렉트'
 date: 2022-09-23 01:00:00
 category: 'DevLog'
 draft: false
