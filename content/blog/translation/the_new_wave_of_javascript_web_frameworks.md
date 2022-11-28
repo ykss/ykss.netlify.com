@@ -5,8 +5,6 @@ category: 'Translation'
 draft: false
 ---
 
-# 자바스크립트 웹 프레임워크의 새로운 흐름
-
 > 이 글을 통해 새로운 자바스크립트 웹 프레임워크의 확산에 대해 이해하고, 규모에 따른 문제와 최근 혁신의 진화에 대해 자세히 알아봅시다.
 
 > 원문: [The new wave of Javascript web frameworks](https://frontendmastery.com/posts/the-new-wave-of-javascript-web-frameworks/)
