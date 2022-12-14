@@ -5,6 +5,8 @@ category: 'Translation'
 draft: false
 ---
 
+![](./images/fun-with-console-log.webp)
+
 > 원문: [Fun with console.log()💿](https://dev.to/lissy93/fun-with-consolelog-3i59)
 
 여러분이 웹 앱을 개발한 적이 있다면, [`console.log(...)`](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)가 익숙 하실겁니다. 이 메서드는 개발자 콘솔에 데이터를 출력하며, 디버깅과 로깅, 그리고 테스트에 유용합니다.
