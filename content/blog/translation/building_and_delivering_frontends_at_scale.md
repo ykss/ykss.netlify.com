@@ -431,3 +431,5 @@ IE11의 죽음, ESM 지원 및 에버그린 브라우저에 대한 지원은 많
 - [Enabling modern Javascript on NPM](https://jasonformat.com/enabling-modern-js-on-npm/)
 - [Prerender pages in Chrome for instant page navigations](https://developer.chrome.com/blog/prerender-pages/)
 - [Don’t fight the browser preload scanner](https://web.dev/preload-scanner/)
+
+> 🚀 한국어로 된 프런트엔드 아티클을 빠르게 받아보고 싶다면 Korean FE Article(<https://kofearticle.substack.com/>)을 구독해주세요!
