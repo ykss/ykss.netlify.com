@@ -120,3 +120,5 @@ AI가 결국 개발자의 일자리를 빼앗을까요? 아직 이 질문에 대
 잊어버리고 싶지 않은 몇 가지 주목할 만한 내용이 있지만 앞서 언급한 트렌드에 포함되지는 않았습니다. 자바스크립트/CSS/HTML로 구현된 데스크톱 애플리케이션을 위한 Electron의 대안으로 [Tauri](https://tauri.app/), E2E 테스트를 위한 Cypress의 대안으로 [Playwright](https://playwright.dev/), 차세대 터미널로 [Warp](https://www.warp.dev/)와 [Fig](https://fig.io/), 반응형 디자인을 위한 CSS 미디어 쿼리의 대안으로 [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Container_Queries), 마지막으로 자바스크립트 없이 대화형 사용자 인터페이스를 만들기 위한 강화된 HTML로 [htmx](https://htmx.org/)를 꼽을 수 있습니다. 여기서는 요약만 했으니 직접 확인해 보세요!
 
 아무쪼록 웹 개발 생태계의 현 상황에 대한 훌륭한 요약이 되었기를 바랍니다. 제 글이 마음에 드셨다면 아래에서 제 뉴스레터를 구독해 주세요. 또한 올해에는 이러한 기술 중 몇 가지에 대해 더 많은 글을 쓸 계획이므로 해당 기술 중 하나에서 일하고 계신다면 저에게 연락을 주시면 함께 협업할 수 있을 것입니다.
+
+> 🚀 한국어로 된 프런트엔드 아티클을 빠르게 받아보고 싶다면 Korean FE Article(<https://kofearticle.substack.com/>)을 구독해주세요!
