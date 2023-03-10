@@ -62,25 +62,27 @@
     </style>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
-        var hash = window.decodeURI(location.hash.replace('#', ''))
+        var hash = window.decodeURI(location.hash.replace('#', ''));
         if (hash !== '') {
-          var element = document.getElementById(hash)
+          var element = document.getElementById(hash);
           if (element) {
             var scrollTop =
               window.pageYOffset ||
               document.documentElement.scrollTop ||
-              document.body.scrollTop
+              document.body.scrollTop;
             var clientTop =
-              document.documentElement.clientTop || document.body.clientTop || 0
+              document.documentElement.clientTop ||
+              document.body.clientTop ||
+              0;
             var offset =
-              element.getBoundingClientRect().top + scrollTop - clientTop
+              element.getBoundingClientRect().top + scrollTop - clientTop;
             // Wait for the browser to finish rendering before scrolling.
             setTimeout(function() {
-              window.scrollTo(0, offset - 0)
-            }, 0)
+              window.scrollTo(0, offset - 0);
+            }, 0);
           }
         }
-      })
+      });
     </script>
     <link
       rel="icon"
@@ -133,7 +135,20 @@
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <script src="/socket.io/socket.io.js"></script>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VZ19ZNF3YQ"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
+    gtag('config', 'G-VZ19ZNF3YQ');
+  </script>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="___gatsby"></div>
