@@ -1,6 +1,6 @@
 ---
 title: '(번역) 2023년 웹 개발 트렌드 10가지'
-date: 2023-03-06 01:00:00
+date: 2023-03-06 02:00:00
 category: 'Translation'
 draft: false
 ---
