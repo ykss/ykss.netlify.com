@@ -1,8 +1,8 @@
 ---
 title: '(번역) 🔥 자바스크립트 메모리 관리: 일반적인 메모리 누수를 방지하고 성능을 개선하는 방법'
-date: 2023-03-27 01:00:00
+date: 2023-03-30 01:00:00
 category: 'Translation'
-draft: false
+draft: true
 ---
 
 > 원문: [JavaScript Memory Management: How to Avoid Common Memory Leaks and Improve Performance](https://itnext.io/javascript-memory-management-how-to-avoid-common-memory-leaks-and-improve-performance-c018dbbca954)
