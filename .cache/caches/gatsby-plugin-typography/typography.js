@@ -1,1 +1,0 @@
-module.exports = require("C:\\Users\\Ykss\\Desktop\\gatsby\\ykss-starter-blog\\src\\utils\\typography")
