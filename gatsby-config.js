@@ -91,6 +91,25 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://your-blog.netlify.app',
+        sitemap: 'https://your-blog.netlify.app/sitemap.xml',
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: metaConfig.ad,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-feed`,

@@ -10,7 +10,8 @@ module.exports = {
     github: `ykss`, // Your GitHub account
     medium: ``, // Your Medium account
     facebook: ``, // Your Facebook account
-    linkedin: `kyeongsangyu`, // Your LinkedIn account
+    linkedin: `kyeongsangyu`, // Your LinkedIn account,
+    instagram: `kyeongsangyu`, // Your Instagram account
   },
   icon: `content/assets/felog.png`, // Add your favicon
   keywords: [`blog`],
@@ -27,5 +28,6 @@ module.exports = {
   share: {
     facebookAppId: '', // Add facebookAppId for using facebook share feature v3.2
   },
-  ga: ['UA-116559927-2', 'G-VZ19ZNF3YQ'], // Add your google analytics tranking ID
+  ga: ['UA-116559927-2', 'G-VZ19ZNF3YQ'], // Add your google analytics tranking ID,
+  ad: 'pub-5924627079296495', // Add your google adsense publisherId `ca-pub-xxxxxxxxxx`
 };
