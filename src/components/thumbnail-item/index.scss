@@ -8,8 +8,11 @@
   box-shadow: none;
   transition: text-shadow 0.3s, opacity 0.4s;
   opacity: 0;
+  border-bottom: 0.5px solid #666;
 
   p {
+    padding-top: 10px;
+    padding-bottom: 5px;
     font-size: 90%;
     line-height: 1.4;
   }
