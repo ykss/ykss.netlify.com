@@ -1,3 +1,10 @@
+.home-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .home-header {
   margin-top: 0;
   border-bottom: none;
