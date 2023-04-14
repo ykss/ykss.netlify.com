@@ -8,6 +8,7 @@ export const ThumbnailItem = ({ node }) => (
   <Link className={`thumbnail ${TARGET_CLASS}`} to={node.fields.slug}>
     <div key={node.fields.slug}>
       <h3>{node.frontmatter.title || node.fields.slug}</h3>
+      <small>{new Date(node.frontmatter.date).toLocaleDateString()}</small>
       <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
     </div>
   </Link>
