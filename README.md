@@ -13,8 +13,6 @@
 
 개발하며 배우고, 겪은 것들을 기록하며, 좋은 FE관련 글들도 번역하고 있습니다.
 
-<img alt="GitHub followers" src="https://img.shields.io/github/followers/ykss?style=social">
-<br/>
 <br/>
 
 이 블로그는 RSS 리더에 아래 주소를 추가하여 구독이 가능합니다.
