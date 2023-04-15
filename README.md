@@ -1,4 +1,4 @@
-# YKSS 기술 블로그
+# YKSS Dev Blog
 <div align='center'>
   <img src="./content/assets/felog.png" width="180px"/>  
   <br/><br/>
