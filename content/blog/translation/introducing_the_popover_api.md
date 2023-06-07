@@ -45,7 +45,7 @@ draft: false
   Simple default popover</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/8IO7BsdxF8ieyDG0qn0m.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/8IO7BsdxF8ieyDG0qn0m.mp4" type="video/mp4"> </video>
 
 이 팝오버는 추가 정보를 전달하거나 정보 표시 위젯으로 사용할 수 있습니다.
 
@@ -69,7 +69,7 @@ draft: false
   Simple default popover with close button</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/BXZs8RR2ux2edU777Eh5.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/BXZs8RR2ux2edU777Eh5.mp4" type="video/mp4"> </video>
 
 ## 자동 및 수동 팝오버
 
@@ -82,7 +82,7 @@ draft: false
   Basic manual popover with close button</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/J9pcnrgxLu5rhxWSyid8.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/J9pcnrgxLu5rhxWSyid8.mp4" type="video/mp4"> </video>
 
 위의 데모를 살펴보면 팝오버 영역 외부를 클릭해도 팝오버가 닫히지 않는 것을 확인할 수 있습니다. 또한 다른 팝오버가 열려있어도 닫지 않습니다.
 
@@ -115,7 +115,7 @@ draft: false
   Popover demo: Sizing Guide</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/MYQK3USGS47wWw9yodA4.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/MYQK3USGS47wWw9yodA4.mp4" type="video/mp4"> </video>
 
 > 기본적으로 팝오버는 2픽셀 테두리가 있고 UI 중앙에 위치하지만, 완전히 사용자가 직접 스타일을 정의할 수 있습니다! 다른 HTML 요소와 마찬가지로 팝오버의 크기, 배경, 페이지 내 위치 등을 변경 등의 스타일 지정이 가능합니다.
 
@@ -130,7 +130,7 @@ draft: false
   Popover Demo: Product Cards</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/12t9jqC8VDxIiM5MIZb6.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/12t9jqC8VDxIiM5MIZb6.mp4" type="video/mp4"> </video>
 
 위의 데모는 팝오버 동작이 있는 시맨틱 대화 상자입니다. 즉, 페이지의 나머지 부분은 비활성 상태가 아니며, 대화 상자 팝오버를 외부 클릭 닫기를 통해 닫을 수 있습니다. 다음 코드를 사용해서 팝오버 동작이 있는 이 대화 상자를 만들 수 있습니다.
 
@@ -163,7 +163,7 @@ draft: false
   Popover demo: Sizing Guide - Animated</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/nQfuhpV2iTuq7pQxq5Yg.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/nQfuhpV2iTuq7pQxq5Yg.mp4" type="video/mp4"> </video>
 
 > 현재 구현은 유동적이지만 코드펜 데모를 클릭하여 최신 구문을 확인하고 Chrome Canary에서 _#experimental-web-platform-features_ 플래그를 켜서 사용해 보세요.
 
@@ -198,7 +198,7 @@ draft: false
   Radial Menu Popover</a> by web.dev (<a href="https://codepen.io/web-dot-dev">@web-dot-dev</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-<video muted="" loop="" controls="" autoplay="" width="740"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/imnWsuQJdoTY25mYakHM.mp4" type="video/mp4"> </video>
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/imnWsuQJdoTY25mYakHM.mp4" type="video/mp4"> </video>
 
 이제 토글 버튼에 고정되어 있고, 자바스크립트 없이도 팝오버의 모든 기능이 내장된 완전한 기능의 팝오버 메뉴를 사용할 수 있습니다!
 
