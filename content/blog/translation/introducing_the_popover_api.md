@@ -71,7 +71,7 @@ draft: false
 </iframe>
 <video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://storage.googleapis.com/web-dev-uploads/video/HodOHWjMnbNw56hvNASHWSgZyAf2/BXZs8RR2ux2edU777Eh5.mp4" type="video/mp4"> </video>
 
-## 자동 및 수동 팝오버
+## 자동 닫기 팝오버와 수동 닫기 팝오버
 
 `popover` 속성을 단독으로 사용하는 것은 사실상 `popover="auto"`의 단축된 버전 입니다. 기본 `popover`는 열릴 때, 상위 팝오버를 제외한 다른 자동 팝오버를 강제로 닫습니다. 팝오버는 외부 클릭 닫힘 기능(light-dismiss)이나 닫기 버튼을 통해 닫을 수 있습니다.
 
@@ -150,7 +150,7 @@ draft: false
 
 > [WhatWG](https://github.com/whatwg/html/issues/3567)와 [OpenUI](https://github.com/openui/open-ui/issues/741) 커뮤니티 그룹은 현재 HTML 인체공학적으로 대화 요소를 여는 기능에 대해 논의하고 있습니다. 이 기능은 팝오버와 유사하지만, 페이지의 나머지 부분을 비활성화하는 등 앞서 나열한 대화 상자 기능을 유지합니다. `popover`, `dialog`와 `selectmenu`와 같은 새로운 요소의 미래를 위해 이 그룹을 지켜보세요.
 
-## 곧 출시 예정
+## 곧 출시 예정인 기능들
 
 ### 인터랙티브한 표시 및 제거
 
