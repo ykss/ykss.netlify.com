@@ -2,16 +2,16 @@
 title: '(번역) 이벤트 루프를 차단하지 않기 위한 실용적인 가이드'
 date: 2023-06-23 01:00:00
 category: 'Translation'
-draft: false
+draft: true
 ---
+
+<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
 
 > 원문: [Practical Guide To Not Blocking The Event Loop](https://www.bbss.dev/posts/eventloop/)
 
 ![](https://www.bbss.dev/images/eventloop/cover.png)
 
 자바스크립트는 이벤트 루프가 있는 단일 스레드 환경에서 실행되며, 이는 추론하기 매우 쉬운 아키텍처입니다. 이벤트 루프는 들어오는 작업을 실행하는 연속 루프이며 더 많은 작업을 수행하도록 스케줄링할 수 있습니다.
-
-<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
 
 ```javascript
 while (hasWorkToDo) {
