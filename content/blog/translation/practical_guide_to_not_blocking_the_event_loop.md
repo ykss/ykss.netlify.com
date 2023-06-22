@@ -2,10 +2,8 @@
 title: '(번역) 이벤트 루프를 차단하지 않기 위한 실용적인 가이드'
 date: 2023-06-23 01:00:00
 category: 'Translation'
-draft: true
+draft: false
 ---
-
-<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
 
 > 원문: [Practical Guide To Not Blocking The Event Loop](https://www.bbss.dev/posts/eventloop/)
 
@@ -24,20 +22,7 @@ while (hasWorkToDo) {
 
 동기식 작업은 즉시 실행되고, 비동기식 작업은 수행해야 할 동기식 작업이 없을 때(또는 간단히 말해서 _"나중에"_) 실행됩니다. 이상적으로는 애플리케이션의 실행 프로파일에서 백그라운드 작업(예: 새 연결 수락, 타이머 실행 등)을 수행하기 위해 이벤트 루프가 자주 실행되도록 허용해야 합니다.
 
-<div class="mermaid">
-gantt
-    title Ideal Execution Profile
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 02
-      Background Work    :milestone, crit, 02, sameline
-      doWork()              :02, 03
-      Background Work    :milestone, crit, 03, sameline
-      doWork()              :03, 04
-</div>
+![](./images/gantt1.png)
 
 이 설계는 동기식 작업을 수행하는 것이 *큰 문제*라는 것을 의미합니다. 동기식 작업이 실행되는 동안 이벤트 루프는 어떤 작업도 수행할 수 없습니다.
 
@@ -52,22 +37,7 @@ setImmediate(() => {
 findNthPrime(9999999);
 ```
 
-<div class="mermaid">
-gantt
-    title Blocking Event Loop For a Long Time
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section User Code
-      setImmediate()        :01, 03
-      findNthPrime(9999999) :03, 10
-      console.log(...)      :10, 12
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 10
-      Background Work    :milestone, crit, 10, sameline
-      doWork()              :10, 12
-</div>
+![](./images/gantt2.png)
 
 서버 환경에서는 이러한 요청 하나가 다른 모든 요청을 무기한 차단할 수 있습니다.
 
@@ -86,34 +56,7 @@ app.get('/computePrimes', () => {
 });
 ```
 
-<div class="mermaid">
-gantt
-    title One Request Blocking Other Requests
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section Client
-      GET /home             :01, 03
-      GET /computePrimes    :crit, 02, 10
-      GET /home             :active, 04, 12
-      GET /home             :05, 14
-    section User Code
-      handle /home          :01, 03
-      handle /computePrimes :crit, 03, 10
-      findNthPrime(9999999) :crit, 04, 09
-      handle /home          :active, 10, 12
-      handle /home          :12, 14
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 03
-      Background Work    :milestone, crit, 03, sameline
-      doWork()              :crit, 03, 10
-      Background Work    :milestone, crit, 10, sameline
-      doWork()              :active, 10, 12
-      Background Work    :milestone, crit, 12, sameline
-      doWork()              :12, 14
-
-</div>
+![](./images/gantt3.png)
 
 이러한 시나리오에는 세 가지 해결책이 있습니다.
 
@@ -170,53 +113,13 @@ const findNthPrime = num => {
 };
 ```
 
-<div class="mermaid">
-gantt
-    title Execution Profile Of findNthPrime()
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section User Code
-      findNthPrime() :01, 09
-      isPrime()        :01, 03
-      isPrime()        :03, 05
-      isPrime()        :05, 07
-      isPrime()        :07, 09
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 09
-      Background Work    :milestone, crit, 09, sameline
-
-</div>
+![](./images/gantt4.png)
 
 이 접근 방식의 기본 목표는 동기 실행 블록 사이에 간격을 추가하여 알고리즘이 실행되는 동안 이벤트 루프가 실행될 수 있도록 하는 것입니다. 이러한 간격을 _어디에_ 표시할지는 원하는 성능 프로파일에 따라 다릅니다. 알고리즘이 이벤트 루프를 1초 이상 차단하는 경우 **아무 곳에나** 간격을 추가하는 것이 좋습니다.
 
 이 경우 `isPrime()`은 여러 반복에 걸쳐 대부분의 작업을 수행합니다. 이미 함수로 편리하게 분리되어 있으므로 이벤트 루프에서 지연시킬 수 있는 가장 적합한 후보가 됩니다.
 
-<div class="mermaid">
-gantt
-    title Target Execution Profile of findNthPrimeAsync()
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section User Code
-      findNthPrime() :01, 09
-      isPrime()        :01, 03
-      isPrime()        :03, 05
-      isPrime()        :05, 07
-      isPrime()        :07, 09
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 03
-      Background Work    :milestone, crit, 03, sameline
-      doWork()              :03, 05
-      Background Work    :milestone, crit, 05, sameline
-      doWork()              :05, 07
-      Background Work    :milestone, crit, 07, sameline
-      doWork()              :07, 09
-      Background Work    :milestone, crit, 09, sameline
-
-</div>
+![](./images/gantt5.png)
 
 ### 프로미스화 하기(Promisify)
 
@@ -348,41 +251,7 @@ Intervals on event loop: 6
 
 시각화하면, 실행 프로파일은 다음과 같습니다.
 
-<div class="mermaid">
-gantt
-    title Execution Profile Of findNthPrime vs findNthPrimeAsync()
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section User Code
-      findNthPrime() :01, 09
-      isPrime()        :01, 03
-      isPrime()        :03, 05
-      isPrime()        :05, 07
-      isPrime()        :07, 09
-      findNthPrimeAsync() :09, 17
-      isPrime()        :09, 11
-      isPrime()        :11, 13
-      isPrime()        :13, 15
-      isPrime()        :15, 17
-    section Timers
-      interval :milestone, active, 11, sameline
-      interval :milestone, active, 13, sameline
-      interval :milestone, active, 15, sameline
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 09
-      Background Work    :milestone, crit, 09, sameline
-      doWork()              :09, 11
-      Background Work    :milestone, crit, 11, sameline
-      doWork()              :11, 13
-      Background Work    :milestone, crit, 13, sameline
-      doWork()              :13, 15
-      Background Work    :milestone, crit, 15, sameline
-      doWork()              :15, 17
-      Background Work    :milestone, crit, 17, sameline
-
-</div>
+![](./images/gantt6.png)
 
 [Replit 데모 링크](https://replit.com/@knyzorg/FindPrimeAsync)
 
@@ -419,40 +288,7 @@ const findNthPrime = num => {
 parentPort.postMessage(findNthPrime(workerData));
 ```
 
-<div class="mermaid">
-gantt
-    title Execution Profile of findNthPrimeWorker()
-    dateFormat HH
-    axisFormat %H
-    todayMarker off
-    section User Code
-      findNthPrimeWorker() :01, 09
-    section Event Loop
-      Background Work    :milestone, crit, 01, sameline
-      doWork()              :01, 02
-      Background Work    :milestone, crit, 02, sameline
-      doWork()              :02, 03
-      Background Work    :milestone, crit, 03, sameline
-      doWork()              :03, 04
-      Background Work    :milestone, crit, 04, sameline
-      doWork()              :04, 05
-      Background Work    :milestone, crit, 05, sameline
-      doWork()              :05, 06
-      Background Work    :milestone, crit, 06, sameline
-      doWork()              :06, 07
-      Background Work    :milestone, crit, 07, sameline
-      doWork()              :07, 08
-      Background Work    :milestone, crit, 08, sameline
-      doWork()              :08, 09
-      Background Work    :milestone, crit, 09, sameline
-    section Worker Thread
-      findNthPrime() :01, 09
-      isPrime()        :01, 03
-      isPrime()        :03, 05
-      isPrime()        :05, 07
-      isPrime()        :07, 09
-
-</div>
+![](./images/gantt7.png)
 
 [Replit 데모 링크](https://replit.com/@knyzorg/FindPrimeWorker?v=1)
 
