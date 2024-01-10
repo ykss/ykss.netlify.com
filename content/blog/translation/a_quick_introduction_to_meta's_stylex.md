@@ -2,7 +2,7 @@
 title: '(번역) Meta의 StyleX에 대한 간략한 소개'
 date: 2024-01-11 01:00:00
 category: 'Translation'
-draft: true
+draft: false
 ---
 
 > 원문 : [A Quick Introduction to Meta's StyleX](https://refine.dev/blog/meta-stylex/)
