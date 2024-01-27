@@ -15,8 +15,6 @@ draft: false
 
 이제 리액트 애플리케이션에 사용할 수 있는 라이브러리에 대해 자세히 알아봅시다.
 
----
-
 ## 목차
 
 - [리액트 라이브러리](#%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC)
@@ -89,8 +87,6 @@ Vite와 같은 도구가 어떻게 작동하는지 이해하고 싶다면 직접
 - 정적 사이드에서 생성된 리액트 애플리케이션을 위한 Astro
 - 선택적 학습 경험: [리액트 프로젝트 처음부터 만들어보기](https://www.robinwieruch.de/minimal-react-webpack-babel-setup/)
 
----
-
 ## 리액트를 위한 패키지 매니저
 
 자바스크립트 생태계(즉, 리액트)에서 라이브러리(의존성, 노드 패키지)를 설치하는 데 가장 널리 사용되는 패키지 관리자는 [npm](https://www.npmjs.com/)으로, 모든 Node.js 설치와 함께 제공되기 때문입니다. 하지만 [yarn](https://yarnpkg.com/)과 [pnpm](https://pnpm.io/)도 훌륭한 대안이며, 특히 후자는 더 큰 성능 향상을 제공합니다.
@@ -107,8 +103,6 @@ Vite와 같은 도구가 어떻게 작동하는지 이해하고 싶다면 직접
   - 기본적이고 가장 널리 사용되는 -> npm
   - 성능은 향상되었지만, 상당히 새롭고 대중적이지 않은 -> pnpm
 - 모노레포가 필요한 경우, Turborepo를 확인하세요(튜토리얼을 보세요).
-
----
 
 ## 리액트 상태 관리
 
@@ -133,8 +127,6 @@ Redux를 사용하신다면 [Redux Toolkit](https://redux-toolkit.js.org/)도 �
 - 같은 위치에 있거나 공유된 상태의 경우, useState/useReducer (튜토리얼 참조)
 - _작은_ 전역 상태의 경우, useContext의 선택적 사용 (튜토리얼 참조)
 - _많은_ 전역 상태의 경우 Zustand(또는 다른 대체 도구) 사용
-
----
 
 ## 리액트 데이터 페칭
 
@@ -162,8 +154,6 @@ TanStack Query는 REST API를 사용하도록 설계되었습니다. 하지만 �
 - 긴밀하게 결합된 클라이언트-서버 아키텍처를 위한 tRPC
 - 선택적 학습 경험: [TanStack Query의 작동 방식 알아보기](https://www.robinwieruch.de/react-hooks-fetch-data/)
 
----
-
 ## 리액트 라우터를 통한 라우팅
 
 Next.js와 같은 리액트 프레임워크는 이미 라우팅이 처리되어 있습니다. 그러나 프레임워크 없이 클라이언트 측 렌더링에만 리액트를 사용하는 경우(예: SSR이 없는 Vite), 가장 강력하고 인기 있는 라우팅 라이브러리는 [React Router](https://reactrouter.com/en/main)입니다. 완전한 타입스크립트 지원을 염두에 둔 새로운 대안으로 [TanStack Router](https://tanstack.com/router/v1)가 있습니다.
@@ -181,8 +171,6 @@ Next.js와 같은 리액트 프레임워크는 이미 라우팅이 처리되어 
 - 가장 인기 있는 라이브러리는 React Router
 - 요즘 떠오르는 것은 TanStack Router
   - 주로 최고 수준의 TS 지원 때문입니다.
-
----
 
 ## 리액트 CSS 스타일링
 
@@ -250,8 +238,6 @@ CSS-in-CSS를 선택할지, Utility-First-CSS를 선택할지는 사용자에게
   - 예: Styled Components 또는 Facebook의 [StyleX](https://stylexjs.com/)
 - [CSS-in-TS](https://github.com/andreipfeiffer/css-in-js)(타입스크립트 및 서버 사이드 렌더링 지원)
 
----
-
 ## 리액트 UI 라이브러리
 
 초보자라면 재사용 가능한 컴포넌트를 처음부터 만들어 보는 것은 좋은 학습 경험이 될 것입니다. [드롭다운](https://www.robinwieruch.de/react-dropdown/), [셀렉트](https://www.robinwieruch.de/react-select/), [라디오 버튼](https://www.robinwieruch.de/react-radio-button/), [체크박스](https://www.robinwieruch.de/react-checkbox/)등 무엇이든 언젠가 이러한 UI 컴포넌트를 직접 만드는 방법을 알게 될 것입니다.
@@ -284,8 +270,6 @@ CSS-in-CSS를 선택할지, Utility-First-CSS를 선택할지는 사용자에게
 
 이러한 모든 UI 라이브러리에는 자체 컴포넌트가 포함되어 있지만, 각 컴포넌트를 하나의 UI 컴포넌트에 중점을 둔 라이브러리만큼 강력하게 만들 수는 없습니다. 예를 들어, [react-table-library](https://react-table-library.com/)를 사용하면 리액트에서 강력한 테이블 컴포넌트를 만들 수 있는 동시에, 이를 UI 라이브러리와 결합할 수 있는 테마(예: Material UI)도 제공할 수 있습니다.
 
----
-
 ## 리액트 애니메이션 라이브러리
 
 웹 애플리케이션의 모든 애니메이션은 CSS로 시작합니다. 결국 CSS 애니메이션만으로는 요구 사항을 충족시키기 어렵다는 것을 알게 될 것입니다. 보통 개발자들은 그럴 때 리액트 컴포넌트로 애니메이션을 구현할 수 있는 [React Transition Group](https://reactcommunity.org/react-transition-group/)을 살펴봅니다. 리액트를 위한 다른 잘 알려진 애니메이션 라이브러리는 다음과 같습니다.
@@ -294,8 +278,6 @@ CSS-in-CSS를 선택할지, Utility-First-CSS를 선택할지는 사용자에게
 - [react-spring](https://github.com/pmndrs/react-spring)
 - [react-motion](https://github.com/chenglou/react-motion)
 - [react-move](https://github.com/sghall/react-move)
-
----
 
 ## 리액트 시각화 & 차트 라이브러리
 
@@ -313,8 +295,6 @@ CSS-in-CSS를 선택할지, Utility-First-CSS를 선택할지는 사용자에게
   - [nivo](https://nivo.rocks/)
   - [react-chartjs](https://github.com/reactchartjs/react-chartjs-2)
 
----
-
 ## 리액트 폼 라이브러리
 
 리액트에서 가장 많이 사용되는 폼 라이브러리는 [React Hook Form](https://react-hook-form.com/)입니다. 유효성 검사(가장 많이 사용되는 통합은 [zod](https://github.com/colinhacks/zod)), 양식 제출, 양식 상태 관리 등 필요한 모든 것이 포함되어 있습니다. 대안으로 [Formik](https://github.com/jaredpalmer/formik)과 [React Final Form](https://final-form.org/react)이 있습니다. 리액트 UI 라이브러리를 사용하는 경우 이러한 라이브러리 중 하나와 어떻게 통합되는지 확인해 보세요.
@@ -325,8 +305,6 @@ CSS-in-CSS를 선택할지, Utility-First-CSS를 선택할지는 사용자에게
 
 - React Hook Form
   - 유효성 검사를 위한 zod 통합
-
----
 
 ## 리액트 타입 검사
 
@@ -377,8 +355,6 @@ const List = ({ list }: ListProps) => (
 
 - 타입이 지정된 자바스크립트가 필요한 경우, 타입스크립트를 사용합니다.
 
----
-
 ## 리액트 코드 구조
 
 통일되고 일반적인 코드 스타일을 유지하고 싶다면 리액트 프로젝트에서 [ESLint](https://eslint.org/)를 사용하세요. ESLint와 같은 린터는 특정 코드 스타일을 강제합니다. 예를 들어, 인기 있는 스타일 가이드(예: [에어비앤비 스타일 가이드](https://www.npmjs.com/package/eslint-config-airbnb))를 따르도록 ESLint에서 요구사항으로 설정할 수 있습니다. 또한 [IDE/편집기에 ESLint](https://www.robinwieruch.de/vscode-eslint/)를 통합하면 모든 실수를 표시해 줍니다.
@@ -393,8 +369,6 @@ const List = ({ list }: ListProps) => (
 
 - ESLint + Prettier
 - Biome도 사용해 보세요.
-
----
 
 ## 리액트 인증
 
@@ -415,15 +389,11 @@ const List = ({ list }: ListProps) => (
 - [Auth0](https://auth0.com/)
 - [AWS Cognito](https://aws.amazon.com/ko/cognito/)
 
----
-
 ## 리액트 백엔드
 
 리액트를 서버로 이동시키는 강력한 추세가 있기 때문에 리액트 프로젝트의 가장 자연스러운 환경은 Next.js, Astro 또는 Remix와 같은 메타 프레임워크일 것입니다.
 
 만약 다양한 이유로 JS/TS는 사용할 수 있지만 풀스택 프레임워크를 사용할 수 없다면, [tRPC](https://trpc.io/) 또는 [Hono](https://hono.dev/)를 확인해 보셔야 합니다. 구식이지만 여전히 인기 있는 [Express](https://expressjs.com/)를 기반으로 하는 Node 백엔드도 언급할 만합니다. 다른 대안으로는 [Fastify](https://fastify.dev/)나 [Nest](https://nestjs.com/)가 있습니다.
-
----
 
 ## 리액트 데이터베이스
 
@@ -433,15 +403,11 @@ const List = ({ list }: ListProps) => (
 
 > 계속 읽기 : [웹 개발 트렌드](https://www.robinwieruch.de/web-development-trends/)
 
----
-
 ## 리액트 호스팅
 
 리액트 애플리케이션을 다른 웹 애플리케이션처럼 배포하고 호스팅할 수 있습니다. 완전한 제어를 원한다면 [Digital Ocean](https://m.do.co/c/fb27c90322f3)과 같은 것을 선택할 수 있습니다. 누군가 대신 모든 것을 처리해주길 원한다면 [Netlify](https://www.netlify.com/)나 [Vercel](https://vercel.com/ykss-projects) (특히 Next.js의 경우)이 인기 있는 솔루션입니다.
 
 이미 Firebase/Supabase와 같은 서드파티 백엔드 서비스를 사용하고 있다면, 해당 서비스가 호스팅도 제공하는지 확인해 볼 수 있습니다. 다른 인기 있는 호스팅 제공자로는 [Render](https://render.com/), [Fly.io](https://fly.io/), [Railway](https://railway.app/), 또는 더 직접적인 AWS/Azure/Google Cloud/Hetzner 등이 있습니다.
-
----
 
 ## 리액트 테스팅
 
@@ -459,13 +425,9 @@ const List = ({ list }: ListProps) => (
 - 스냅샷 테스트: Vitest
 - E2E 테스트: Playwright 또는 Cypress
 
----
-
 ## 리액트 불변 데이터 구조
 
 바닐라 자바스크립트는 데이터 구조를 불변인 것처럼 처리할 수 있는 다양한 내장 도구를 제공합니다. 하지만 불변의 데이터 구조를 강제해야 할 필요성을 느낀다면, 가장 많이 사용되는 도구는 [Immer](https://github.com/immerjs/immer)입니다.
-
----
 
 ## 리액트 국제화
 
@@ -475,8 +437,6 @@ const List = ({ list }: ListProps) => (
 - [react-i18next](https://github.com/i18next/react-i18next)
 - [Lingui](https://lingui.dev/)
 
----
-
 ## 리액트 리치 텍스트 편집기
 
 리액트의 리치 텍스트 편집기에 관해서는 아래 후보만 떠올릴 수 있습니다.
@@ -484,8 +444,6 @@ const List = ({ list }: ListProps) => (
 - [Plate](https://platejs.org/)
 - [Lexical](https://github.com/facebook/lexical)
 - [Slate.js](https://www.slatejs.org/examples/richtext)
-
----
 
 ## 리액트 결제
 
@@ -496,8 +454,6 @@ const List = ({ list }: ListProps) => (
   - [React Stripe Elements](https://github.com/stripe/react-stripe-js)
   - [Stripe Checkout](https://stripe.com/docs/payments/checkout)
 
----
-
 ## 리액트 시간
 
 리액트 애플리케이션이 날짜, 시간 및 시간대를 많이 다루는 경우, 이러한 요소들을 관리해 주는 라이브러리를 도입할 수 있습니다. 여기 몇 가지 옵션들입니다.
@@ -506,19 +462,13 @@ const List = ({ list }: ListProps) => (
 - [Day.js](https://github.com/iamkun/dayjs)
 - [Luxon](https://github.com/moment/luxon/)
 
----
-
 ## 리액트 데스크톱 애플리케이션
 
 [Electron](https://www.electronjs.org/)과 [Tauri](https://github.com/tauri-apps/tauri)는 크로스 플랫폼 데스크톱 애플리케이션을 개발하기 위한 주요 프레임워크입니다.
 
----
-
 ## 리액트 파일 업로드
 
 - [react-dropzone](https://react-dropzone.js.org/)
-
----
 
 ## 리액트 메일
 
@@ -526,21 +476,15 @@ const List = ({ list }: ListProps) => (
 - [Mailing](https://www.mailing.run/)
 - [mjml](https://mjml.io/)
 
----
-
 ## 드래그 앤 드롭
 
 개인적으로 [react-beautiful-dnd의 후속 버전](https://github.com/hello-pangea/dnd)을 사용해 봤는데, 정말 좋았습니다. 훨씬 많은 유연성과 옵션을 제공하지만 학습 곡선이 다소 가파른 비용이 있는 인기 있는 대안으로는 [dnd kit](https://dndkit.com/)이 있습니다. 이 분야의 또 다른 대안으로는 [react-dnd](https://github.com/react-dnd/react-dnd)가 있습니다.
-
----
 
 ## 리액트 모바일 개발
 
 리액트를 웹에서 모바일로 가져오는 가장 일반적인 해결책은 여전히 [React Native](https://reactnative.dev/)입니다. React Native 애플리케이션을 만들기 위한 가장 인기 있는 프레임워크는 [Expo](https://www.robinwieruch.de/react-native-expo/)입니다. 웹과 모바일에서 통일된 컴포넌트가 필요하다면 [Tamagui](https://tamagui.dev/)를 확인해보는 것이 좋습니다.
 
 > 계속 읽기 : [React Native에서 탐색 배우기](https://www.robinwieruch.de/react-native-navigation/)
-
----
 
 ## 리액트 VR/AR
 
@@ -550,13 +494,9 @@ const List = ({ list }: ListProps) => (
 - [react-360](https://facebook.github.io/react-360/)
 - [aframe-react](https://github.com/supermedium/aframe-react)
 
----
-
 ## 리액트 디자인 프로토타이핑
 
 UI/UX 배경을 가지고 있다면, 새로운 리액트 컴포넌트, 레이아웃 또는 UI/UX 개념을 빠르게 프로토타이핑할 수 있는 도구를 사용하고 싶을 것입니다. 개인적으로는 [Figma](https://www.figma.com/)를 사용합니다. 대략적이고 가벼운 스케치에는 [Excalidraw](https://excalidraw.com/)를 선호하며, 어떤 사람들은 [tldraw](https://www.tldraw.com/)를 선호하기도 합니다.
-
----
 
 ## 리액트 컴포넌트 문서화
 
