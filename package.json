@@ -35,7 +35,7 @@
     "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.17",
     "intersection-observer": "^0.5.1",
-    "katex": "^0.11.1",
+    "katex": "^0.16.10",
     "lodash": "^4.17.21",
     "node-sass": "^4.14.0",
     "prismjs": "^1.25.0",
