@@ -154,7 +154,7 @@ Facebook의 **[BigPipe](https://engineering.fb.com/2010/06/04/web/bigpipe-pipeli
 초기 페이지 로딩 외에도 RSC는 직렬화된 가상 DOM을 다운로드 할 수 있게 합니다. **기술적 관점**에서 볼 때 얻을 수 있는 인사이트는 Suspense가 렌더링이 비동기식이고 순서가 없이 스트리밍될 때, 일관된 렌더링 문제를 해결한다는 것입니다.
 
   <details>
-  <summary>더 자세히 알아보기</summary>
+  <summary>* 더 자세히 알아보기</summary>
   <div markdown="1">
   프레임워크의 반응성 시스템이 해결하는 핵심 문제는 시간이 지남에 따라 데이터가 변경될 때 사용자 인터페이스가 일관되게 렌더링되도록 하는 방법입니다.
 
