@@ -2,7 +2,7 @@
 title: '(번역) 프런트엔드의 미래 탐색하기'
 date: 2024-04-16 01:00:00
 category: 'Translation'
-draft: true
+draft: false
 ---
 
 > 원문 : [Navigating the future of frontend](https://frontendmastery.com/posts/navigating-the-future-of-frontend/)
