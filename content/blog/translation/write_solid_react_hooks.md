@@ -5,6 +5,8 @@ category: 'Translation'
 draft: false
 ---
 
+<link rel="canonical" href="https://www.ykss.netlify.app">
+
 > 원문 : [Write SOLID React Hooks](https://www.perssondennis.com/articles/write-solid-react-hooks)
 
 ![](https://www.perssondennis.com/_next/image?url=%2Fimages%2Farticles%2Fwrite-solid-react-hooks%2Fwrite-solid-react-hooks.webp&w=2048&q=50)
