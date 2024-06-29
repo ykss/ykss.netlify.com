@@ -3,9 +3,8 @@ title: '(번역) SOLID 원칙으로 리액트 훅 작성하기'
 date: 2024-06-17 01:00:00
 category: 'Translation'
 draft: false
+canonicalUrl: 'https://www.ykss.netlify.app'
 ---
-
-<link rel="canonical" href="https://www.ykss.netlify.app">
 
 > 원문 : [Write SOLID React Hooks](https://www.perssondennis.com/articles/write-solid-react-hooks)
 

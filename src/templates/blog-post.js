@@ -30,7 +30,7 @@ export default ({ data, pageContext, location }) => {
   const slug = pageContext.slug;
   const { title, comment, siteUrl, author, sponsor } = metaData;
   const { disqusShortName, utterances } = comment;
-  const { title: postTitle, date, thumbnail } = post.frontmatter;
+  const { title: postTitle, date, thumbnail, canonicalUrl } = post.frontmatter;
   const thumbnailSrc = thumbnail
     ? `${siteUrl}${thumbnail.childImageSharp.fixed.src}`
     : undefined;
@@ -41,6 +41,7 @@ export default ({ data, pageContext, location }) => {
         title={postTitle}
         description={post.excerpt}
         thumbnail={thumbnailSrc}
+        canonicalUrl={canonicalUrl}
       />{' '}
       <PostTitle title={postTitle} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -97,6 +98,7 @@ export const pageQuery = graphql`
             }
           }
         }
+        canonicalUrl
       }
     }
   }

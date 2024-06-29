@@ -1,15 +1,22 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
 
-export function Head({ description, lang, meta, keywords, title }) {
+export function Head({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  canonicalUrl,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
-          description || data.site.siteMetadata.description
+          description || data.site.siteMetadata.description;
         return (
           <Helmet
             htmlAttributes={{
@@ -60,18 +67,20 @@ export function Head({ description, lang, meta, keywords, title }) {
                   : []
               )
               .concat(meta)}
-          />
-        )
+          >
+            {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+          </Helmet>
+        );
       }}
     />
-  )
+  );
 }
 
 Head.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
-}
+};
 
 Head.propTypes = {
   description: PropTypes.string,
@@ -79,7 +88,7 @@ Head.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-}
+};
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -91,4 +100,4 @@ const detailsQuery = graphql`
       }
     }
   }
-`
+`;
