@@ -164,7 +164,7 @@ animation: if(media(prefers-reduced-motion) ? 10s: 1s) rainbow infinite;
 
 > 정보 : 이 단계들은 반드시 순차적인 것은 아닙니다. 초기 버전을 명세화하고 나서 다른 문법에 대해 합의하고 명세를 업데이트하는 경우가 종종 있습니다. 때로는 브라우저가 초기 문법을 구현하고 나서 문법이 변경되어 구현을 변경해야 하는 경우도 있습니다(이는 [중첩](https://lea.verou.me/specs/#relaxed-css-nesting) 기능에서도 발생했습니다).
 
-> 참고 : **이 작업이 더 빨리 일어나길 원하나요? `if()`에 대한 기대가 크고 감사함을 표현하고 싶나요? [Open Collective에서 제 웹 표준 작업을 후원해주세요(https://opencollective.com/leaverou/projects/standards-work)].** 이 블로그 글을 쓰면서 실험적으로 시작한 것이며, 많이 홍보할 계획은 없지만, 관심이 있으시면 참고해 보세요.
+> 참고 : **이 작업이 더 빨리 일어나길 원하나요? `if()`에 대한 기대가 크고 감사함을 표현하고 싶나요? [Open Collective에서 제 웹 표준 작업을 후원해주세요](https://opencollective.com/leaverou/projects/standards-work).** 이 블로그 글을 쓰면서 실험적으로 시작한 것이며, 많이 홍보할 계획은 없지만, 관심이 있으시면 참고해 보세요.
 
 ## CSS에서 첫 번째 조건부 문법인가요?
 
