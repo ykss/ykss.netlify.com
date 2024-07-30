@@ -177,7 +177,7 @@ animation: if(media(prefers-reduced-motion) ? 10s: 1s) rainbow infinite;
 - `@media`와 `@supports` 규칙도 조건문입니다. 그리고 `@container`를 잊지 마세요.
 - `var(--foo, fallback)`은 제한된 형태의 조건문입니다(기본적으로 `if(style(--foo: initial) ? var(--foo) : fallback)`과 같습니다). 따라서 인라인 조건문을 에뮬레이트하기 위한 대부분의 [해결 방법](https://github.com/w3c/csswg-drafts/issues/10064#issuecomment-2161742249)의 기초가 됩니다.
 
-## 이것이 CSS를 명령형으로 만드나요?
+## `if()`가 CSS를 명령형으로 만드나요?
 
 널리 퍼진 오해는 비선형 로직(조건문, 반복문)가 언어를 명령형으로 만든다는 것입니다.
 
@@ -214,7 +214,7 @@ button {
 
 후자가 목표를 달성하는 방법보다 목표를 지정하는 것에 훨씬 더 가깝다는 점에서 더 선언적이라고 주장하고 싶습니다.
 
-## if가 CSS를 프로그래밍 언어로 만드나요?
+## `if()`가 CSS를 프로그래밍 언어로 만드나요?
 
 매우 흔한 반응 중 하나는 CSS가 이제 프로그래밍 언어가 되었는지에 대한 질문 또는 주장이었습니다. 이를 답하기 위해서는 먼저 프로그래밍 언어가 *무엇*인지 답해야 합니다.
 
