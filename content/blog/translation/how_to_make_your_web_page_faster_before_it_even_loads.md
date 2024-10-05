@@ -102,11 +102,11 @@ Sentry에서는 연결 이벤트와 TLS 이벤트가 별도의 스팬으로 보�
 
 ![image_3_Sentry_Trace_View](https://images.ctfassets.net/em6l9zw4tzag/7hEwSobeWxNqZWp9vWj4p2/764663d4652675b7a1adaeef371a62d6/image_3_Sentry_Trace_View.png)
 
-## 브라우저 요청
+### 브라우저 요청
 
 웹 서버와 (보안) 연결 후 브라우저는 `requestStart` 이벤트로 표시되는 리소스 요청을 공식적으로 시작합니다.
 
-## 브라우저 응답
+### 브라우저 응답
 
 마지막으로, 브라우저는 콘텐츠의 첫 번째 바이트를 수신합니다. Sentry Trace View에서 TTFB(첫 바이트까지의 시간) 수직선이 여기에 표시됩니다.
 
