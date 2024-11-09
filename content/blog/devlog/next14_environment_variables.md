@@ -1,5 +1,5 @@
 ---
-title: 'Next 14의 환경변수 및 런타임 환경 변수 주입하기'
+title: 'Next.js의 환경 변수와 런타임 환경 변수 활용'
 date: 2024-11-10 01:00:00
 category: 'DevLog'
 draft: false
