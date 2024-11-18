@@ -448,7 +448,7 @@ body {
 - [`descent-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/descent-override) – 글리프의 베이스라인 아래 높이를 증가 또는 감소시킬 백분율 값을 지정합니다.
 - [`line-gap-override`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/line-gap-override) – 줄 간격을 증가 또는 감소시킬 백분율 값을 지정합니다.
 
-## `@font-face` 규칙을 페이지 헤드 섹션에 인라인하세요
+## `@font-face` 규칙을 페이지 `<head>` 섹션에 인라인하세요
 
 폰트를 가능한 빨리 다운로드하려면 HTML 페이지의 `<head>` 섹션에 `@font-face` 규칙을 [중요한 CSS](https://unused-css.com/blog/improving-perceived-speed-with-critical-css/)의 일부로 인라인하세요.
 
