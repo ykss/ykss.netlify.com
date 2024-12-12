@@ -227,13 +227,19 @@ startTransition(() => {
 
 다음은 전환을 지원하지 않는 이전 아키텍처와 전환을 지원하는 새로운 아키텍처의 비교입니다. 각 타일이 단순한 배경색 뷰가 아니라 이미지를 포함한 복잡한 컴포넌트라고 상상해 보세요. `useTransition`을 **사용하면** 앱이 업데이트로 인해 과부하 되거나 뒤처지는 것을 방지할 수 있습니다.
 
-![transitions을 지원하지 않는 경우](https://reactnative.dev/img/new-architecture/without-transitions.gif)
+<img alt="transitions을 지원하지 않는 경우" src="https://reactnative.dev/img/new-architecture/without-transitions.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### **이전**: 전환으로 표시하지 않고 타일을 렌더링 합니다
+**이전**: 전환으로 표시하지 않고 타일을 렌더링 합니다
 
-![transitions을 지원하는 경우](https://reactnative.dev/img/new-architecture/with-transitions.gif)
+<img alt="transitions을 지원하는 경우" src="https://reactnative.dev/img/new-architecture/with-transitions.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### **이후**: 진행 중인 렌더링을 중단하는 트랜지션이 있는 타일을 렌더링 하여 오래된 상태의 렌더링을 중단합니다.
+**이후**: 진행 중인 렌더링을 중단하는 트랜지션이 있는 타일을 렌더링 하여 오래된 상태의 렌더링을 중단합니다.
 
 자세한 내용은 [동시성 렌더러 및 기능 지원](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page#support-for-concurrent-renderer-and-features)을 참조하세요.
 
@@ -243,13 +249,19 @@ startTransition(() => {
 
 자동 배치은 리액트가 렌더링 시 더 많은 상태 업데이트를 하나로 묶어 중간 상태의 렌더링을 방지합니다. 이를 통해 리액트 네이티브는 개발자가 추가 코드를 작성할 필요 없이 더 빠르고 지연이 적은 상태로 작동합니다.
 
-![레거시 렌더러](https://reactnative.dev/img/new-architecture/legacy-renderer.gif)
+<img alt="레거시 렌더러" src="https://reactnative.dev/img/new-architecture/legacy-renderer.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### **이전**: 레거시 렌더러로 빈번한 상태 업데이트를 렌더링 했습니다.
+**이전**: 레거시 렌더러로 빈번한 상태 업데이트를 렌더링 했습니다.
 
-![리액트 18 렌더러](https://reactnative.dev/img/new-architecture/react18-renderer.gif)
+<img alt="리액트 18 렌더러" src="https://reactnative.dev/img/new-architecture/react18-renderer.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### **이후**: 자동 일괄 처리로 빈번한 상태 업데이트를 렌더링 합니다.
+**이후**: 자동 일괄 처리로 빈번한 상태 업데이트를 렌더링 합니다.
 
 이전 아키텍처에서는 더 많은 중간 상태가 렌더링 되었으며, 슬라이더가 멈추더라도 UI가 계속 업데이트되었습니다. 새로운 아키텍처에서는 자동 배치 덕분에 중간 상태가 적게 렌더링 되고 렌더링이 훨씬 빨리 완료됩니다.
 
@@ -290,13 +302,19 @@ useLayoutEffect(() => {
 
 이 변경을 통해 레이아웃 정보를 동기적으로 읽고 동일한 프레임에서 UI를 업데이트할 수 있으며, 사용자에게 요소가 표시되기 전에 정확한 위치로 배치할 수 있습니다.
 
-<img alt="비동기 onLayout" src="https://reactnative.dev/img/new-architecture/async-on-layout.gif" width="352px">
+<img alt="비동기 onLayout" src="https://reactnative.dev/img/new-architecture/async-on-layout.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### 이전 아키텍처에서는 레이아웃을 `onLayout`에서 비동기적으로 읽었기 때문에 툴팁의 위치가 지연되었습니다.
+이전 아키텍처에서는 레이아웃을 `onLayout`에서 비동기적으로 읽었기 때문에 툴팁의 위치가 지연되었습니다.
 
-<img alt="동기 useLayoutEffect" src="https://reactnative.dev/img/new-architecture/sync-use-layout-effect.gif" width="352px">
+<img alt="동기 useLayoutEffect" src="https://reactnative.dev/img/new-architecture/sync-use-layout-effect.gif" width="352px" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;">
 
-#### 새 아키텍처에서는 레이아웃을 `useLayoutEffect`에서 동기식으로 읽어서 표시하기 전에 툴팁 위치를 업데이트할 수 있습니다.
+새 아키텍처에서는 레이아웃을 `useLayoutEffect`에서 동기식으로 읽어서 표시하기 전에 툴팁 위치를 업데이트할 수 있습니다.
 
 자세한 내용은 [동기적 레이아웃 및 효과 문서](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page#synchronous-layout-and-effects)를 참조하세요.
 
