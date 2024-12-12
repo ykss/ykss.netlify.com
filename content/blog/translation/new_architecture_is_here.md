@@ -237,11 +237,11 @@ startTransition(() => {
 
 자세한 내용은 [동시성 렌더러 및 기능 지원](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page#support-for-concurrent-renderer-and-features)을 참조하세요.
 
-### 자동 배칭(Automatic Batching)
+### 자동 배치(Automatic Batching)
 
-새로운 아키텍처로 업그레이드하면 리액트 18의 자동 배칭 기능을 사용할 수 있습니다.
+새로운 아키텍처로 업그레이드하면 리액트 18의 자동 배치 기능을 사용할 수 있습니다.
 
-자동 배칭은 리액트가 렌더링 시 더 많은 상태 업데이트를 하나로 묶어 중간 상태의 렌더링을 방지합니다. 이를 통해 리액트 네이티브는 개발자가 추가 코드를 작성할 필요 없이 더 빠르고 지연이 적은 상태로 작동합니다.
+자동 배치은 리액트가 렌더링 시 더 많은 상태 업데이트를 하나로 묶어 중간 상태의 렌더링을 방지합니다. 이를 통해 리액트 네이티브는 개발자가 추가 코드를 작성할 필요 없이 더 빠르고 지연이 적은 상태로 작동합니다.
 
 ![레거시 렌더러](https://reactnative.dev/img/new-architecture/legacy-renderer.gif)
 
@@ -251,7 +251,7 @@ startTransition(() => {
 
 #### **이후**: 자동 일괄 처리로 빈번한 상태 업데이트를 렌더링 합니다.
 
-이전 아키텍처에서는 더 많은 중간 상태가 렌더링 되었으며, 슬라이더가 멈추더라도 UI가 계속 업데이트되었습니다. 새로운 아키텍처에서는 자동 배칭 덕분에 중간 상태가 적게 렌더링 되고 렌더링이 훨씬 빨리 완료됩니다.
+이전 아키텍처에서는 더 많은 중간 상태가 렌더링 되었으며, 슬라이더가 멈추더라도 UI가 계속 업데이트되었습니다. 새로운 아키텍처에서는 자동 배치 덕분에 중간 상태가 적게 렌더링 되고 렌더링이 훨씬 빨리 완료됩니다.
 
 자세한 내용은 [동시성 렌더러 및 기능 지원](https://reactnative.dev/docs/0.75/the-new-architecture/landing-page#support-for-concurrent-renderer-and-features)을 참조하세요.
 
