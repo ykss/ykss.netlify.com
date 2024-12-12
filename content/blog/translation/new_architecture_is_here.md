@@ -5,6 +5,8 @@ category: 'Translation'
 draft: false
 ---
 
+![react native](https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Freactnative.dev%2Fimg%2Flogo-share.png&is_viewed=1)
+
 > 원문 : [New Architecture is here](https://reactnative.dev/blog/2024/10/23/the-new-architecture-is-here)
 
 새로운 아키텍처가 기본으로 포함된 리액트 네이티브 0.76을 이제 npm에서 사용할 수 있습니다!
