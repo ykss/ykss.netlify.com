@@ -290,11 +290,11 @@ useLayoutEffect(() => {
 
 이 변경을 통해 레이아웃 정보를 동기적으로 읽고 동일한 프레임에서 UI를 업데이트할 수 있으며, 사용자에게 요소가 표시되기 전에 정확한 위치로 배치할 수 있습니다.
 
-![비동기 onLayout](https://reactnative.dev/img/new-architecture/async-on-layout.gif)
+<img alt="비동기 onLayout" src="https://reactnative.dev/img/new-architecture/async-on-layout.gif" width="352px">
 
 #### 이전 아키텍처에서는 레이아웃을 `onLayout`에서 비동기적으로 읽었기 때문에 툴팁의 위치가 지연되었습니다.
 
-![동기 useLayoutEffect](https://reactnative.dev/img/new-architecture/sync-use-layout-effect.gif)
+<img alt="동기 useLayoutEffect" src="https://reactnative.dev/img/new-architecture/sync-use-layout-effect.gif" width="352px">
 
 #### 새 아키텍처에서는 레이아웃을 `useLayoutEffect`에서 동기식으로 읽어서 표시하기 전에 툴팁 위치를 업데이트할 수 있습니다.
 
