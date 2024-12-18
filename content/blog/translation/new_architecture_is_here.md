@@ -1,6 +1,6 @@
 ---
 title: '(번역) 리액트 네이티브의 새로운 아키텍처가 출시되었습니다'
-date: 2024-12-23 09:30:00
+date: 2024-12-16 09:30:00
 category: 'Translation'
 draft: false
 ---
