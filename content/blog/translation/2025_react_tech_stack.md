@@ -1,6 +1,6 @@
 ---
 title: '(번역) 2025 리액트 기술 스택'
-date: 2024-01-06 09:30:00
+date: 2025-01-06 09:30:00
 category: 'Translation'
 draft: false
 ---
