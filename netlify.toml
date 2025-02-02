@@ -1,0 +1,12 @@
+[build]
+command = "npm install --platform=linux --arch=x64 sharp@0.25.2 && npm run build"
+publish = "public"
+
+[build.environment]
+NODE_VERSION = "14.15.0"
+SHARP_IGNORE_GLOBAL_LIBVIPS = "1"
+
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"
+  [plugins.inputs]
+  paths = ["node_modules/.cache", "public/.cache"] 
