@@ -6,7 +6,6 @@ import { Layout } from '../layout';
 import { Head } from '../components/head';
 import { PostTitle } from '../components/post-title';
 import { PostDate } from '../components/post-date';
-import { PostHits } from '../components/post-hits';
 import { PostContainer } from '../components/post-container';
 import { SocialShare } from '../components/social-share';
 import { SponsorButton } from '../components/sponsor-button';
@@ -46,7 +45,6 @@ export default ({ data, pageContext, location }) => {
       <PostTitle title={postTitle} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <PostDate date={date} />
-        <PostHits slug={slug} />
       </div>
       <PostContainer html={post.html} />{' '}
       {!!sponsor.buyMeACoffeeId && (
