@@ -1,7 +1,7 @@
 ---
 title: '2025년 리액트 네이티브로 프로젝트 시작하기'
 date: 2025-02-02 11:30:00
-category: 'Devlog'
+category: 'DevLog'
 draft: false
 ---
 
