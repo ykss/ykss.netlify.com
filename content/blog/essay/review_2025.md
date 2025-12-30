@@ -63,8 +63,8 @@ draft: false
 
 ## 독서
 
-<img src="./images/book_2025.jpeg" alt="books" width="250">
-<img src="./images/book2_2025.jpeg" alt="books" width="250">
+<img src="./images/book_2025.jpeg" alt="books" width="250" style="display: inline-block; margin-right: 10px;">
+<img src="./images/book2_2025.jpeg" alt="books2" width="250" style="display: inline-block;">
 
 올해 한 달에 한 권인 12권을 읽자는 목표를 세웠었는데, 무려 38권(+ 현재 거의 다 읽은 책까지 하면 39권!)이라는 고무적인 독서를 했다. 읽은 책 한 권씩 선명하게 기억나진 않지만, 책 읽는 습관을 가지면서 독서를 통해 많은 부분에서 배우고 성장했다고 느낀다. 올해는 경제 관련 서적, 재테크, 신앙서적, 문학 등 정말 다양한 책들을 읽었는데 아무래도 제일 많이 읽은 것은 재정에 대한 책이었다. 그래서 올 한 해는 재정적으로 나만의 생각이나 원칙 같은 것들이 많이 세워지게 되었고, 자산배분 등에 대해도 많이 관심을 가지게 되고 여러모로 세상을 바라보는 인사이트를 키운 한 해였다.
 
