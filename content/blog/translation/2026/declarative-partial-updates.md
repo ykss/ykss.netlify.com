@@ -97,7 +97,7 @@ Chrome 팀은 이 문제를 고민해 왔으며, 웹 플랫폼에 [선언적 부
 
 다음 영상은 스트리밍 HTML로 구현한 기본 사진 앨범 애플리케이션입니다.
 
-![비순서 스트리밍으로 구현된 사진 앨범 데모](https://developer.chrome.com/blog/declarative-partial-updates/image/patching-photo-album-poster.jpg)
+<video muted="" loop="" controls="" autoplay="" width="100%"> <source src="https://developer.chrome.com/static/blog/declarative-partial-updates/video/patching-photo-album.mp4?hl=ko" type="video/mp4"> </video>
 
 비순서 스트리밍으로 구현된 사진 앨범 데모 ([소스](https://github.com/GoogleChromeLabs/web-perf-demos/blob/main/patching-demos/photo-album-server.js))
 
