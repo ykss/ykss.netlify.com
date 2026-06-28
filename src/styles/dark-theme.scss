@@ -1,3 +1,5 @@
+@use './variables.scss' as *;
+
 body.dark {
   background-color: $dark-background-color;
   text-shadow: $dark-text-shadow;

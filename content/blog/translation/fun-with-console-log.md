@@ -111,7 +111,7 @@ for (var i = 1; i <= 1e6; i++) {
 console.timeEnd('concatenation');
 ```
 
-```cmd
+```bash
 concatenation: 1206ms - timer ended
 ```
 

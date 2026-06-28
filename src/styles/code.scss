@@ -5,8 +5,8 @@
  * @custoimized by Jbee
  */
 
+@use './variables.scss' as *;
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
-@import './variables.scss';
 
 .gatsby-highlight-code-line {
   background-color: hsla(207, 95%, 15%, 1);
