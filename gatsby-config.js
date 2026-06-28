@@ -92,12 +92,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: metaConfig.ad,
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `

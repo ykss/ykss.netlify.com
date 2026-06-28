@@ -93,18 +93,11 @@ export const Head = ({ data }) => {
   const { siteMetadata } = data.site
 
   return (
-    <>
-      <Seo
-        title={HOME_TITLE}
-        keywords={siteMetadata.keywords}
-        siteMetadata={siteMetadata}
-      />
-      <script
-        data-ad-client="ca-pub-5924627079296495"
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      />
-    </>
+    <Seo
+      title={HOME_TITLE}
+      keywords={siteMetadata.keywords}
+      siteMetadata={siteMetadata}
+    />
   )
 }
 
