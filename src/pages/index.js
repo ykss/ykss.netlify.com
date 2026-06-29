@@ -7,6 +7,7 @@ import { Bio } from '../components/bio'
 import { Seo } from '../components/head'
 import { Category } from '../components/category'
 import { Contents } from '../components/contents'
+import { PostSearch } from '../components/post-search'
 
 import * as ScrollManager from '../utils/scroll'
 import * as Storage from '../utils/storage'
@@ -29,6 +30,7 @@ export default ({ data, location }) => {
   const [count, setCount] = useState(initialCount)
   const countRef = useRef(count)
   const [category, setCategory] = useState(initialCategory)
+  const [searchQuery, setSearchQuery] = useState('')
 
   const { siteMetadata } = data.site
   const { countOfInitialPost } = siteMetadata.configs
@@ -56,7 +58,13 @@ export default ({ data, location }) => {
 
   const selectCategory = category => {
     setCategory(category)
+    setCount(1)
     ScrollManager.go(DEST_POS)
+  }
+
+  const searchPosts = searchQuery => {
+    setSearchQuery(searchQuery)
+    setCount(1)
   }
 
   const onScroll = () => {
@@ -74,6 +82,7 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteMetadata.title}>
       <Bio />
+      <PostSearch searchQuery={searchQuery} onSearch={searchPosts} />
       <Category
         categories={categories}
         category={category}
@@ -84,6 +93,7 @@ export default ({ data, location }) => {
         countOfInitialPost={countOfInitialPost}
         count={count}
         category={category}
+        searchQuery={searchQuery}
       />
     </Layout>
   )
