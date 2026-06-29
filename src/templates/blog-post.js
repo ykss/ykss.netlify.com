@@ -11,6 +11,7 @@ import { SocialShare } from '../components/social-share';
 import { SponsorButton } from '../components/sponsor-button';
 import { Bio } from '../components/bio';
 import { PostNavigator } from '../components/post-navigator';
+import { TableOfContents } from '../components/table-of-contents';
 import { Disqus } from '../components/disqus';
 import { Utterences } from '../components/utterances';
 import * as ScrollManager from '../utils/scroll';
@@ -29,7 +30,13 @@ export default ({ data, pageContext, location }) => {
   const slug = pageContext.slug;
   const { title, comment, siteUrl, author, sponsor } = metaData;
   const { disqusShortName, utterances } = comment;
-  const { title: postTitle, date, thumbnail, canonicalUrl } = post.frontmatter;
+  const {
+    title: postTitle,
+    date,
+    thumbnail,
+    canonicalUrl,
+    toc,
+  } = post.frontmatter;
   const thumbnailSrc = thumbnail
     ? `${siteUrl}${thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}`
     : undefined;
@@ -40,6 +47,7 @@ export default ({ data, pageContext, location }) => {
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <PostDate date={date} />
       </div>
+      {toc !== false && <TableOfContents headings={post.headings} />}
       <PostContainer html={post.html} />{' '}
       {!!sponsor.buyMeACoffeeId && (
         <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
@@ -100,9 +108,15 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 280)
       html
+      headings {
+        id
+        value
+        depth
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        toc
         thumbnail {
           childImageSharp {
             gatsbyImageData(width: 600, layout: FIXED)

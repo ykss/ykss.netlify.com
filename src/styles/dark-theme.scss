@@ -75,6 +75,24 @@ body.dark {
     border-bottom-color: rgba(255, 255, 255, 0.3);
   }
 
+  .table-of-contents {
+    color: $dark-middle-font-color;
+
+    .table-of-contents__link--active,
+    a:hover {
+      color: $dark-lightest-font-color;
+    }
+  }
+
+  .table-of-contents--mobile {
+    background-color: $dark-category-background-color;
+    border: 1px solid $dark-category-border-color;
+  }
+
+  .table-of-contents--desktop {
+    border-left: 1px solid $dark-category-border-color;
+  }
+
   .navigator {
     a {
       background-color: $navigator-background-color;
