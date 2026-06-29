@@ -35,6 +35,7 @@ const TocLinks = ({ headings, activeId }) => (
 export const TableOfContents = ({ headings }) => {
   const [activeId, setActiveId] = useState('')
   const tocHeadings = useMemo(() => getVisibleHeadings(headings), [headings])
+  const activeHeading = tocHeadings.find(heading => heading.id === activeId)
 
   useEffect(() => {
     if (!tocHeadings.length) {
@@ -117,6 +118,12 @@ export const TableOfContents = ({ headings }) => {
 
     window.history.replaceState(null, '', href)
     setActiveId(target.id)
+
+    const mobileToc = event.currentTarget.closest('details')
+
+    if (mobileToc) {
+      mobileToc.open = false
+    }
   }
 
   if (tocHeadings.length < MIN_HEADING_COUNT) {
@@ -134,7 +141,14 @@ export const TableOfContents = ({ headings }) => {
         <TocLinks headings={tocHeadings} activeId={activeId} />
       </nav>
       <details className="table-of-contents table-of-contents--mobile">
-        <summary className="table-of-contents__summary">Contents</summary>
+        <summary className="table-of-contents__summary">
+          <span>Contents</span>
+          {activeHeading && (
+            <span className="table-of-contents__current">
+              {activeHeading.value}
+            </span>
+          )}
+        </summary>
         <nav aria-label="Table of contents" onClick={handleClick}>
           <TocLinks headings={tocHeadings} activeId={activeId} />
         </nav>

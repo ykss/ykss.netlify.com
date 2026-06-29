@@ -7,21 +7,23 @@ export const PostNavigator = ({ pageContext }) => {
   const { previous, next } = pageContext
 
   return (
-    <ul className="navigator">
-      <li>
+    <nav className="navigator" aria-label="Previous and next posts">
+      <div className="navigator__item">
         {previous && (
-          <Link to={previous.fields.slug} rel="prev">
-            ← {previous.frontmatter.title}
+          <Link className="navigator__link" to={previous.fields.slug} rel="prev">
+            <small>Previous</small>
+            <span>{previous.frontmatter.title}</span>
           </Link>
         )}
-      </li>
-      <li>
+      </div>
+      <div className="navigator__item">
         {next && (
-          <Link to={next.fields.slug} rel="next">
-            {next.frontmatter.title} →
+          <Link className="navigator__link" to={next.fields.slug} rel="next">
+            <small>Next</small>
+            <span>{next.frontmatter.title}</span>
           </Link>
         )}
-      </li>
-    </ul>
+      </div>
+    </nav>
   )
 }
