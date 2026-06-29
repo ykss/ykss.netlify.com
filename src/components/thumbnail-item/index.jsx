@@ -19,7 +19,9 @@ export const ThumbnailItem = ({ node, searchQuery }) => (
       <small>{new Date(node.frontmatter.date).toLocaleDateString()}</small>
       <p
         dangerouslySetInnerHTML={{
-          __html: highlightSearchText(node.excerpt, searchQuery),
+          __html: highlightSearchText(node.excerpt, searchQuery, {
+            preserveHtml: true,
+          }),
         }}
       />
     </div>

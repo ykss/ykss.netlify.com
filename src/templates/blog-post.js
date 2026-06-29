@@ -20,7 +20,7 @@ import * as ScrollManager from '../utils/scroll';
 import '../styles/code.scss';
 import 'katex/dist/katex.min.css';
 
-export default ({ data, pageContext, location }) => {
+const BlogPostTemplate = ({ data, pageContext, location }) => {
   useEffect(() => {
     ScrollManager.init();
     return () => ScrollManager.destroy();
@@ -69,6 +69,8 @@ export default ({ data, pageContext, location }) => {
     </Layout>
   );
 };
+
+export default BlogPostTemplate;
 
 export const Head = ({ data }) => {
   const post = data.markdownRemark;

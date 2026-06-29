@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 export function Seo({
   description,
-  lang,
-  meta,
-  keywords,
+  lang = `en`,
+  meta = [],
+  keywords = [],
   siteMetadata,
-  thumbnail,
+  thumbnail = undefined,
   title,
-  canonicalUrl,
+  canonicalUrl = undefined,
 }) {
   const metaDescription = description || siteMetadata.description;
   const metaTags = [
@@ -84,14 +84,6 @@ export function Seo({
     </>
   );
 }
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-  thumbnail: undefined,
-  canonicalUrl: undefined,
-};
 
 Seo.propTypes = {
   description: PropTypes.string,
