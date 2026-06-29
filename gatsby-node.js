@@ -1,6 +1,16 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+
+  createTypes(`
+    type MarkdownRemarkFrontmatter {
+      toc: Boolean
+    }
+  `);
+};
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
