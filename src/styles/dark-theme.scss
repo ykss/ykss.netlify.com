@@ -46,8 +46,13 @@ body.dark {
     }
   }
 
-  .post-search__empty {
+  .post-search__empty,
+  .post-search__summary {
     color: $dark-middle-font-color;
+  }
+
+  .post-search-highlight {
+    background-color: rgba(255, 218, 76, 0.32);
   }
 
   .post-search__input {

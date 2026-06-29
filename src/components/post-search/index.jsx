@@ -2,7 +2,7 @@ import React from 'react'
 
 import './index.scss'
 
-export const PostSearch = ({ searchQuery, onSearch }) => (
+export const PostSearch = ({ searchQuery, onSearch, inputRef }) => (
   <form
     className="post-search"
     role="search"
@@ -13,6 +13,7 @@ export const PostSearch = ({ searchQuery, onSearch }) => (
     </label>
     <div className="post-search__control">
       <input
+        ref={inputRef}
         id="post-search"
         className="post-search__input"
         type="search"
