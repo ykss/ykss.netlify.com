@@ -12,9 +12,14 @@ import { SocialShare } from '../components/social-share';
 import { SponsorButton } from '../components/sponsor-button';
 import { Bio } from '../components/bio';
 import { PostNavigator } from '../components/post-navigator';
+import { RelatedPosts } from '../components/related-posts';
 import { TableOfContents } from '../components/table-of-contents';
 import { Disqus } from '../components/disqus';
 import { Utterences } from '../components/utterances';
+import {
+  buildBlogPostingJsonLd,
+  getRelatedPosts,
+} from '../utils/post-recommendations';
 import * as ScrollManager from '../utils/scroll';
 
 import '../styles/code.scss';
@@ -36,11 +41,16 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     date,
     thumbnail,
     canonicalUrl,
+    category,
     toc,
   } = post.frontmatter;
   const thumbnailSrc = thumbnail
     ? `${siteUrl}${thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}`
     : undefined;
+  const relatedPosts = getRelatedPosts(data.relatedPosts.edges, {
+    slug,
+    category,
+  });
 
   return (
     <Layout location={location} title={title}>
@@ -56,6 +66,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       )}{' '}
       <Elements.Hr />
       <Bio />
+      <RelatedPosts posts={relatedPosts} />
       <PostNavigator pageContext={pageContext} />{' '}
       {!!disqusShortName && (
         <Disqus
@@ -75,19 +86,38 @@ export default BlogPostTemplate;
 export const Head = ({ data }) => {
   const post = data.markdownRemark;
   const siteMetadata = data.site.siteMetadata;
-  const { title: postTitle, thumbnail, canonicalUrl } = post.frontmatter;
+  const {
+    title: postTitle,
+    isoDate,
+    thumbnail,
+    canonicalUrl,
+  } = post.frontmatter;
   const thumbnailSrc = thumbnail
     ? `${siteMetadata.siteUrl}${thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}`
     : undefined;
+  const postUrl = `${siteMetadata.siteUrl}${post.fields.slug}`;
+  const jsonLd = buildBlogPostingJsonLd({
+    author: siteMetadata.author,
+    canonicalUrl,
+    datePublished: isoDate,
+    description: post.excerpt,
+    image: thumbnailSrc,
+    siteUrl: siteMetadata.siteUrl,
+    title: postTitle,
+    url: postUrl,
+  });
 
   return (
-    <Seo
-      title={postTitle}
-      description={post.excerpt}
-      thumbnail={thumbnailSrc}
-      canonicalUrl={canonicalUrl}
-      siteMetadata={siteMetadata}
-    />
+    <>
+      <Seo
+        title={postTitle}
+        description={post.excerpt}
+        thumbnail={thumbnailSrc}
+        canonicalUrl={canonicalUrl}
+        siteMetadata={siteMetadata}
+      />
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </>
   );
 };
 
@@ -111,6 +141,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 280)
+      fields {
+        slug
+      }
       html
       headings {
         id
@@ -120,6 +153,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        isoDate: date(formatString: "YYYY-MM-DD")
+        category
         toc
         thumbnail {
           childImageSharp {
@@ -127,6 +162,26 @@ export const pageQuery = graphql`
           }
         }
         canonicalUrl
+      }
+    }
+    relatedPosts: allMarkdownRemark(
+      sort: { frontmatter: { date: DESC } }
+      filter: {
+        fields: { slug: { ne: null } }
+        frontmatter: { title: { ne: "" }, category: { ne: null } }
+      }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+            category
+          }
+        }
       }
     }
   }
