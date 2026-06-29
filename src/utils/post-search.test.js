@@ -53,6 +53,15 @@ test('leaves text escaped without highlights when search query is blank', () => 
   assert.equal(highlightSearchText('<React>', ''), '&lt;React&gt;')
 })
 
+test('preserves trusted HTML tags while highlighting text content', () => {
+  assert.equal(
+    highlightSearchText('<strong>React</strong> Hooks', 'react', {
+      preserveHtml: true,
+    }),
+    '<strong><mark class="post-search-highlight">React</mark></strong> Hooks'
+  )
+})
+
 test('builds result summary text for category and search state', () => {
   assert.equal(getSearchSummaryText(12, 'All', ''), '전체 포스트 12개')
   assert.equal(

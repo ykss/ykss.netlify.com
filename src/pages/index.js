@@ -24,7 +24,7 @@ function getDistance(currentPos) {
   return Dom.getDocumentHeight() - currentPos
 }
 
-export default ({ data, location }) => {
+const HomePage = ({ data, location }) => {
   const initialCount = Storage.getCount(1)
   const initialCategory = Storage.getCategory(CATEGORY_TYPE.ALL)
   const [count, setCount] = useState(initialCount)
@@ -150,6 +150,8 @@ export default ({ data, location }) => {
     </Layout>
   )
 }
+
+export default HomePage
 
 export const Head = ({ data }) => {
   const { siteMetadata } = data.site

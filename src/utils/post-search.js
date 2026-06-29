@@ -13,6 +13,8 @@ const escapeHtml = value =>
 
 const escapeRegExp = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
+const HTML_TAG_PATTERN = /(<[^>]+>)/
+
 const getSearchableText = post => {
   const node = post && post.node ? post.node : {}
   const frontmatter = node.frontmatter || {}
@@ -32,12 +34,11 @@ const filterPostsBySearch = (posts, searchQuery) => {
   return posts.filter(post => getSearchableText(post).includes(normalizedQuery))
 }
 
-const highlightSearchText = (value, searchQuery) => {
+const highlightPlainText = (value, normalizedQuery, shouldEscapeHtml) => {
   const text = String(value || '')
-  const normalizedQuery = normalizeSearchText(searchQuery)
 
   if (!normalizedQuery) {
-    return escapeHtml(text)
+    return shouldEscapeHtml ? escapeHtml(text) : text
   }
 
   const matcher = new RegExp(`(${escapeRegExp(normalizedQuery)})`, 'gi')
@@ -45,15 +46,39 @@ const highlightSearchText = (value, searchQuery) => {
   return text
     .split(matcher)
     .map(part => {
-      const escapedPart = escapeHtml(part)
+      const safePart = shouldEscapeHtml ? escapeHtml(part) : part
 
       if (normalizeSearchText(part) === normalizedQuery) {
-        return `<mark class="post-search-highlight">${escapedPart}</mark>`
+        return `<mark class="post-search-highlight">${safePart}</mark>`
       }
 
-      return escapedPart
+      return safePart
     })
     .join('')
+}
+
+const highlightTrustedHtmlText = (value, normalizedQuery) =>
+  String(value || '')
+    .split(HTML_TAG_PATTERN)
+    .map(part => {
+      if (part.startsWith('<') && part.endsWith('>')) {
+        return part
+      }
+
+      return highlightPlainText(part, normalizedQuery, false)
+    })
+    .join('')
+
+const highlightSearchText = (value, searchQuery, options = {}) => {
+  const text = String(value || '')
+  const normalizedQuery = normalizeSearchText(searchQuery)
+  const { preserveHtml = false } = options
+
+  if (preserveHtml) {
+    return highlightTrustedHtmlText(text, normalizedQuery)
+  }
+
+  return highlightPlainText(text, normalizedQuery, true)
 }
 
 const getSearchSummaryText = (resultCount, category, searchQuery) => {
