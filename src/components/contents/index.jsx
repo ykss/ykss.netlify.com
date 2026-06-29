@@ -3,7 +3,10 @@ import React, { useMemo } from 'react'
 import { ThumbnailContainer } from '../thumbnail-container'
 import { ThumbnailItem } from '../thumbnail-item'
 import { CATEGORY_TYPE } from '../../constants'
-import { filterPostsBySearch } from '../../utils/post-search'
+import {
+  filterPostsBySearch,
+  getSearchSummaryText,
+} from '../../utils/post-search'
 
 export const Contents = ({
   posts,
@@ -12,27 +15,35 @@ export const Contents = ({
   category,
   searchQuery,
 }) => {
-  const refinedPosts = useMemo(
+  const filteredPosts = useMemo(
     () =>
-      filterPostsBySearch(posts, searchQuery)
-        .filter(
-          ({ node }) =>
-            category === CATEGORY_TYPE.ALL ||
-            node.frontmatter.category === category
-        )
-        .slice(0, count * countOfInitialPost),
-    [posts, searchQuery, category, count, countOfInitialPost]
+      filterPostsBySearch(posts, searchQuery).filter(
+        ({ node }) =>
+          category === CATEGORY_TYPE.ALL ||
+          node.frontmatter.category === category
+      ),
+    [posts, searchQuery, category]
   )
+  const refinedPosts = filteredPosts.slice(0, count * countOfInitialPost)
 
   return (
-    <ThumbnailContainer>
-      {refinedPosts.length === 0 ? (
-        <p className="post-search__empty">No posts found.</p>
-      ) : (
-        refinedPosts.map(({ node }, index) => (
-          <ThumbnailItem node={node} key={`item_${index}`} />
-        ))
-      )}
-    </ThumbnailContainer>
+    <>
+      <p className="post-search__summary">
+        {getSearchSummaryText(filteredPosts.length, category, searchQuery)}
+      </p>
+      <ThumbnailContainer>
+        {refinedPosts.length === 0 ? (
+          <p className="post-search__empty">검색 결과가 없습니다.</p>
+        ) : (
+          refinedPosts.map(({ node }, index) => (
+            <ThumbnailItem
+              node={node}
+              searchQuery={searchQuery}
+              key={`item_${index}`}
+            />
+          ))
+        )}
+      </ThumbnailContainer>
+    </>
   )
 }

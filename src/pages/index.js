@@ -29,8 +29,12 @@ export default ({ data, location }) => {
   const initialCategory = Storage.getCategory(CATEGORY_TYPE.ALL)
   const [count, setCount] = useState(initialCount)
   const countRef = useRef(count)
+  const searchInputRef = useRef(null)
   const [category, setCategory] = useState(initialCategory)
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchQuery, setSearchQuery] = useState(() => {
+    const params = new URLSearchParams(location.search)
+    return params.get('q') || ''
+  })
 
   const { siteMetadata } = data.site
   const { countOfInitialPost } = siteMetadata.configs
@@ -55,6 +59,50 @@ export default ({ data, location }) => {
     Storage.setCount(count)
     Storage.setCategory(category)
   })
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+
+    if (searchQuery) {
+      params.set('q', searchQuery)
+    } else {
+      params.delete('q')
+    }
+
+    const nextSearch = params.toString()
+    const nextUrl = nextSearch
+      ? `${window.location.pathname}?${nextSearch}`
+      : window.location.pathname
+
+    window.history.replaceState(null, '', nextUrl)
+  }, [searchQuery])
+
+  useEffect(() => {
+    const onKeyDown = event => {
+      const target = event.target
+      const isInputTarget =
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target.isContentEditable
+
+      if (event.key === '/' && !event.metaKey && !event.ctrlKey && !isInputTarget) {
+        event.preventDefault()
+        searchInputRef.current.focus()
+        return
+      }
+
+      if (event.key === 'Escape' && searchQuery) {
+        event.preventDefault()
+        searchPosts('')
+      }
+    }
+
+    window.addEventListener('keydown', onKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [searchQuery])
 
   const selectCategory = category => {
     setCategory(category)
@@ -82,7 +130,11 @@ export default ({ data, location }) => {
   return (
     <Layout location={location} title={siteMetadata.title}>
       <Bio />
-      <PostSearch searchQuery={searchQuery} onSearch={searchPosts} />
+      <PostSearch
+        searchQuery={searchQuery}
+        onSearch={searchPosts}
+        inputRef={searchInputRef}
+      />
       <Category
         categories={categories}
         category={category}
