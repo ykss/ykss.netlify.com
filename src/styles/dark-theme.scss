@@ -46,7 +46,6 @@ body.dark {
     }
   }
 
-  .post-search__label,
   .post-search__empty {
     color: $dark-middle-font-color;
   }
@@ -55,6 +54,7 @@ body.dark {
     background-color: $dark-category-item-color;
     border-color: $dark-category-border-color;
     color: $dark-light-font-color;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
 
     &::placeholder {
       color: $dark-middle-font-color;
@@ -67,7 +67,15 @@ body.dark {
 
   .post-search__clear {
     background-color: $dark-category-background-color;
+    border-color: $dark-category-border-color;
     color: $dark-middle-font-color;
+
+    &:hover,
+    &:focus {
+      background-color: $dark-category-item-color;
+      border-color: $dark-category-highlight-border-color;
+      color: $dark-lightest-font-color;
+    }
   }
 
   .thumbnail {

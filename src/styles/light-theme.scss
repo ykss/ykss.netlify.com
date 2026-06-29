@@ -45,7 +45,6 @@ body.light {
     }
   }
 
-  .post-search__label,
   .post-search__empty {
     color: $middle-gray;
   }
@@ -54,6 +53,7 @@ body.light {
     background-color: $light-category-item-color;
     border-color: $light-category-border-color;
     color: $dark-gray;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 
     &::placeholder {
       color: $middle-gray;
@@ -65,8 +65,16 @@ body.light {
   }
 
   .post-search__clear {
-    background-color: $light-category-background-color;
+    background-color: #fff;
+    border-color: $light-category-border-color;
     color: $middle-gray;
+
+    &:hover,
+    &:focus {
+      background-color: $light-category-background-color;
+      border-color: $light-category-highlight-border-color;
+      color: $dark-gray;
+    }
   }
 
   .thumbnail {
