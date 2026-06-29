@@ -83,6 +83,15 @@ body.light {
     border-left: 1px solid $light-category-border-color;
   }
 
+  .post-heading--active {
+    color: $dark-gray;
+    text-shadow: $light-hover-text-shadow;
+
+    &::before {
+      background-color: rgba(255, 229, 64, 0.55);
+    }
+  }
+
   .navigator {
     a {
       background-color: $navigator-background-color;

@@ -43,6 +43,23 @@
   }
 }
 
+.post-heading--active {
+  isolation: isolate;
+  position: relative;
+  transition: color 0.2s, text-shadow 0.2s;
+
+  &::before {
+    border-radius: 0.18rem;
+    bottom: 0.35rem;
+    content: '';
+    height: 0.55em;
+    left: -0.2rem;
+    position: absolute;
+    right: -0.2rem;
+    z-index: -1;
+  }
+}
+
 .table-of-contents__title,
 .table-of-contents__summary {
   font-size: 0.72rem;
