@@ -46,6 +46,30 @@ body.dark {
     }
   }
 
+  .post-search__label,
+  .post-search__empty {
+    color: $dark-middle-font-color;
+  }
+
+  .post-search__input {
+    background-color: $dark-category-item-color;
+    border-color: $dark-category-border-color;
+    color: $dark-light-font-color;
+
+    &::placeholder {
+      color: $dark-middle-font-color;
+    }
+
+    &:focus {
+      border-color: $dark-category-highlight-border-color;
+    }
+  }
+
+  .post-search__clear {
+    background-color: $dark-category-background-color;
+    color: $dark-middle-font-color;
+  }
+
   .thumbnail {
     h3 {
       color: $dark-light-font-color;

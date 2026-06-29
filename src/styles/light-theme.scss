@@ -45,6 +45,30 @@ body.light {
     }
   }
 
+  .post-search__label,
+  .post-search__empty {
+    color: $middle-gray;
+  }
+
+  .post-search__input {
+    background-color: $light-category-item-color;
+    border-color: $light-category-border-color;
+    color: $dark-gray;
+
+    &::placeholder {
+      color: $middle-gray;
+    }
+
+    &:focus {
+      border-color: $light-category-highlight-border-color;
+    }
+  }
+
+  .post-search__clear {
+    background-color: $light-category-background-color;
+    color: $middle-gray;
+  }
+
   .thumbnail {
     h3 {
       color: $dark-gray;
