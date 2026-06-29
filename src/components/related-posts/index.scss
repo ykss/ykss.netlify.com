@@ -1,0 +1,51 @@
+@use '../../styles/variables.scss' as *;
+
+.related-posts {
+  margin: 48px 0 36px;
+
+  h2 {
+    margin-bottom: 12px;
+    font-size: 18px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    border-bottom: 0.5px solid #666;
+  }
+
+  a {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 12px 4px;
+    box-shadow: none;
+  }
+
+  span {
+    line-height: 1.4;
+  }
+
+  small {
+    flex: 0 0 auto;
+    opacity: 0.72;
+  }
+}
+
+@media (max-width: 640px) {
+  .related-posts {
+    a {
+      display: block;
+    }
+
+    small {
+      display: block;
+      margin-top: 4px;
+    }
+  }
+}
