@@ -56,9 +56,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-prismjs`,
-            options: {
-              inlineCodeMarker: '%',
-            },
           },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -95,12 +92,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-adsense`,
-      options: {
-        publisherId: metaConfig.ad,
-      },
-    },
-    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
@@ -117,6 +108,7 @@ module.exports = {
         `,
         feeds: [
           {
+            title: metaConfig.title,
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
@@ -131,7 +123,7 @@ module.exports = {
             query: `
               {
                 allMarkdownRemark(
-                  sort: { fields: [frontmatter___date], order: DESC }
+                  sort: { frontmatter: { date: DESC } }
                   filter: { frontmatter: { draft: { eq: false } } },
                 ) {
                   edges {
@@ -156,7 +148,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-lodash`,
     `gatsby-plugin-sitemap`,

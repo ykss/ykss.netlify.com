@@ -19,7 +19,7 @@ draft: false
 SELECT * FROM example WHERE user_id in ('ykss');
 ```
 
-```gql
+```graphql
 {
   example {
     admin

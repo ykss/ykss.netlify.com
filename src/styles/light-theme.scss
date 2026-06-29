@@ -1,3 +1,5 @@
+@use './variables.scss' as *;
+
 body.light {
   background-color: $light-background-color;
   text-shadow: $light-text-shadow;

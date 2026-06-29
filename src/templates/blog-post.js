@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import * as Elements from '../components/elements';
 import { Layout } from '../layout';
-import { Head } from '../components/head';
+import { Seo } from '../components/head';
 import { PostTitle } from '../components/post-title';
 import { PostDate } from '../components/post-date';
 import { PostContainer } from '../components/post-container';
@@ -31,17 +31,11 @@ export default ({ data, pageContext, location }) => {
   const { disqusShortName, utterances } = comment;
   const { title: postTitle, date, thumbnail, canonicalUrl } = post.frontmatter;
   const thumbnailSrc = thumbnail
-    ? `${siteUrl}${thumbnail.childImageSharp.fixed.src}`
+    ? `${siteUrl}${thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}`
     : undefined;
 
   return (
     <Layout location={location} title={title}>
-      <Head
-        title={postTitle}
-        description={post.excerpt}
-        thumbnail={thumbnailSrc}
-        canonicalUrl={canonicalUrl}
-      />{' '}
       <PostTitle title={postTitle} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <PostDate date={date} />
@@ -66,11 +60,31 @@ export default ({ data, pageContext, location }) => {
   );
 };
 
+export const Head = ({ data }) => {
+  const post = data.markdownRemark;
+  const siteMetadata = data.site.siteMetadata;
+  const { title: postTitle, thumbnail, canonicalUrl } = post.frontmatter;
+  const thumbnailSrc = thumbnail
+    ? `${siteMetadata.siteUrl}${thumbnail.childImageSharp.gatsbyImageData.images.fallback.src}`
+    : undefined;
+
+  return (
+    <Seo
+      title={postTitle}
+      description={post.excerpt}
+      thumbnail={thumbnailSrc}
+      canonicalUrl={canonicalUrl}
+      siteMetadata={siteMetadata}
+    />
+  );
+};
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
+        description
         author
         siteUrl
         comment {
@@ -91,9 +105,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         thumbnail {
           childImageSharp {
-            fixed(width: 800) {
-              src
-            }
+            gatsbyImageData(width: 600, layout: FIXED)
           }
         }
         canonicalUrl

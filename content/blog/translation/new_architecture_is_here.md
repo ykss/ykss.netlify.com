@@ -163,7 +163,7 @@ setTimeout(() => {}, 100);
 
 새 아키텍처에서는 C++에서 메서드를 직접 바인딩할 수 있습니다.
 
-```c++
+```cpp
 // ✅ C++에서 직접적인 초기화
 runtime.global().setProperty(runtime, "setTimeout", createTimer);
 ```

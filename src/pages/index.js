@@ -4,7 +4,7 @@ import _ from 'lodash'
 
 import { Layout } from '../layout'
 import { Bio } from '../components/bio'
-import { Head } from '../components/head'
+import { Seo } from '../components/head'
 import { Category } from '../components/category'
 import { Contents } from '../components/contents'
 
@@ -15,7 +15,6 @@ import * as EventManager from '../utils/event-manager'
 import * as Dom from '../utils/dom'
 
 import { HOME_TITLE, CATEGORY_TYPE } from '../constants'
-import { Helmet } from 'react-helmet'
 
 const DEST_POS = 316
 const BASE_LINE = 80
@@ -74,14 +73,6 @@ export default ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteMetadata.title}>
-      <Head title={HOME_TITLE} keywords={siteMetadata.keywords} />
-      <Helmet>
-        <script
-          data-ad-client="ca-pub-5924627079296495"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-      </Helmet>
       <Bio />
       <Category
         categories={categories}
@@ -98,18 +89,33 @@ export default ({ data, location }) => {
   )
 }
 
+export const Head = ({ data }) => {
+  const { siteMetadata } = data.site
+
+  return (
+    <Seo
+      title={HOME_TITLE}
+      keywords={siteMetadata.keywords}
+      siteMetadata={siteMetadata}
+    />
+  )
+}
+
 export const pageQuery = graphql`
   query {
     site {
       siteMetadata {
         title
+        description
+        author
+        keywords
         configs {
           countOfInitialPost
         }
       }
     }
     allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { category: { ne: null }, draft: { eq: false } } }
     ) {
       edges {

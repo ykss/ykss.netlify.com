@@ -1,6 +1,6 @@
-@import '../styles/variables.scss';
-@import '../styles/light-theme.scss';
-@import '../styles/dark-theme.scss';
+@use '../styles/variables.scss' as *;
+@use '../styles/light-theme.scss' as *;
+@use '../styles/dark-theme.scss' as *;
 
 body {
   font-family: 'Noto Sans KR', sans-serif;

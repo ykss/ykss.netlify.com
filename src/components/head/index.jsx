@@ -1,103 +1,109 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
 
-export function Head({
+export function Seo({
   description,
   lang,
   meta,
   keywords,
+  siteMetadata,
+  thumbnail,
   title,
   canonicalUrl,
 }) {
+  const metaDescription = description || siteMetadata.description;
+  const metaTags = [
+    {
+      name: `description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:title`,
+      content: title,
+    },
+    {
+      property: `og:description`,
+      content: metaDescription,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      name: `twitter:card`,
+      content: thumbnail ? `summary_large_image` : `summary`,
+    },
+    {
+      name: `twitter:creator`,
+      content: siteMetadata.author,
+    },
+    {
+      name: `twitter:title`,
+      content: title,
+    },
+    {
+      name: `twitter:description`,
+      content: metaDescription,
+    },
+  ]
+    .concat(
+      thumbnail
+        ? [
+            {
+              property: `og:image`,
+              content: thumbnail,
+            },
+            {
+              name: `twitter:image`,
+              content: thumbnail,
+            },
+          ]
+        : []
+    )
+    .concat(
+      keywords.length > 0
+        ? {
+            name: `keywords`,
+            content: keywords.join(`, `),
+          }
+        : []
+    )
+    .concat(meta);
+
   return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description;
-        return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : []
-              )
-              .concat(meta)}
-          >
-            {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-          </Helmet>
-        );
-      }}
-    />
+    <>
+      <html lang={lang} />
+      <title>{`${title} | ${siteMetadata.title}`}</title>
+      {metaTags.map(tag => (
+        <meta
+          key={`${tag.name || tag.property}-${tag.content}`}
+          {...tag}
+        />
+      ))}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+    </>
   );
 }
 
-Head.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   keywords: [],
+  thumbnail: undefined,
+  canonicalUrl: undefined,
 };
 
-Head.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
+  siteMetadata: PropTypes.shape({
+    author: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
+  thumbnail: PropTypes.string,
   title: PropTypes.string.isRequired,
+  canonicalUrl: PropTypes.string,
 };
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`;
