@@ -7,6 +7,7 @@ import { Seo } from '../components/head';
 import { PostTitle } from '../components/post-title';
 import { PostDate } from '../components/post-date';
 import { PostContainer } from '../components/post-container';
+import { ScrollIndicator } from '../components/scroll-indicator';
 import { SocialShare } from '../components/social-share';
 import { SponsorButton } from '../components/sponsor-button';
 import { Bio } from '../components/bio';
@@ -43,6 +44,7 @@ export default ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location} title={title}>
+      <ScrollIndicator />
       <PostTitle title={postTitle} />
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <PostDate date={date} />

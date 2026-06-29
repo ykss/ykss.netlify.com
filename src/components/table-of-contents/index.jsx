@@ -3,6 +3,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import './index.scss'
 
 const MIN_HEADING_COUNT = 3
+const ACTIVE_HEADING_CLASS_NAME = 'post-heading--active'
 
 const getVisibleHeadings = headings =>
   (headings || []).filter(heading => {
@@ -36,7 +37,7 @@ export const TableOfContents = ({ headings }) => {
   const tocHeadings = useMemo(() => getVisibleHeadings(headings), [headings])
 
   useEffect(() => {
-    if (tocHeadings.length < MIN_HEADING_COUNT) {
+    if (!tocHeadings.length) {
       return undefined
     }
 
@@ -68,6 +69,26 @@ export const TableOfContents = ({ headings }) => {
 
     return () => observer.disconnect()
   }, [tocHeadings])
+
+  useEffect(() => {
+    if (!activeId) {
+      return undefined
+    }
+
+    const headingElements = tocHeadings
+      .map(heading => getTargetById(heading.id))
+      .filter(Boolean)
+
+    headingElements.forEach(heading => {
+      heading.classList.toggle(ACTIVE_HEADING_CLASS_NAME, heading.id === activeId)
+    })
+
+    return () => {
+      headingElements.forEach(heading => {
+        heading.classList.remove(ACTIVE_HEADING_CLASS_NAME)
+      })
+    }
+  }, [activeId, tocHeadings])
 
   const handleClick = event => {
     const link = event.target.closest('a[href^="#"]')

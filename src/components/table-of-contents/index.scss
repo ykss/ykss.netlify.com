@@ -43,6 +43,21 @@
   }
 }
 
+.post-heading--active {
+  position: relative;
+  transition: color 0.2s, text-shadow 0.2s;
+
+  &::before {
+    border-radius: 999px;
+    bottom: 0.45rem;
+    content: '';
+    left: -0.75rem;
+    position: absolute;
+    top: 0.25rem;
+    width: 3px;
+  }
+}
+
 .table-of-contents__title,
 .table-of-contents__summary {
   font-size: 0.72rem;

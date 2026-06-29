@@ -93,6 +93,15 @@ body.dark {
     border-left: 1px solid $dark-category-border-color;
   }
 
+  .post-heading--active {
+    color: $dark-lightest-font-color;
+    text-shadow: $dark-hover-text-shadow;
+
+    &::before {
+      background-color: $dark-link-color;
+    }
+  }
+
   .navigator {
     a {
       background-color: $navigator-background-color;

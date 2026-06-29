@@ -1,0 +1,17 @@
+.scroll-indicator {
+  height: 3px;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.scroll-indicator__bar {
+  background: linear-gradient(72deg, #291e95, #00a3cc);
+  height: 100%;
+  transform-origin: left center;
+  transition: transform 0.08s linear;
+  width: 100%;
+}
