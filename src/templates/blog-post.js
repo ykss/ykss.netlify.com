@@ -5,14 +5,12 @@ import * as Elements from '../components/elements';
 import { Layout } from '../layout';
 import { Seo } from '../components/head';
 import { PostTitle } from '../components/post-title';
-import { PostDate } from '../components/post-date';
+import { PostMeta } from '../components/post-meta';
 import { PostContainer } from '../components/post-container';
 import { ScrollIndicator } from '../components/scroll-indicator';
 import { SocialShare } from '../components/social-share';
 import { SponsorButton } from '../components/sponsor-button';
-import { Bio } from '../components/bio';
-import { PostNavigator } from '../components/post-navigator';
-import { RelatedPosts } from '../components/related-posts';
+import { PostFooterActions } from '../components/post-footer-actions';
 import { TableOfContents } from '../components/table-of-contents';
 import { Disqus } from '../components/disqus';
 import { Utterences } from '../components/utterances';
@@ -20,6 +18,7 @@ import {
   buildBlogPostingJsonLd,
   getRelatedPosts,
 } from '../utils/post-recommendations';
+import { getPostReadingMeta } from '../utils/post-reading';
 import * as ScrollManager from '../utils/scroll';
 
 import '../styles/code.scss';
@@ -36,6 +35,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const slug = pageContext.slug;
   const { title, comment, siteUrl, author, sponsor } = metaData;
   const { disqusShortName, utterances } = comment;
+  const hasComments = !!disqusShortName || !!utterances;
   const {
     title: postTitle,
     date,
@@ -51,32 +51,43 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     slug,
     category,
   });
+  const { readingTimeText } = getPostReadingMeta({
+    wordCount: post.wordCount.words,
+  });
 
   return (
     <Layout location={location} title={title}>
       <ScrollIndicator />
       <PostTitle title={postTitle} />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <PostDate date={date} />
-      </div>
+      <PostMeta
+        date={date}
+        readingTimeText={readingTimeText}
+        hasComments={hasComments}
+      />
       {toc !== false && <TableOfContents headings={post.headings} />}
-      <PostContainer html={post.html} />{' '}
+      <PostContainer html={post.html} slug={slug} />{' '}
       {!!sponsor.buyMeACoffeeId && (
         <SponsorButton sponsorId={sponsor.buyMeACoffeeId} />
       )}{' '}
       <Elements.Hr />
-      <Bio />
-      <RelatedPosts posts={relatedPosts} />
-      <PostNavigator pageContext={pageContext} />{' '}
-      {!!disqusShortName && (
-        <Disqus
-          post={post}
-          shortName={disqusShortName}
-          siteUrl={siteUrl}
-          slug={pageContext.slug}
-        />
-      )}{' '}
-      {!!utterances && <Utterences repo={utterances} />}{' '}
+      <PostFooterActions
+        hasComments={hasComments}
+        pageContext={pageContext}
+        relatedPosts={relatedPosts}
+      />
+      {hasComments && (
+        <section id="post-comments" className="post-comments">
+          {!!disqusShortName && (
+            <Disqus
+              post={post}
+              shortName={disqusShortName}
+              siteUrl={siteUrl}
+              slug={pageContext.slug}
+            />
+          )}{' '}
+          {!!utterances && <Utterences repo={utterances} />}{' '}
+        </section>
+      )}
     </Layout>
   );
 };
@@ -141,6 +152,9 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 280)
+      wordCount {
+        words
+      }
       fields {
         slug
       }
