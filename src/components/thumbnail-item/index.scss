@@ -18,6 +18,18 @@
   }
 }
 
+.thumbnail__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  align-items: center;
+
+  span + span::before {
+    margin-right: 0.55rem;
+    content: '·';
+  }
+}
+
 .thumbnail.visible {
   opacity: 1;
 }
