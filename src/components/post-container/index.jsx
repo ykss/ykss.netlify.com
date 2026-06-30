@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+import { getCodeBlockMeta } from '../../utils/code-block-meta'
 import { getReadingProgressStorageKey } from '../../utils/post-reading'
 
 import './index.scss'
@@ -8,13 +9,19 @@ const ENHANCED_CODE_CLASS_NAME = 'post-code-block--enhanced'
 
 const getCodeLanguage = pre => {
   const code = pre.querySelector('code[class*="language-"]')
-  const languageClass =
-    code &&
-    Array.from(code.classList).find(className =>
-      className.indexOf('language-') === 0
-    )
+  const codeDataMeta = code ? code.getAttribute('data-meta') : null
+  const codeDataTitle = code ? code.getAttribute('data-title') : null
+  const codeDataFilename = code ? code.getAttribute('data-filename') : null
 
-  return languageClass ? languageClass.replace('language-', '') : 'code'
+  return getCodeBlockMeta({
+    className: code ? code.className : pre.className,
+    dataMeta: pre.getAttribute('data-meta') || codeDataMeta,
+    dataTitle:
+      pre.getAttribute('data-title') ||
+      pre.getAttribute('data-filename') ||
+      codeDataTitle ||
+      codeDataFilename,
+  })
 }
 
 const copyText = async text => {
@@ -66,11 +73,13 @@ const enhanceCodeBlocks = container => {
 
     const header = document.createElement('div')
     const label = document.createElement('span')
+    const language = document.createElement('span')
     const button = document.createElement('button')
+    const codeMeta = getCodeLanguage(pre)
 
     header.className = 'post-code-block__header'
     label.className = 'post-code-block__language'
-    label.textContent = getCodeLanguage(pre)
+    language.textContent = codeMeta.language
     button.className = 'post-code-block__copy'
     button.type = 'button'
     button.textContent = 'Copy'
@@ -93,6 +102,16 @@ const enhanceCodeBlocks = container => {
 
     button.addEventListener('click', handleCopy)
     cleanupHandlers.push(() => button.removeEventListener('click', handleCopy))
+
+    label.appendChild(language)
+
+    if (codeMeta.title) {
+      const title = document.createElement('span')
+
+      title.className = 'post-code-block__title'
+      title.textContent = codeMeta.title
+      label.appendChild(title)
+    }
 
     header.appendChild(label)
     header.appendChild(button)

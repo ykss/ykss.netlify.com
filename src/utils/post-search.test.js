@@ -3,6 +3,7 @@ const assert = require('node:assert/strict')
 
 const {
   filterPostsBySearch,
+  getSearchState,
   getSearchSummaryText,
   highlightSearchText,
 } = require('./post-search')
@@ -70,4 +71,17 @@ test('builds result summary text for category and search state', () => {
   )
   assert.equal(getSearchSummaryText(2, 'All', 'react'), '"react" 검색 결과 2개')
   assert.equal(getSearchSummaryText(5, 'Web', ''), 'Web 카테고리 포스트 5개')
+})
+
+test('builds search state labels and reset visibility', () => {
+  assert.deepEqual(getSearchState(4, 'React', 'hooks'), {
+    summaryText: 'React 카테고리에서 "hooks" 검색 중 · 4개',
+    filterLabel: 'React · hooks',
+    hasActiveFilter: true,
+  })
+  assert.deepEqual(getSearchState(12, 'All', ''), {
+    summaryText: '전체 포스트 12개',
+    filterLabel: '전체',
+    hasActiveFilter: false,
+  })
 })

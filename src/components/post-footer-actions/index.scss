@@ -2,6 +2,21 @@
   margin: 2.5rem 0 1.5rem;
 }
 
+.post-footer-actions__feedback {
+  margin: 1.5rem 0;
+  padding: 0.8rem 0;
+  border-top: 0.5px solid #666;
+  border-bottom: 0.5px solid #666;
+  text-align: center;
+
+  a {
+    box-shadow: none;
+    font-size: 0.86rem;
+    font-weight: 700;
+    opacity: 0.82;
+  }
+}
+
 .post-footer-actions__comments {
   margin-top: 1.5rem;
   text-align: center;

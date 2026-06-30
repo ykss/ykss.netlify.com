@@ -5,7 +5,7 @@ import { ThumbnailItem } from '../thumbnail-item'
 import { CATEGORY_TYPE } from '../../constants'
 import {
   filterPostsBySearch,
-  getSearchSummaryText,
+  getSearchState,
 } from '../../utils/post-search'
 
 export const Contents = ({
@@ -14,6 +14,7 @@ export const Contents = ({
   count,
   category,
   searchQuery,
+  onResetFilters,
 }) => {
   const filteredPosts = useMemo(
     () =>
@@ -25,12 +26,23 @@ export const Contents = ({
     [posts, searchQuery, category]
   )
   const refinedPosts = filteredPosts.slice(0, count * countOfInitialPost)
+  const searchState = getSearchState(filteredPosts.length, category, searchQuery)
 
   return (
     <>
-      <p className="post-search__summary">
-        {getSearchSummaryText(filteredPosts.length, category, searchQuery)}
-      </p>
+      <div className="post-search__summary">
+        <span>{searchState.summaryText}</span>
+        <span className="post-search__filter">{searchState.filterLabel}</span>
+        {searchState.hasActiveFilter && (
+          <button
+            className="post-search__reset"
+            type="button"
+            onClick={onResetFilters}
+          >
+            초기화
+          </button>
+        )}
+      </div>
       <ThumbnailContainer>
         {refinedPosts.length === 0 ? (
           <p className="post-search__empty">검색 결과가 없습니다.</p>

@@ -100,8 +100,27 @@ const getSearchSummaryText = (resultCount, category, searchQuery) => {
   return `전체 포스트 ${resultCount}개`
 }
 
+const getSearchState = (resultCount, category, searchQuery) => {
+  const normalizedQuery = String(searchQuery || '').trim()
+  const isAllCategory = category === 'All'
+  const hasActiveFilter = Boolean(normalizedQuery) || !isAllCategory
+  const filterLabel = [
+    isAllCategory ? null : category,
+    normalizedQuery || null,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+
+  return {
+    summaryText: getSearchSummaryText(resultCount, category, searchQuery),
+    filterLabel: filterLabel || '전체',
+    hasActiveFilter,
+  }
+}
+
 module.exports = {
   filterPostsBySearch,
+  getSearchState,
   getSearchSummaryText,
   highlightSearchText,
   normalizeSearchText,

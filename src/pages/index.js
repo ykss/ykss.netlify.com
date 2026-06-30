@@ -115,6 +115,12 @@ const HomePage = ({ data, location }) => {
     setCount(1)
   }
 
+  const resetPostFilters = () => {
+    setSearchQuery('')
+    setCategory(CATEGORY_TYPE.ALL)
+    setCount(1)
+  }
+
   const onScroll = () => {
     const currentPos = window.scrollY + window.innerHeight
     const isTriggerPos = () => getDistance(currentPos) < BASE_LINE
@@ -146,6 +152,7 @@ const HomePage = ({ data, location }) => {
         count={count}
         category={category}
         searchQuery={searchQuery}
+        onResetFilters={resetPostFilters}
       />
     </Layout>
   )

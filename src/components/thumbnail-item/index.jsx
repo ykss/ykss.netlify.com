@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { TARGET_CLASS } from '../../utils/visible'
+import { PostBadges } from '../post-badges'
+import { getPostBadges } from '../../utils/post-badges'
 import { getPostReadingMeta } from '../../utils/post-reading'
 import { highlightSearchText } from '../../utils/post-search'
 
@@ -8,6 +10,10 @@ import './index.scss'
 
 export const ThumbnailItem = ({ node, searchQuery }) => {
   const { readingTimeText } = getPostReadingMeta({
+    wordCount: node.wordCount && node.wordCount.words,
+  })
+  const badges = getPostBadges({
+    category: node.frontmatter.category,
     wordCount: node.wordCount && node.wordCount.words,
   })
 
@@ -26,6 +32,7 @@ export const ThumbnailItem = ({ node, searchQuery }) => {
           <span>{new Date(node.frontmatter.date).toLocaleDateString()}</span>
           <span>{readingTimeText}</span>
         </small>
+        <PostBadges badges={badges} />
         <p
           dangerouslySetInnerHTML={{
             __html: highlightSearchText(node.excerpt, searchQuery, {

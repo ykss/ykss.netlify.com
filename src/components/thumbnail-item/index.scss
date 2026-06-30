@@ -23,11 +23,16 @@
   flex-wrap: wrap;
   gap: 0.35rem 0.55rem;
   align-items: center;
+  margin-bottom: 0.55rem;
 
   span + span::before {
     margin-right: 0.55rem;
     content: '·';
   }
+}
+
+.thumbnail .post-badges {
+  margin-bottom: 0.15rem;
 }
 
 .thumbnail.visible {

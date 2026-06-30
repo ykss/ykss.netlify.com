@@ -18,6 +18,7 @@ import {
   buildBlogPostingJsonLd,
   getRelatedPosts,
 } from '../utils/post-recommendations';
+import { getPostBadges } from '../utils/post-badges';
 import { getPostReadingMeta } from '../utils/post-reading';
 import * as ScrollManager from '../utils/scroll';
 
@@ -54,6 +55,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { readingTimeText } = getPostReadingMeta({
     wordCount: post.wordCount.words,
   });
+  const badges = getPostBadges({
+    category,
+    wordCount: post.wordCount.words,
+  });
+  const postUrl = `${siteUrl}${slug}`;
+  const feedbackUrl = `https://github.com/ykss/ykss.netlify.com/issues/new?title=${encodeURIComponent(
+    `[피드백] ${postTitle}`
+  )}&body=${encodeURIComponent(`포스트: ${postUrl}\n\n피드백 내용을 적어주세요.`)}`;
 
   return (
     <Layout location={location} title={title}>
@@ -63,6 +72,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         date={date}
         readingTimeText={readingTimeText}
         hasComments={hasComments}
+        badges={badges}
       />
       {toc !== false && <TableOfContents headings={post.headings} />}
       <PostContainer html={post.html} slug={slug} />{' '}
@@ -71,6 +81,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       )}{' '}
       <Elements.Hr />
       <PostFooterActions
+        feedbackUrl={feedbackUrl}
         hasComments={hasComments}
         pageContext={pageContext}
         relatedPosts={relatedPosts}

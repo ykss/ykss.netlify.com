@@ -37,9 +37,23 @@ h3:hover .post-heading-anchor,
 }
 
 .post-code-block__language {
+  display: inline-flex;
+  gap: 0.45rem;
+  align-items: center;
+  min-width: 0;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.post-code-block__title {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 500;
+  opacity: 0.72;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
 }
 
 .post-code-block__copy {
