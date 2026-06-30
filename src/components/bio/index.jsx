@@ -30,6 +30,12 @@ export const Bio = () => {
             >
               <span>@{author}</span>
             </a>
+            <img
+              className="author-name-badge"
+              src="/author-badge.svg"
+              alt=""
+              aria-hidden="true"
+            />
             <div className="author-introduction">{introduction}</div>
             <p className="author-socials">
               {social.github && (

@@ -29,6 +29,14 @@
     animation: flutter 2s infinite linear;
   }
 
+  .author-name-badge {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin: 0 0 0 2px;
+    vertical-align: -4px;
+  }
+
   .author-introduction {
     margin-top: 4px;
     font-size: 80%;
