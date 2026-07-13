@@ -33,8 +33,17 @@ export const Bio = () => {
             <img
               className="author-name-badge"
               src="/author-badge.svg"
+              width="18"
+              height="18"
               alt=""
               aria-hidden="true"
+              style={{
+                display: 'inline-block',
+                width: 18,
+                height: 18,
+                margin: '0 0 0 2px',
+                verticalAlign: '-4px',
+              }}
             />
             <div className="author-introduction">{introduction}</div>
             <p className="author-socials">
