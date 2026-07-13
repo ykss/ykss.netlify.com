@@ -5,6 +5,8 @@ category: 'Translation'
 draft: false
 ---
 
+> 원문: [How an Underrated Refactor Saved 90% Memory Usage](https://tanstack.com/blog/tanstack-table-v9-memory-performance)
+
 ![TanStack Table V9 - 메모리 성능](https://tanstack.com/cdn-cgi/image/quality%3D80%2Cformat%3Dauto/blog-assets/tanstack-table-v9-memory-performance/header.png)
 
 TanStack Table V8과 비교해 TanStack Table V9의 메모리 사용량이 최대 90% 줄었다고요? 맞습니다! 적어도 큰 테이블에서는요.
